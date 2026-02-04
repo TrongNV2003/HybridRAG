@@ -102,11 +102,18 @@ class GraphRetrieval(BaseRetrieval):
                 WITH node, score
                 MATCH (node)-[r]-(m)
                 WHERE NOT (toLower(m.id) IN $excluded OR toLower(m.entity_role) IN $excluded)
-                WITH DISTINCT node, r, m, score
+                
+                OPTIONAL MATCH (c1:Chunk)-[:MENTIONS]->(node)
+                WITH node, r, m, score, collect(DISTINCT c1.content)[0..1] as node_context
+                
+                OPTIONAL MATCH (c2:Chunk)-[:MENTIONS]->(m)
+                WITH node, r, m, score, node_context, collect(DISTINCT c2.content)[0..1] as m_context
+
+                WITH DISTINCT node, r, m, score, node_context, m_context
                 ORDER BY score DESC
-                RETURN { id: node.id, entity_role: node.entity_role, type: labels(node)[0] } AS source,
-                       type(r) AS relationship,
-                       { id: m.id, entity_role: m.entity_role, type: labels(m)[0] } AS target
+                RETURN { id: node.id, entity_role: node.entity_role, type: labels(node)[0], context: node_context, reference: node.reference } AS source,
+                       { id: m.id, entity_role: m.entity_role, type: labels(m)[0], context: m_context, reference: m.reference } AS target,
+                       type(r) AS relationship
                 LIMIT $limit
                 """
                 
@@ -124,7 +131,7 @@ class GraphRetrieval(BaseRetrieval):
             seen = set()
             unique_results = []
             for r in all_results:
-                key = (r.get("source", {}).get("id"), r.get("relationship"), r.get("target", {}).get("id"))
+                key = (r.get("source", {}).get("id"), r.get("target", {}).get("id"), r.get("relationship"))
                 if key not in seen:
                     seen.add(key)
                     unique_results.append(r)
@@ -151,10 +158,17 @@ class GraphRetrieval(BaseRetrieval):
         {exclusion_clause}
         MATCH (n)-[r]-(m)
         WHERE 1=1 {exclusion_clause.replace('AND', '') if excluded_lower else ''}
-        WITH DISTINCT n, r, m
-        RETURN {{ id: n.id, entity_role: n.entity_role, type: labels(n)[0] }} AS source,
-               type(r) AS relationship,
-               {{ id: m.id, entity_role: m.entity_role, type: labels(m)[0] }} AS target
+        
+        OPTIONAL MATCH (c1:Chunk)-[:MENTIONS]->(n)
+        WITH n, r, m, collect(DISTINCT c1.content)[0..1] as n_context
+        
+        OPTIONAL MATCH (c2:Chunk)-[:MENTIONS]->(m)
+        WITH n, r, m, n_context, collect(DISTINCT c2.content)[0..1] as m_context
+        
+        WITH DISTINCT n, r, m, n_context, m_context
+        RETURN {{ id: n.id, entity_role: n.entity_role, type: labels(n)[0], context: n_context, reference: n.reference }} AS source,
+               {{ id: m.id, entity_role: m.entity_role, type: labels(m)[0], context: m_context, reference: m.reference }} AS target,
+               type(r) AS relationship
         LIMIT $limit
         """
         
@@ -182,10 +196,17 @@ class GraphRetrieval(BaseRetrieval):
         {exclusion_clause}
         MATCH (n)-[r]-(m)
         WHERE 1=1 {exclusion_clause.replace('AND', '') if excluded_lower else ''}
-        WITH DISTINCT n, r, m
-        RETURN {{ id: n.id, entity_role: n.entity_role, type: labels(n)[0] }} AS source,
-               type(r) AS relationship,
-               {{ id: m.id, entity_role: m.entity_role, type: labels(m)[0] }} AS target
+        
+        OPTIONAL MATCH (c1:Chunk)-[:MENTIONS]->(n)
+        WITH n, r, m, collect(DISTINCT c1.content)[0..1] as n_context
+        
+        OPTIONAL MATCH (c2:Chunk)-[:MENTIONS]->(m)
+        WITH n, r, m, n_context, collect(DISTINCT c2.content)[0..1] as m_context
+        
+        WITH DISTINCT n, r, m, n_context, m_context
+        RETURN {{ id: n.id, entity_role: n.entity_role, type: labels(n)[0], context: n_context, reference: n.reference }} AS source,
+               {{ id: m.id, entity_role: m.entity_role, type: labels(m)[0], context: m_context, reference: m.reference }} AS target,
+               type(r) AS relationship
         LIMIT $limit
         """
         

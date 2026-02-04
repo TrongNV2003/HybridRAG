@@ -26,7 +26,7 @@ async def index_wikipedia(
         # Chunk documents
         chunks: List[StructuralChunk] = []
         for doc in raw_docs:
-            chunks.extend(indexing_service.chunking(doc["content"]))
+            chunks.extend(indexing_service.chunking(doc))
 
         indexing_service.indexing(chunks=chunks)
 

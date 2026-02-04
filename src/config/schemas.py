@@ -1,4 +1,4 @@
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from pydantic import BaseModel, Field
 
 
@@ -27,9 +27,23 @@ class QueryRequest(BaseModel):
     graph_limit: int = Field(10, ge=1, le=50, description="Maximum number of graph results to return")
 
 
+class GraphEntity(BaseModel):
+    id: str
+    entity_role: Optional[str] = None
+    type: str
+    context: List[str]
+    reference: Optional[str] = None
+
+
+class GraphTriple(BaseModel):
+    source: GraphEntity
+    target: GraphEntity
+    relationship: str
+
+
 class QueryResponse(BaseModel):
     answer: str
-    graph_context: List[Dict[str, Any]] = Field(default_factory=list)
+    graph_context: List[GraphTriple] = Field(default_factory=list)
     chunk_context: List[Dict[str, Any]] = Field(default_factory=list)
 
 

@@ -1,3 +1,4 @@
+import uuid
 from openai import OpenAI
 from loguru import logger
 from typing import List, Optional, Dict
@@ -31,8 +32,14 @@ class GraphIndexing:
         self.qdrant_storage = qdrant_storage
         self.clear_old_graph = clear_old_graph
 
-    def chunking(self, document: dict, max_new_chunk_size: Optional[int] = None) -> List['StructuralChunk']:
-        chunks = self.chunker.chunk_document(document, max_new_chunk_size=max_new_chunk_size)
+    def chunking(self, document: Dict, max_new_chunk_size: Optional[int] = None) -> List['StructuralChunk']:
+        content = document.get("content", "")
+        metadata = document.get("metadata", {})
+        chunks = self.chunker.chunk_document(
+            content, 
+            max_new_chunk_size=max_new_chunk_size,
+            additional_metadata=metadata
+        )
         return chunks
 
     def indexing(self, chunks: List['StructuralChunk']) -> None:
@@ -42,12 +49,14 @@ class GraphIndexing:
         all_relationships: List[Dict] = []
         batch_nodes: List[Dict] = []
         batch_relationships: List[Dict] = []
+        batch_chunk_relationships: List[Dict] = []
         batch_chunks: List['StructuralChunk'] = []
         total_chunks = len(chunks)
         
         if self.clear_old_graph:
             logger.info("Clearing existing graph data")
             self.storage.clear_all()
+            self.qdrant_storage.clear_collection()
 
         for i, chunk in enumerate(chunks):
             text = getattr(chunk, "content", None) or chunk.get("content", "")
@@ -66,11 +75,23 @@ class GraphIndexing:
                 continue
             
             cleaned_nodes: List[Dict] = []
+            chunk_provenance: List[Dict] = []
+            chunk_id = chunk.metadata.get("chunk_id") or str(uuid.uuid4())
+            # Ensure chunk has ID in metadata
+            chunk.metadata["chunk_id"] = chunk_id
+
             for node in extracted_data.get("nodes", []):
+                node_id = self.postprocessor(node.get("id", ""))
                 cleaned_nodes.append({
-                    "id": self.postprocessor(node.get("id", "")),
+                    "id": node_id,
                     "entity_type": self.postprocessor(node.get("entity_type", "")),
                     "entity_role": self.postprocessor(node.get("entity_role", "")),
+                    "reference": chunk.metadata.get("reference", "Unknown")
+                })
+                # Link Chunk -> Entity
+                chunk_provenance.append({
+                    "source": chunk_id,
+                    "target": node_id
                 })
             
             cleaned_relationships: List[Dict] = []
@@ -80,7 +101,8 @@ class GraphIndexing:
                     "target": self.postprocessor(rel.get("target", "")),
                     "relationship_type": self.postprocessor(rel.get("relationship_type", "")),
                 })
-
+            
+            batch_chunk_relationships.extend(chunk_provenance)
             batch_nodes.extend(cleaned_nodes)
             batch_relationships.extend(cleaned_relationships)
             
@@ -93,9 +115,13 @@ class GraphIndexing:
                 dedup_nodes = self._deduplicate_entities(batch_nodes)
                 dedup_relationships = self._deduplicate_relationships(batch_relationships)
                 
+                dedup_chunk_rels = [dict(t) for t in {tuple(d.items()) for d in batch_chunk_relationships}]
+
                 batch_graph_data = {
                     "nodes": dedup_nodes,
-                    "relationships": dedup_relationships
+                    "relationships": dedup_relationships,
+                    "chunks": batch_chunks,
+                    "chunk_relationships": dedup_chunk_rels
                 }
                 self.storage.store_graph(batch_graph_data)
                 
@@ -110,7 +136,7 @@ class GraphIndexing:
                 batch_nodes = []
                 batch_relationships = []
                 batch_chunks = []
-                
+                batch_chunk_relationships = []
 
         entity_count = self.graph_db.query('MATCH (e:Entity) RETURN count(e) as count')[0]['count']
         rel_count = self.graph_db.query('MATCH ()-[r]->() RETURN count(r) as count')[0]['count']

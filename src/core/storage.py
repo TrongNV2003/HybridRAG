@@ -25,8 +25,14 @@ class GraphStorage:
         FOR (e:Entity) REQUIRE e.id IS UNIQUE
         """
         
+        chunk_constraint_query = """
+        CREATE CONSTRAINT chunk_id_uniqueness IF NOT EXISTS
+        FOR (c:Chunk) REQUIRE c.id IS UNIQUE
+        """
+        
         try:
             self.graph_db.query(constraint_query)
+            self.graph_db.query(chunk_constraint_query)
         except Exception as e:
             logger.error(f"Failed to create constraint: {e}")
 
@@ -44,15 +50,63 @@ class GraphStorage:
         """
         Store nodes and relationships into the graph database.
         Args:
-            graph_data (dict): A dictionary containing 'nodes' and 'relationships'.
+            graph_data (dict): A dictionary containing 'nodes', 'relationships', and 'chunks'.
         """
+        # Store Chunks first
+        chunks_to_store = []
+        chunk_rels = []
         
+        if "chunks" in graph_data:
+            for chunk in graph_data["chunks"]:
+                # Ensure chunk has ID
+                metadata = getattr(chunk, "metadata", {}) or {}
+                chunk_id = metadata.get("chunk_id") or str(uuid.uuid4())
+                reference = metadata.get("reference", "Unknown")
+                content = getattr(chunk, "content", "")
+                
+                chunks_to_store.append({
+                    "id": chunk_id,
+                    "reference": reference,
+                    "content": content if content else ""
+                })
+        
+        # Upsert Chunks
+        if chunks_to_store:
+            chunk_query = """
+            UNWIND $chunks as chunk
+            MERGE (c:Chunk {id: chunk.id})
+            ON CREATE SET c.content = chunk.content, c.reference = chunk.reference
+            ON MATCH SET c.content = chunk.content, c.reference = chunk.reference
+            RETURN count(c) as chunk_count
+            """
+            try:
+                chunk_result = self.graph_db.query(chunk_query, params={"chunks": chunks_to_store})
+                logger.info(f"Upserted {chunk_result[0]['chunk_count']} chunks.")
+            except Exception as e:
+                logger.error(f"Error storing chunks: {str(e)}")
+
+        # Upsert Chunk Relationships (Chunk -> Entity)
+        chunk_rels = graph_data.get("chunk_relationships", [])
+        if chunk_rels:
+            chunk_rel_query = """
+            UNWIND $rels as rel
+            MATCH (c:Chunk {id: rel.source})
+            MERGE (e:Entity {id: rel.target})
+            MERGE (c)-[:MENTIONS]->(e)
+            RETURN count(c) as rel_count
+            """
+            try:
+                self.graph_db.query(chunk_rel_query, params={"rels": chunk_rels})
+            except Exception as e:
+                logger.error(f"Error storing chunk relationships: {str(e)}")
+
         # Add nodes
         nodes_to_store = []
         for node in graph_data.get("nodes", []):
             id = node.get("id")
             entity_type = node.get("entity_type", "Unknown")
             entity_role = node.get("entity_role", "")
+            reference = node.get("reference", "Unknown")
             
             if not id or id.strip() == "":
                 continue
@@ -69,6 +123,7 @@ class GraphStorage:
                     "id": id,
                     "entity_type": entity_type,
                     "entity_role": entity_role,
+                    "reference": reference
                 }
             })
 
@@ -498,7 +553,7 @@ class QdrantEmbedStorage:
         chunk_type = getattr(chunk, "chunk_type", None) or chunk.get("chunk_type", "")
         chunk_type_val = chunk_type.value if hasattr(chunk_type, "value") else str(chunk_type)
         
-        chunk_id = metadata.get("chunk_id") or metadata.get("id") or str(uuid.uuid4())
+        chunk_id = metadata.get("chunk_id") or str(uuid.uuid4())
         
         try:
             # Generate dense embedding
@@ -513,8 +568,10 @@ class QdrantEmbedStorage:
                 payload={
                     "chunk_id": chunk_id,
                     "content": content,
-                    "doc_id": doc_id or metadata.get("doc_id"),
+                    "doc_id": doc_id or str(metadata.get("id", "")),
                     "chunk_type": chunk_type_val,
+                    "reference": metadata.get("reference", "Unknown"),
+                    "title": metadata.get("title", ""),
                 },
                 sparse_indices=sparse_result.indices,
                 sparse_values=sparse_result.values
@@ -524,5 +581,9 @@ class QdrantEmbedStorage:
             return None
     
     def clear_collection(self) -> bool:
-        """Clear all data from collection"""
-        return self.vector_store.delete_collection(self.collection_name)
+        """Clear all data from collection and recreate it"""
+        result = self.vector_store.delete_collection(self.collection_name)
+        if result:
+            self._ensure_collection()
+            logger.info("Qdrant collection recreated after clearing.")
+        return result

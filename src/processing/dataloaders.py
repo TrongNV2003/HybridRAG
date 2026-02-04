@@ -27,8 +27,12 @@ class DataLoader:
             keyword = loader.load()
             docs = [
                 {
-                    "id": i,
                     "content": doc.page_content,
+                    "metadata": {
+                        "reference": "Wikipedia",
+                        "title": doc.metadata.get("title", keyword),
+                        "id": i
+                    }
                 }
                 for i, doc in enumerate(keyword)
             ]

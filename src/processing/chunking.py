@@ -1,4 +1,5 @@
 import re
+import uuid
 from loguru import logger
 from transformers import AutoTokenizer
 from typing import List, Dict, Optional, Tuple
@@ -125,9 +126,18 @@ class TwoPhaseDocumentChunker:
         # Define order of pattern type
         self.pattern_hierarchy = ['phan', 'chuong', 'uppercase_alphabetical', 'roman', 'muc', 'arabic', 'decimal', 'sub_decimal', 'alphabetical']
 
-    def chunk_document(self, document: str, max_new_chunk_size: Optional[int] = None) -> List[StructuralChunk]:
+    def chunk_document(
+        self, 
+        document: str, 
+        max_new_chunk_size: Optional[int] = None,
+        additional_metadata: Optional[Dict] = None
+    ) -> List[StructuralChunk]:
         logger.info("Phase 1: Structure-based chunking.")
-        structural_chunks = self._structural_chunking(document, chunk_size=max_new_chunk_size)
+        structural_chunks = self._structural_chunking(
+            document, 
+            chunk_size=max_new_chunk_size,
+            additional_metadata=additional_metadata
+        )
 
         logger.info("Phase 2: Recursive chunking for oversized chunks.")
         final_chunks = self._recursive_chunking(structural_chunks)
@@ -185,11 +195,19 @@ class TwoPhaseDocumentChunker:
             "max_depth": max(section_depths) if section_depths else 0,
         }
 
-    def _structural_chunking(self, document: str, chunk_size: Optional[int] = None) -> List[StructuralChunk]:
+    def _structural_chunking(
+        self, 
+        document: str, 
+        chunk_size: Optional[int] = None,
+        additional_metadata: Optional[Dict] = None
+    ) -> List[StructuralChunk]:
         lines = document.split('\n')
         structural_elements = self._parse_document_structure(lines)
         structural_elements = self._normalize_heading_levels(structural_elements)
-        chunks = self._create_structural_chunks(structural_elements)
+        chunks = self._create_structural_chunks(
+            structural_elements,
+            additional_metadata=additional_metadata
+        )
         
         if chunk_size is None:
             chunk_size = self.chunk_size
@@ -385,7 +403,12 @@ class TwoPhaseDocumentChunker:
         
         return level_mapping
 
-    def _create_structural_chunks(self, elements: List[Dict]) -> List[StructuralChunk]:
+    def _create_structural_chunks(
+        self, 
+        elements: List[Dict],
+        additional_metadata: Optional[Dict] = None
+    ) -> List[StructuralChunk]:
+        self.additional_metadata = additional_metadata or {}
         chunks = []
         current_content_elements = []
         current_heading_context = None
@@ -478,7 +501,7 @@ class TwoPhaseDocumentChunker:
             chunk_type=ChunkType.SECTION,
             level=1,
             section_hierarchy=[section_name],
-            metadata=metadata,
+            metadata=self._merge_metadata(metadata),
             token_count=0,
         )
 
@@ -518,7 +541,7 @@ class TwoPhaseDocumentChunker:
             chunk_type=ChunkType.SECTION if level == 1 else ChunkType.SUBSECTION,
             level=level,
             section_hierarchy=section_hierarchy,
-            metadata=metadata,
+            metadata=self._merge_metadata(metadata),
             token_count=0,
         )
     
@@ -568,10 +591,18 @@ class TwoPhaseDocumentChunker:
             chunk_type=chunk_type,
             level=content_level,
             section_hierarchy=section_hierarchy,
-            metadata=metadata,
+            metadata=self._merge_metadata(metadata),
             token_count=0,
         )
     
+    def _merge_metadata(self, metadata: Dict) -> Dict:
+        """Merge additional metadata and ensure unique chunk_id"""
+        merged = {**metadata, **getattr(self, 'additional_metadata', {})}
+        merged['chunk_id'] = str(uuid.uuid4())
+        if 'id' in getattr(self, 'additional_metadata', {}):
+            merged['doc_id'] = getattr(self, 'additional_metadata', {})['id']
+        return merged
+
     def _determine_content_chunk_type(self, elements: List[Dict]) -> ChunkType:
         type_counts = {}
         
