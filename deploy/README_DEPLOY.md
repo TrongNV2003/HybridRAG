@@ -79,6 +79,11 @@ docker compose ps
 
 ## Deploy Each Service
 
+### Run Neo4j & Qdrant
+```bash
+docker compose -f docker-compose.databases.yml up -d
+```
+
 ### Run Neo4j only
 ```bash
 docker compose -f docker-compose.neo4j.yml up -d
