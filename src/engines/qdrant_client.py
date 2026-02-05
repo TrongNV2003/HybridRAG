@@ -1,13 +1,14 @@
 import logging
 from typing import List, Dict, Any, Optional
 
-from src.config.dataclass import VectorPoint, SearchResult
-from src.config.setting import qdrant_config
+from src.config.dataclass import VectorPoint
+from src.engines.qdrant_search import QdrantSearchMixin
+from src.config.settings import qdrant_config
 
 logger = logging.getLogger(__name__)
 
 
-class QdrantVectorStore:
+class QdrantVectorStore(QdrantSearchMixin):
     """
     Qdrant vector store implementation.
     Supports both cloud and local Qdrant instances with hybrid search.
@@ -177,129 +178,6 @@ class QdrantVectorStore:
             logger.error(f"Failed to upsert to '{collection}': {e}")
             raise
     
-    def search(
-        self,
-        collection: str,
-        vector: List[float],
-        top_k: int = 5,
-        threshold: Optional[float] = None,
-        filter_conditions: Optional[Dict[str, Any]] = None
-    ) -> List[SearchResult]:
-        """Search for similar vectors (dense only)"""
-        client = self._get_client()
-        
-        # Build filter if provided
-        query_filter = None
-        if filter_conditions:
-            query_filter = self._build_filter(filter_conditions)
-        
-        try:
-            results = client.query_points(
-                collection_name=collection,
-                query=vector,
-                using="dense",
-                limit=top_k,
-                query_filter=query_filter,
-                score_threshold=threshold
-            )
-        except Exception as e:
-            if "Not existing vector name" in str(e) or "dense" in str(e):
-                # Fallback to unnamed vector (old collections)
-                logger.debug(f"Collection '{collection}' uses unnamed vectors, falling back")
-                results = client.query_points(
-                    collection_name=collection,
-                    query=vector,
-                    limit=top_k,
-                    query_filter=query_filter,
-                    score_threshold=threshold
-                )
-            else:
-                logger.error(f"Search failed in '{collection}': {e}")
-                raise
-        
-        return [
-            SearchResult(
-                id=str(r.id),
-                score=r.score,
-                payload=r.payload or {}
-            )
-            for r in results.points
-        ]
-    
-    def hybrid_search(
-        self,
-        collection: str,
-        query_vector: List[float],
-        sparse_indices: List[int],
-        sparse_values: List[float],
-        top_k: int = 5,
-        threshold: Optional[float] = None,
-        filter_conditions: Optional[Dict[str, Any]] = None
-    ) -> List[SearchResult]:
-        """
-        Qdrant hybrid search using prefetch + RRF fusion.
-        Combines dense (semantic) and sparse (SPLADE) search.
-        
-        Args:
-            query_vector: Dense embedding vector
-            sparse_indices: Sparse vector indices (from sparse encoder)
-            sparse_values: Sparse vector values (from sparse encoder)
-        """
-        from qdrant_client.models import Prefetch, SparseVector, FusionQuery, Fusion
-        
-        client = self._get_client()
-        
-        # Build filter if provided
-        query_filter = None
-        if filter_conditions:
-            query_filter = self._build_filter(filter_conditions)
-        
-        try:
-            prefetch_limit = top_k * 2
-            
-            results = client.query_points(
-                collection_name=collection,
-                prefetch=[
-                    Prefetch(
-                        query=query_vector,
-                        using="dense",
-                        limit=prefetch_limit
-                    ),
-                    Prefetch(
-                        query=SparseVector(indices=sparse_indices, values=sparse_values),
-                        using="sparse",
-                        limit=prefetch_limit
-                    )
-                ],
-                query=FusionQuery(fusion=Fusion.RRF),
-                limit=top_k,
-                query_filter=query_filter,
-                with_payload=True,
-                score_threshold=threshold
-            )
-            
-            search_results = [
-                SearchResult(
-                    id=str(r.id),
-                    score=r.score,
-                    payload=r.payload or {}
-                )
-                for r in results.points
-            ]
-            
-            logger.debug(f"Hybrid search returned {len(search_results)} results")
-            return search_results
-            
-        except Exception as e:
-            logger.warning(f"Hybrid search failed, falling back to dense-only: {e}")
-            return self.search(
-                collection=collection,
-                vector=query_vector,
-                top_k=top_k,
-                threshold=threshold,
-                filter_conditions=filter_conditions
-            )
-    
     def delete(
         self,
         collection: str,
@@ -378,13 +256,3 @@ class QdrantVectorStore:
         except Exception as e:
             logger.error(f"Failed to get collection info for '{name}': {e}")
             return None
-
-
-def create_qdrant_store() -> QdrantVectorStore:
-    """Factory function to create QdrantVectorStore instance"""
-    return QdrantVectorStore(
-        url=qdrant_config.url,
-        api_key=qdrant_config.api_key,
-        host=qdrant_config.host,
-        port=qdrant_config.port
-    )

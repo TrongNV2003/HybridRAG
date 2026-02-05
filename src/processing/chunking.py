@@ -5,9 +5,9 @@ from transformers import AutoTokenizer
 from typing import List, Dict, Optional, Tuple
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-from src.config.setting import llm_config
-from src.config.datatype import ChunkType
+from src.config.enums import ChunkType
 from src.config.dataclass import StructuralChunk
+from src.config.settings import llm_config
 
 
 class TwoPhaseDocumentChunker:

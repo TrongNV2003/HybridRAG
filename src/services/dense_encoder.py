@@ -1,7 +1,7 @@
 import logging
 from typing import List, Optional
 
-from src.config.setting import embed_config, api_config
+from src.config.settings import embed_config, api_config
 
 logger = logging.getLogger(__name__)
 

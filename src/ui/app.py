@@ -7,7 +7,7 @@ from langchain_neo4j import Neo4jGraph
 from src.processing.dataloaders import DataLoader
 from src.services.index_service import GraphIndexing
 from src.services.query_service import GraphQuerying
-from src.config.setting import api_config, neo4j_config
+from src.config.settings import api_config, neo4j_config
 from src.services.visualize_service import visualize_knowledge_graph
 
 

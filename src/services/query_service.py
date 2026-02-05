@@ -2,7 +2,7 @@ from loguru import logger
 from typing import List, Dict
 
 from src.core.retrieval import HybridRetrieval
-from src.engines.llm import AnalysisQueryLLM, GenerationResponseLLM
+from src.engines.llm_engine import AnalysisQueryLLM, GenerationResponseLLM
 
 
 class GraphQuerying:
@@ -159,9 +159,9 @@ class GraphQuerying:
         return "\n\n".join(formatted)
 
 
-    def semantic_response(self, query: str, top_k: int = 5, threshold: float = 0.0) -> dict:
+    def dense_response(self, query: str, top_k: int = 5, threshold: float = 0.0) -> dict:
         """Generate answer using Semantic Search (Dense vector) only."""
-        chunks = self.retriever.chunk_retrieval.semantic_search(
+        chunks = self.retriever.semantic_retrieval.dense_search(
             query=query, 
             top_k=top_k, 
             threshold=threshold
@@ -185,9 +185,38 @@ class GraphQuerying:
             "search_type": "semantic"
         }
 
-    def hybrid_response(self, query: str, top_k: int = 5, threshold: float = 0.0) -> dict:
+    def graph_response(self, query: str, graph_limit: int = 10) -> dict:
+        """Generate answer using Graph Search (Neo4j) only."""
+        target_entities, excluded_entities, normalized_query = self._analyze_query(query)
+        
+        graph_results = self.retriever.graph_retrieval.retrieve(
+            target_entities=target_entities, 
+            excluded_entities=excluded_entities, 
+            graph_limit=graph_limit
+        )
+        
+        # Format context
+        graph_context = self._format_graph_context(graph_results)
+        chunk_context = "No chunk context (Graph Search mode)."
+        
+        # Generate Answer
+        response = self.generator.call(
+            query=query,
+            graph_context=graph_context,
+            chunk_context=chunk_context
+        )
+        answer_text = response.get("answer", "No answer generated.")
+        
+        return {
+            "answer": answer_text,
+            "graph_context": graph_results,
+            "chunk_context": [],
+            "search_type": "graph"
+        }
+
+    def semantic_hybrid_response(self, query: str, top_k: int = 5, threshold: float = 0.0) -> dict:
         """Generate answer using Hybrid Search (Qdrant Dense+Sparse) only."""
-        chunks = self.retriever.chunk_retrieval.retrieve(
+        chunks = self.retriever.semantic_retrieval.retrieve(
             query=query,
             top_k=top_k,
             threshold=threshold
@@ -212,6 +241,21 @@ class GraphQuerying:
             "search_type": "hybrid"
         }
 
+    def graph_search(self, query: str, graph_limit: int = 10) -> dict:
+        """Perform graph search (Neo4j only)."""
+        target_entities, excluded_entities, normalized_query = self._analyze_query(query)
+        
+        graph_results = self.retriever.graph_retrieval.retrieve(
+            target_entities=target_entities, 
+            excluded_entities=excluded_entities, 
+            graph_limit=graph_limit
+        )
+        
+        return {
+            "graph_context": graph_results,
+            "total": len(graph_results),
+            "search_type": "graph"
+        }
 
     def semantic_search(self, query: str, top_k: int = 5, threshold: float = 0.0) -> dict:
         """Perform semantic search (dense vector only, no sparse/keyword).
@@ -224,7 +268,7 @@ class GraphQuerying:
         Returns:
             dict: Search results with chunks and total count.
         """
-        chunks = self.retriever.chunk_retrieval.semantic_search(
+        chunks = self.retriever.semantic_retrieval.dense_search(
             query=query,
             top_k=top_k,
             threshold=threshold
@@ -246,7 +290,7 @@ class GraphQuerying:
         Returns:
             dict: Search results with chunks and total count.
         """
-        chunks = self.retriever.chunk_retrieval.retrieve(
+        chunks = self.retriever.semantic_retrieval.retrieve(
             query=query, 
             top_k=top_k, 
             threshold=threshold

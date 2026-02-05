@@ -5,7 +5,7 @@ from langchain_neo4j import Neo4jGraph
 from typing import Any, Dict, List, Optional, Union
 
 from src.config.dataclass import VectorPoint
-from src.engines.qdrant import QdrantVectorStore
+from src.engines.qdrant_client import QdrantVectorStore
 from src.services.dense_encoder import get_dense_encoder
 
 class GraphStorage:
@@ -473,9 +473,9 @@ class GraphStorage:
         return total, None
 
 
-class QdrantEmbedStorage:
+class EmbedStorage:
     """
-    QdrantEmbedStorage handles embedding and storing chunks into Qdrant vector database.
+    EmbedStorage handles embedding and storing chunks into Qdrant vector database.
     Supports both dense and sparse vectors for hybrid search.
     """
     def __init__(
@@ -484,10 +484,9 @@ class QdrantEmbedStorage:
         collection_name: Optional[str] = None,
         auto_create: bool = True
     ):
-        from src.engines.qdrant import create_qdrant_store
-        from src.config.setting import qdrant_config
+        from src.config.settings import qdrant_config
         
-        self.vector_store = vector_store or create_qdrant_store()
+        self.vector_store = vector_store
         self.collection_name = collection_name or qdrant_config.collection_name
         self.embedder = get_dense_encoder()
         self._sparse_encoder = None

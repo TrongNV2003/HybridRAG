@@ -7,8 +7,8 @@ from abc import ABC, abstractmethod
 from openai import OpenAI
 from src.core.factory import LLMClientFactory
 
-from src.config.datatype import RoleType
-from src.config.setting import llm_config
+from src.config.enums import RoleType
+from src.config.settings import llm_config
 
 
 class PromptMixin:

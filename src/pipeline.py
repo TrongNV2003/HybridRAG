@@ -6,7 +6,7 @@ from src.config.dataclass import StructuralChunk
 from src.processing.dataloaders import DataLoader
 from src.services.index_service import GraphIndexing
 from src.services.query_service import GraphQuerying
-from src.config.setting import neo4j_config, api_config
+from src.config.settings import neo4j_config, api_config
 
 
 class Pipeline:

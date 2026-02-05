@@ -1,7 +1,7 @@
 from typing import Optional
 from openai import OpenAI, AsyncOpenAI
 
-from src.config.setting import api_config, llm_config
+from src.config.settings import api_config, llm_config
 
 
 class LLMClientFactory:

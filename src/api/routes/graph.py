@@ -3,10 +3,10 @@ from langchain_neo4j import Neo4jGraph
 from fastapi.responses import HTMLResponse
 from fastapi import APIRouter, Depends, HTTPException, BackgroundTasks, Query
 
-from src.engines.qdrant import QdrantVectorStore
+from src.engines.qdrant_client import QdrantVectorStore
 from src.api.dependencies import get_neo4j_graph, get_qdrant_store
 from src.services.visualize_service import visualize_knowledge_graph
-from src.config.setting import qdrant_config
+from src.config.settings import qdrant_config
 
 router = APIRouter()
 

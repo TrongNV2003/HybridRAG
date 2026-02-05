@@ -1,7 +1,7 @@
 from dataclasses import asdict, dataclass
 from typing import List, Dict, Any, Optional
 
-from src.config.datatype import ChunkType
+from src.config.enums import ChunkType
 
 # ===== Structural Chunk Classes =====
 

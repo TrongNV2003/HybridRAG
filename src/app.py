@@ -6,7 +6,7 @@ from fastapi import FastAPI, Request, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.exceptions import RequestValidationError
 
-from src.config.setting import settings
+from src.config.settings import settings
 
 logging.basicConfig(
     level=getattr(logging, settings.log_level.upper()),

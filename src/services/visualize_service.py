@@ -1,5 +1,5 @@
-import tempfile
 import hashlib
+import tempfile
 from loguru import logger
 from pyvis.network import Network
 from langchain_neo4j import Neo4jGraph
@@ -282,7 +282,7 @@ def visualize_knowledge_graph(graph_db: Neo4jGraph, limit: int = 100):
         return None
 
 if __name__ == "__main__":
-    from src.config.setting import neo4j_config
+    from src.config.settings import neo4j_config
     
     graph_db = Neo4jGraph(
         url=neo4j_config.url,

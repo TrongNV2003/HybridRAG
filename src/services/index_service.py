@@ -5,9 +5,9 @@ from typing import List, Optional, Dict
 from langchain_neo4j import Neo4jGraph
 
 from src.config.dataclass import StructuralChunk
-from src.engines.llm import EntityExtractionLLM
+from src.engines.llm_engine import EntityExtractionLLM
 from src.processing.chunking import TwoPhaseDocumentChunker
-from src.core.storage import GraphStorage, QdrantEmbedStorage
+from src.core.storage import GraphStorage, EmbedStorage
 from src.processing.postprocessing import EntityPostprocessor
 
 
@@ -20,7 +20,7 @@ class GraphIndexing:
         extractor: EntityExtractionLLM,
         postprocessor: EntityPostprocessor,
         storage: GraphStorage,
-        qdrant_storage: QdrantEmbedStorage,
+        qdrant_storage: EmbedStorage,
         clear_old_graph: bool = False
     ):
         self.client = client

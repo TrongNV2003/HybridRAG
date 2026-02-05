@@ -3,16 +3,13 @@ from abc import ABC, abstractmethod
 from langchain_neo4j import Neo4jGraph
 from typing import List, Dict, Optional, Any
 
-from src.engines.qdrant import QdrantVectorStore, create_qdrant_store
+from src.engines.qdrant_client import QdrantVectorStore
 from src.services.sparse_encoder import get_sparse_encoder
 from src.services.dense_encoder import get_dense_encoder
-from src.config.setting import qdrant_config
+from src.config.settings import qdrant_config
 
 
 class BaseRetrieval(ABC):
-    def __init__(self, graph_db: Neo4jGraph):
-        self.graph_db = graph_db
-        
     @abstractmethod
     def retrieve(self, **kwargs: Any) -> List[Dict]:
         pass
@@ -25,7 +22,7 @@ class GraphRetrieval(BaseRetrieval):
         graph_db: Neo4jGraph instance
     """
     def __init__(self, graph_db: Neo4jGraph):
-        super().__init__(graph_db)
+        self.graph_db = graph_db
 
     def retrieve(
         self,
@@ -87,7 +84,7 @@ class GraphRetrieval(BaseRetrieval):
 
     def _query_fulltext(self, target_entities: List[str], excluded_lower: List[str], graph_limit: int) -> List[Dict]:
         """Query using Neo4j fulltext index for fuzzy matching."""
-        from src.config.setting import retrieval_config
+        from src.config.settings import retrieval_config
         
         try:
             all_results = []
@@ -101,7 +98,7 @@ class GraphRetrieval(BaseRetrieval):
                   AND NOT (toLower(node.id) IN $excluded OR toLower(node.entity_role) IN $excluded)
                 WITH node, score
                 MATCH (node)-[r]-(m)
-                WHERE NOT (toLower(m.id) IN $excluded OR toLower(m.entity_role) IN $excluded)
+                WHERE NOT 'Chunk' IN labels(m) AND NOT (toLower(m.id) IN $excluded OR toLower(m.entity_role) IN $excluded)
                 
                 OPTIONAL MATCH (c1:Chunk)-[:MENTIONS]->(node)
                 WITH node, r, m, score, collect(DISTINCT c1.content)[0..1] as node_context
@@ -157,7 +154,7 @@ class GraphRetrieval(BaseRetrieval):
         WHERE (toLower(n.id) = toLower(entity_name) OR toLower(n.entity_role) = toLower(entity_name))
         {exclusion_clause}
         MATCH (n)-[r]-(m)
-        WHERE 1=1 {exclusion_clause.replace('AND', '') if excluded_lower else ''}
+        WHERE NOT 'Chunk' IN labels(m) {exclusion_clause if excluded_lower else ''}
         
         OPTIONAL MATCH (c1:Chunk)-[:MENTIONS]->(n)
         WITH n, r, m, collect(DISTINCT c1.content)[0..1] as n_context
@@ -195,7 +192,7 @@ class GraphRetrieval(BaseRetrieval):
         WHERE (toLower(n.id) CONTAINS toLower(entity_name) OR toLower(n.entity_role) CONTAINS toLower(entity_name))
         {exclusion_clause}
         MATCH (n)-[r]-(m)
-        WHERE 1=1 {exclusion_clause.replace('AND', '') if excluded_lower else ''}
+        WHERE NOT 'Chunk' IN labels(m) {exclusion_clause if excluded_lower else ''}
         
         OPTIONAL MATCH (c1:Chunk)-[:MENTIONS]->(n)
         WITH n, r, m, collect(DISTINCT c1.content)[0..1] as n_context
@@ -222,24 +219,21 @@ class GraphRetrieval(BaseRetrieval):
         return self.graph_db.query(cypher, params=params or {})
 
 
-class QdrantChunkRetrieval(BaseRetrieval):
-    """Chunk retrieval using Qdrant Hybrid Search (Dense + Sparse).
+class SemanticRetrieval(BaseRetrieval):
+    """Retrieval using Qdrant Hybrid Search (Dense + Sparse).
     
     Args:
-        graph_db: Neo4jGraph instance (used for loading chunks if needed)
         vector_store: QdrantVectorStore instance
         collection_name: Qdrant collection name
         auto_build: Whether to auto-create collection on init
     """
     def __init__(
         self,
-        graph_db: Neo4jGraph,
         vector_store: Optional[QdrantVectorStore] = None,
         collection_name: Optional[str] = None,
         auto_build: bool = True,
     ):
-        super().__init__(graph_db)
-        self.vector_store = vector_store or create_qdrant_store()
+        self.vector_store = vector_store
         self.collection_name = collection_name or qdrant_config.collection_name
         
         # Dense encoder (singleton)
@@ -308,7 +302,7 @@ class QdrantChunkRetrieval(BaseRetrieval):
         
         return formatted_results
 
-    def semantic_search(self, query: str, top_k: int = 5, threshold: float = 0.0) -> List[Dict]:
+    def dense_search(self, query: str, top_k: int = 5, threshold: float = 0.0) -> List[Dict]:
         """Retrieve relevant chunks using dense vector search only (no sparse/keyword).
         
         Args:
@@ -323,7 +317,7 @@ class QdrantChunkRetrieval(BaseRetrieval):
         query_vector = self.dense_encoder.encode(query)
         
         # Dense-only search
-        results = self.vector_store.search(
+        results = self.vector_store.dense_search(
             collection=self.collection_name,
             vector=query_vector,
             top_k=top_k,
@@ -358,8 +352,7 @@ class HybridRetrieval:
         auto_build: bool = True,
     ):
         self.graph_retrieval = GraphRetrieval(graph_db=graph_db)
-        self.chunk_retrieval = QdrantChunkRetrieval(
-            graph_db=graph_db,
+        self.semantic_retrieval = SemanticRetrieval(
             vector_store=vector_store,
             auto_build=auto_build
         )
@@ -387,7 +380,7 @@ class HybridRetrieval:
             Dict with 'graph' and 'chunk' keys
         """
         graph_results = self.graph_retrieval.retrieve(target_entities, excluded_entities, graph_limit=graph_limit)
-        chunk_results = self.chunk_retrieval.retrieve(query, top_k=chunk_top_k, threshold=chunk_threshold)
+        chunk_results = self.semantic_retrieval.retrieve(query, top_k=chunk_top_k, threshold=chunk_threshold)
         
         return {
             "graph": graph_results,

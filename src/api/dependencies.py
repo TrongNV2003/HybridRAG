@@ -4,18 +4,18 @@ from langchain_neo4j import Neo4jGraph
 
 from src.core.factory import LLMClientFactory
 from src.core.retrieval import HybridRetrieval
-from src.core.storage import GraphStorage, QdrantEmbedStorage
+from src.core.storage import GraphStorage, EmbedStorage
 from src.services.index_service import GraphIndexing
 from src.services.query_service import GraphQuerying
 from src.processing.dataloaders import DataLoader
 from src.processing.chunking import TwoPhaseDocumentChunker
 from src.processing.postprocessing import EntityPostprocessor
-from src.engines.qdrant import create_qdrant_store, QdrantVectorStore
-from src.engines.llm import EntityExtractionLLM, GenerationResponseLLM, AnalysisQueryLLM
-from src.prompts.ner_prompt import EXTRACT_SYSTEM_PROMPT, EXTRACT_PROMPT_TEMPLATE, EXTRACT_SCHEMA
+from src.engines.qdrant_client import QdrantVectorStore
+from src.engines.llm_engine import EntityExtractionLLM, GenerationResponseLLM, AnalysisQueryLLM
 from src.prompts.response_prompt import ANSWERING_SYSTEM_PROMPT, ANSWERING_PROMPT_TEMPLATE
+from src.prompts.ner_prompt import EXTRACT_SYSTEM_PROMPT, EXTRACT_PROMPT_TEMPLATE, EXTRACT_SCHEMA
 from src.prompts.analysis_prompt import ANALYZE_SYSTEM_PROMPT, ANALYZE_PROMPT_TEMPLATE, ANALYZE_SCHEMA
-from src.config.setting import neo4j_config, llm_config
+from src.config.settings import neo4j_config, llm_config, qdrant_config
 
 
 @lru_cache()
@@ -31,12 +31,17 @@ def get_neo4j_graph() -> Neo4jGraph:
     )
 
 @lru_cache()
-def get_data_loader() -> DataLoader:
-    return DataLoader()
+def get_qdrant_store() -> QdrantVectorStore:
+    return QdrantVectorStore(
+        url=qdrant_config.url,
+        api_key=qdrant_config.api_key,
+        host=qdrant_config.host,
+        port=qdrant_config.port
+    )
 
 @lru_cache()
-def get_qdrant_store() -> QdrantVectorStore:
-    return create_qdrant_store()
+def get_data_loader() -> DataLoader:
+    return DataLoader()
 
 @lru_cache()
 def get_graph_storage() -> GraphStorage:
@@ -62,7 +67,7 @@ def get_indexing_service() -> GraphIndexing:
     storage = get_graph_storage()
     vector_store = get_qdrant_store()
     postprocessor = EntityPostprocessor()
-    qdrant_storage = QdrantEmbedStorage(vector_store=vector_store)
+    qdrant_storage = EmbedStorage(vector_store=vector_store)
     
     return GraphIndexing(
         client=client,
