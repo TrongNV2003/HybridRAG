@@ -107,7 +107,7 @@ class EntityExtractionLLM(BaseLLM):
             return {"nodes": nodes, "relationships": relationships}
         
         except Exception as e:
-            logger.error(f"OpenAI API call failed: {str(e)}")
+            logger.error(f"LLM API call failed: {str(e)}")
             raise
 
 
@@ -151,7 +151,7 @@ class GenerationResponseLLM(BaseLLM):
             logger.error(f"Failed to parse JSON from OpenAI response: {content}")
             raise
         except Exception as e:
-            logger.error(f"OpenAI API call failed: {str(e)}")
+            logger.error(f"LLM API call failed: {str(e)}")
             raise 
         
 class AnalysisQueryLLM(BaseLLM):
@@ -200,5 +200,5 @@ class AnalysisQueryLLM(BaseLLM):
             raise
         
         except Exception as e:
-            logger.error(f"OpenAI API call failed: {str(e)}")
+            logger.error(f"LLM API call failed: {str(e)}")
             raise e
