@@ -145,7 +145,7 @@ class SparseEncoder:
 # Singleton instance
 _encoder: Optional[SparseEncoder] = None
 
-def get_sparse_encoder(model_name: str = "splade-multilingual") -> SparseEncoder:
+def get_sparse_encoder(model_name: str = None) -> SparseEncoder:
     """
     Get singleton sparse encoder instance.
     
