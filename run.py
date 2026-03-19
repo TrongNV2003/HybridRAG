@@ -4,7 +4,7 @@ if __name__ == "__main__":
     import uvicorn
     
     host = os.getenv("API_HOST", "0.0.0.0")
-    port = int(os.getenv("API_PORT", "8000"))
+    port = int(os.getenv("API_PORT", "2206"))
     reload = os.getenv("API_RELOAD", "true").lower() == "true"
     workers = int(os.getenv("API_WORKERS", "1"))
     

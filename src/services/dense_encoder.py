@@ -33,7 +33,7 @@ class DenseEncoder:
             model_name: Model name (e.g., "contextboxai/halong_embedding")
             provider: "local" (SentenceTransformer) or "openai"
         """
-        self._model_name = model_name or embed_config.embedder_model
+        self._model_name = model_name or embed_config.dense_model
         self._provider = provider.lower()
         self._model = None
         self._client = None

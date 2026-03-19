@@ -3,6 +3,7 @@
 import logging
 from typing import List, Optional
 from src.config.dataclass import SparseVector
+from src.config.settings import embed_config
 
 logger = logging.getLogger(__name__)
 
@@ -28,7 +29,7 @@ class SparseEncoder:
     
     def __init__(
         self, 
-        model_name: str = "splade-multilingual",
+        model_name: Optional[str] = None,
         cache_dir: Optional[str] = None
     ):
         """
@@ -39,7 +40,7 @@ class SparseEncoder:
             cache_dir: Directory to cache model files
         """
         self._model = None
-        self._model_name = self.MODELS.get(model_name, model_name)
+        self._model_name = model_name or embed_config.sparse_model
         self._cache_dir = cache_dir
         self._initialized = False
     

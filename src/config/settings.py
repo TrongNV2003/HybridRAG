@@ -97,10 +97,15 @@ class Neo4jConfig(BaseSettings):
 
 
 class EmbeddingModelConfig(BaseSettings):
-    embedder_model: str = Field(
+    dense_model: str = Field(
         default="contextboxai/halong_embedding",
         description="Model name for sentence embedding",
-        alias="EMBEDDER_MODEL"
+        alias="DENSE_MODEL"
+    )
+    sparse_model: str = Field(
+        default="Qdrant/bm42-all-minilm-l6-v2-attentions",
+        description="Model name for sparse vector embedding",
+        alias="SPARSE_MODEL"
     )
 
 
