@@ -16,7 +16,7 @@ async def index_wikipedia(
     indexing_service: GraphIndexing = Depends(get_indexing_service)
 ):
     try:
-        raw_docs = dataloader.load(request.query_keyword, load_max_docs=request.max_docs)
+        raw_docs = dataloader.load_wikipedia(request.query_keyword, load_max_docs=request.max_docs)
         if not raw_docs:
             raise HTTPException(status_code=404, detail="No documents found for the given keyword")
 
@@ -28,24 +28,15 @@ async def index_wikipedia(
         for doc in raw_docs:
             chunks.extend(indexing_service.chunking(doc))
 
-        indexing_service.indexing(chunks=chunks)
-
-        entity_count = indexing_service.graph_db.query("MATCH (e:Entity) RETURN count(e) as count")[0]["count"]
-        rel_count = indexing_service.graph_db.query("MATCH ()-[r]->() RETURN count(r) as count")[0]["count"]
-        try:
-            collection_info = indexing_service.qdrant_storage.vector_store.get_collection_info(
-                indexing_service.qdrant_storage.collection_name
-            )
-            chunk_count = collection_info.get("points_count", 0) if collection_info else 0
-        except Exception:
-            chunk_count = 0
+        # Indexing process
+        stats = indexing_service.indexing(chunks=chunks)
 
         return IndexingResponse(
             status="success",
             message=f"Successfully indexed {len(raw_docs)} documents",
-            entities_count=entity_count,
-            relationships_count=rel_count,
-            chunks_count=chunk_count
+            entities_count=stats["entities_count"],
+            relationships_count=stats["relationships_count"],
+            chunks_count=stats["chunks_count"]
         )
 
     except Exception as e:

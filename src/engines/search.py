@@ -19,9 +19,11 @@ import json
 import bm25s
 import faiss
 import numpy as np
+from loguru import logger
 from typing import List, Dict, Any
 from abc import ABC, abstractmethod
-from sentence_transformers import SentenceTransformer
+from fastembed import TextEmbedding
+
 
 class BaseRetrievalEngine(ABC):
     @abstractmethod
@@ -234,10 +236,13 @@ class DenseRetrievalEngine(BaseRetrievalEngine):
         self.dimension = dimension
         self.metric = metric
         
-        self.model = SentenceTransformer(model_name, token=False)
-        if self.model_name == "vinai/phobert-base-v2":
-            self.model.max_seq_length = 256
-        
+        try:
+            self.model = TextEmbedding(model_name=self.model_name)
+            if self.model_name == "vinai/phobert-base-v2":
+                self.model.max_seq_length = 256
+        except Exception as e:
+            logger.error(f"Error loading model, required onnx model {self.model_name}: {e}")
+            
         if metric == "cosine":
             self.index = faiss.IndexFlatIP(dimension)  # Inner product for cosine
         else:

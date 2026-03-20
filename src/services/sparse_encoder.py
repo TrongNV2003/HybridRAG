@@ -2,8 +2,8 @@
 
 import logging
 from typing import List, Optional
-from src.config.dataclass import SparseVector
 from src.config.settings import embed_config
+from src.config.dataclass import SparseVector
 
 logger = logging.getLogger(__name__)
 
@@ -30,7 +30,7 @@ class SparseEncoder:
     def __init__(
         self, 
         model_name: Optional[str] = None,
-        cache_dir: Optional[str] = None
+        cache_dir: Optional[str] = "/app/.fastembed_cache"
     ):
         """
         Initialize SPLADE encoder.
@@ -50,12 +50,15 @@ class SparseEncoder:
             return
         
         try:
+            import os
             from fastembed import SparseTextEmbedding
             
-            logger.info(f"Loading SPLADE model: {self._model_name}")
+            cache_model = self._cache_dir if os.path.exists(self._cache_dir) else None
+            
+            logger.info(f"Loading SPLADE model: {self._model_name} (cache: {cache_model})")
             self._model = SparseTextEmbedding(
                 model_name=self._model_name,
-                cache_dir=self._cache_dir
+                cache_dir=cache_model
             )
             self._initialized = True
             logger.info("SPLADE model loaded successfully")

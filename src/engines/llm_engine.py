@@ -125,6 +125,7 @@ class GenerationResponseLLM(BaseLLM):
 
     def call(self, **kwargs: Any) -> dict:
         prompt_str = self.inject_prompt(**kwargs)
+        print(prompt_str)
         
         try:
             generation_params = llm_config.generation.model_dump()

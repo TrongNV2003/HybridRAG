@@ -74,7 +74,7 @@ def visualize_knowledge_graph(graph_db: Neo4jGraph, limit: int = 100):
             return None
         
         net = Network(
-            height="800px",
+            height="100vh",
             width="100%",
             bgcolor="#1a1a2e",
             font_color="white",
@@ -235,7 +235,12 @@ def visualize_knowledge_graph(graph_db: Neo4jGraph, limit: int = 100):
                 box-shadow: none !important;
                 background-color: #1a1a2e !important;
                 width: 100% !important;
-                height: 800px !important;
+                height: 100vh !important;
+            }
+
+            #loadingBar {
+                height: 100vh !important;
+                background-color: rgba(26, 26, 46, 0.8) !important;
             }
             
             canvas {
@@ -279,6 +284,161 @@ def visualize_knowledge_graph(graph_db: Neo4jGraph, limit: int = 100):
         
     except Exception as e:
         logger.error(f"Error creating Neo4j visualization: {e}")
+        return None
+
+
+def visualize_subgraph(triples: list[dict]):
+    """
+    Create interactive graph from a list of triples (head, relation, tail).
+    Format of triples: [{"head": "A", "relation": "RELATED_TO", "tail": "B"}, ...]
+    """
+    try:
+        if not triples:
+            return None
+        
+        net = Network(
+            height="100vh",
+            width="100%",
+            bgcolor="#1a1a2e",
+            font_color="white",
+            directed=True
+        )
+        
+        net.force_atlas_2based(
+            gravity=-100,
+            central_gravity=0.01,
+            spring_length=150,
+            spring_strength=0.1,
+            damping=0.4,
+            overlap=0
+        )
+        
+        # Cache for colors
+        color_cache = {}
+        
+        def get_node_color(node_id: str) -> str:
+            # For subgraph visualization, we might not have types, so use hash of ID
+            if node_id not in color_cache:
+                color_cache[node_id] = _generate_color_from_category(node_id)
+            return color_cache[node_id]
+        
+        for triple in triples:
+            source = triple.get("source", {})
+            target = triple.get("target", {})
+            rel = triple.get("relationship", "RELATED_TO")
+            
+            head = source.get("id")
+            tail = target.get("id")
+            source_type = source.get("type", "Entity")
+            target_type = target.get("type", "Entity")
+            
+            if not head or not tail:
+                # Fallback to old format just in case
+                head = triple.get("head")
+                tail = triple.get("tail")
+                rel = triple.get("relation", rel)
+                
+            if not head or not tail:
+                continue
+                
+            # Add nodes
+            net.add_node(
+                head,
+                label=head[:25] + "..." if len(head) > 25 else head,
+                title=f"{head}<br>Type: {source_type}",
+                color=_generate_color_from_category(source_type),
+                size=20,
+                shape="dot",
+                font={"size": 14, "face": "arial"}
+            )
+            
+            net.add_node(
+                tail,
+                label=tail[:25] + "..." if len(tail) > 25 else tail,
+                title=f"{tail}<br>Type: {target_type}",
+                color=_generate_color_from_category(target_type),
+                size=20,
+                shape="dot",
+                font={"size": 14, "face": "arial"}
+            )
+            
+            # Add edge
+            net.add_edge(
+                head,
+                tail,
+                title=rel,
+                label=rel,
+                color="#848484",
+                width=1,
+                font={"size": 10, "align": "middle", "vadjust": -5}
+            )
+            
+        net.set_options("""
+        var options = {
+          "edges": {
+            "arrows": {
+              "to": { "enabled": true, "scaleFactor": 0.5 }
+            },
+            "color": { "inherit": true },
+            "smooth": false,
+            "font": { "size": 10, "align": "middle" }
+          },
+          "physics": {
+            "forceAtlas2Based": {
+              "gravitationalConstant": -50,
+              "centralGravity": 0.01,
+              "springLength": 100,
+              "springConstant": 0.08
+            },
+            "maxVelocity": 50,
+            "solver": "forceAtlas2Based",
+            "timestep": 0.35,
+            "stabilization": { "iterations": 150 }
+          },
+          "interaction": {
+            "hover": true,
+            "zoomView": true,
+            "dragView": true
+          }
+        }
+        """)
+        
+        html_file = tempfile.NamedTemporaryFile(delete=False, suffix=".html", mode='w', encoding='utf-8')
+        net.save_graph(html_file.name)
+        html_file.close()
+        
+        # Inject the same custom CSS as visualize_knowledge_graph
+        with open(html_file.name, 'r', encoding='utf-8') as f:
+            html_content = f.read()
+            
+        custom_css = """
+        <style>
+            * { margin: 0 !important; padding: 0 !important; box-sizing: border-box !important; border: none !important; }
+            html, body { 
+                background-color: #0b0f19 !important; 
+                margin: 0 !important; 
+                padding: 0 !important; 
+                overflow: hidden !important;
+                width: 100% !important;
+                height: 100% !important;
+            }
+            #mynetwork { 
+                background-color: #0b0f19 !important; 
+                width: 100% !important; 
+                height: 100vh !important; 
+            }
+            center, h1, div.vis-navigation { display: none !important; }
+        </style>
+        """
+        html_content = html_content.replace('</head>', custom_css + '</head>')
+        
+        with open(html_file.name, 'w', encoding='utf-8') as f:
+            f.write(html_content)
+            
+        return html_file.name
+        
+    except Exception as e:
+        logger.error(f"Error creating subgraph visualization: {e}")
         return None
 
 if __name__ == "__main__":

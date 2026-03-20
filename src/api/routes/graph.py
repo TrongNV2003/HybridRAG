@@ -62,3 +62,24 @@ async def get_graph_visualization(
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/visualize_subgraph", response_class=HTMLResponse)
+async def get_subgraph_visualization(
+    triples: list[dict],
+    background_tasks: BackgroundTasks
+):
+    try:
+        from src.services.visualize_service import visualize_subgraph
+        html_path = visualize_subgraph(triples)
+        
+        if not html_path or not os.path.exists(html_path):
+            raise HTTPException(status_code=404, detail="Could not generate subgraph visualization")
+        
+        with open(html_path, "r", encoding="utf-8") as f:
+            html_content = f.read()
+            
+        background_tasks.add_task(remove_temp_file, html_path)
+        return html_content
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

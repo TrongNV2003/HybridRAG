@@ -1,13 +1,13 @@
 import uuid
 from openai import OpenAI
 from loguru import logger
-from typing import List, Optional, Dict
 from langchain_neo4j import Neo4jGraph
+from typing import List, Optional, Dict
 
 from src.config.dataclass import StructuralChunk
 from src.engines.llm_engine import EntityExtractionLLM
-from src.processing.chunking import TwoPhaseDocumentChunker
 from src.core.storage import GraphStorage, EmbedStorage
+from src.processing.chunking import TwoPhaseDocumentChunker
 from src.processing.postprocessing import EntityPostprocessor
 
 
@@ -138,21 +138,19 @@ class GraphIndexing:
                 batch_chunks = []
                 batch_chunk_relationships = []
 
-        entity_count = self.graph_db.query('MATCH (e:Entity) RETURN count(e) as count')[0]['count']
-        rel_count = self.graph_db.query('MATCH ()-[r]->() RETURN count(r) as count')[0]['count']
+        # Global deduplication across all batches to get accurate counts for the current session
+        self._final_nodes = self._deduplicate_entities(all_nodes)
+        self._final_rels = self._deduplicate_relationships(all_relationships)
         
-        try:
-            collection_info = self.qdrant_storage.vector_store.get_collection_info(
-                self.qdrant_storage.collection_name
-            )
-            chunk_count = collection_info.get("points_count", 0) if collection_info else 0
-        except Exception as e:
-            logger.warning(f"Failed to get chunk count from Qdrant: {e}")
-            chunk_count = 0
+        counts = {
+            "entities_count": len(self._final_nodes),
+            "relationships_count": len(self._final_rels),
+            "chunks_count": total_chunks
+        }
         
-        logger.info(f"Database Statistics - Total Entities: {entity_count}, Total Relationships: {rel_count}, Total Chunks: {chunk_count}")
+        logger.info(f"Indexing Session Summary - Entities: {counts['entities_count']}, Relationships: {counts['relationships_count']}, Chunks: {counts['chunks_count']}")
         
-        return all_nodes, all_relationships
+        return counts
             
     def _deduplicate_entities(self, entities: List[Dict]) -> List[Dict]:
         """Remove duplicate entities based on (id, entity_type, entity_role)."""

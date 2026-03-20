@@ -35,7 +35,7 @@ class Pipeline:
             clear_old_graph=True
         )
         
-        raw_docs = self.dataloader.load(query_keyword, load_max_docs=load_max_docs)
+        raw_docs = self.dataloader.load_wikipedia(query_keyword, load_max_docs=load_max_docs)
         
         chunks: List[StructuralChunk] = []
         for doc in raw_docs:

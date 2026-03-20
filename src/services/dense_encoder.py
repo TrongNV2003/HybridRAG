@@ -24,7 +24,8 @@ class DenseEncoder:
     def __init__(
         self, 
         model_name: Optional[str] = None,
-        provider: str = "local"
+        provider: str = "local",
+        cache_dir: Optional[str] = "/app/.fastembed_cache"
     ):
         """
         Initialize dense encoder.
@@ -32,9 +33,11 @@ class DenseEncoder:
         Args:
             model_name: Model name (e.g., "contextboxai/halong_embedding")
             provider: "local" (SentenceTransformer) or "openai"
+            cache_dir: Directory to cache model files (Docker path by default)
         """
         self._model_name = model_name or embed_config.dense_model
         self._provider = provider.lower()
+        self._cache_dir = cache_dir
         self._model = None
         self._client = None
         self._initialized = False
@@ -53,18 +56,30 @@ class DenseEncoder:
         self._initialized = True
     
     def _init_local(self):
-        """Initialize local SentenceTransformer model"""
+        """Initialize local model"""
+        import os
+        from fastembed import TextEmbedding
+        
+        cache_model = self._cache_dir if os.path.exists(self._cache_dir) else None
+        
         try:
-            from sentence_transformers import SentenceTransformer
-            
-            self._model = SentenceTransformer(self._model_name)
+            self._model = TextEmbedding(model_name=self._model_name, cache_dir=cache_model)
             self._dimension = self._model.get_sentence_embedding_dimension()
-            logger.info(f"Loaded Model {self._model_name}. Dimension: {self._dimension}")
-            
-        except ImportError:
-            raise ImportError("sentence-transformers required. Install: pip install sentence-transformers")
+            logger.info(f"Loaded Native FastEmbed Model {self._model_name}. Dimension: {self._dimension}")
         except Exception as e:
-            raise Exception(f"Failed to load model '{self._model_name}': {e}")
+            logger.info(f"Model {self._model_name} not supported by FastEmbed registry. Trying NativeOnnxEncoder...")
+            try:
+                from src.utils.fastembed_util import NativeOnnxEncoder
+                if cache_model:
+                    model_path = os.path.join(cache_model, self._model_name.replace("/", "_"))
+                else:
+                    model_path = self._model_name
+                
+                self._model = NativeOnnxEncoder(model_path, repo_id=self._model_name)
+                self._dimension = self._model.dimension
+                logger.info(f"Loaded Custom ONNX Model {self._model_name} via NativeOnnxEncoder. Dimension: {self._dimension}")
+            except Exception as e:
+                raise Exception(f"Failed to load model '{self._model_name}' via all providers: {e}")
     
     def _init_openai(self):
         """Initialize OpenAI embedding client"""
