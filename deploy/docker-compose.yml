@@ -46,7 +46,7 @@ services:
   api:
     build:
       context: ..
-      dockerfile: deploy/Dockerfile
+      dockerfile: deploy/Dockerfile.backend
     container_name: hybridrag-api
     env_file:
       - .env
@@ -59,6 +59,7 @@ services:
 
       # Models Configuration
       - LLM_MODEL=${LLM_MODEL}
+      - HF_TOKEN=${HF_TOKEN:-}
 
       # Neo4j Configuration
       - NEO4J_URI=bolt://neo4j:7687
@@ -83,7 +84,20 @@ services:
         condition: service_healthy
       qdrant:
         condition: service_started
-    restart: unless-stopped
+    volumes:
+      - fastembed_cache:/app/.fastembed_cache
+    networks:
+      - hybridrag-network
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.frontend
+    container_name: hybridrag-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - api
     networks:
       - hybridrag-network
 
@@ -95,3 +109,4 @@ volumes:
   neo4j_data:
   neo4j_logs:
   qdrant_data:
+  fastembed_cache:
