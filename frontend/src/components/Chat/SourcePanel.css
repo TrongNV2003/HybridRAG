@@ -81,7 +81,7 @@
 }
 
 .graph-section {
-  flex: 0 0 50vh;
+  flex: 0 0 70vh;
   padding-bottom: 1rem;
 }
 
@@ -255,5 +255,7 @@
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }

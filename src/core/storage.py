@@ -60,9 +60,14 @@ class GraphStorage:
             for chunk in graph_data["chunks"]:
                 # Ensure chunk has ID
                 metadata = getattr(chunk, "metadata", {}) or {}
-                chunk_id = metadata.get("chunk_id") or str(uuid.uuid4())
                 reference = metadata.get("reference", "Unknown")
                 content = getattr(chunk, "content", "")
+                
+                chunk_id = metadata.get("chunk_id")
+                if not chunk_id:
+                    import hashlib
+                    hash_input = f"{reference}::{content}".encode("utf-8")
+                    chunk_id = str(uuid.UUID(hashlib.md5(hash_input).hexdigest()))
                 
                 chunks_to_store.append({
                     "id": chunk_id,
@@ -552,7 +557,12 @@ class EmbedStorage:
         chunk_type = getattr(chunk, "chunk_type", None) or chunk.get("chunk_type", "")
         chunk_type_val = chunk_type.value if hasattr(chunk_type, "value") else str(chunk_type)
         
-        chunk_id = metadata.get("chunk_id") or str(uuid.uuid4())
+        chunk_id = metadata.get("chunk_id")
+        if not chunk_id:
+            import hashlib
+            ref_str = metadata.get("reference", "Unknown")
+            hash_input = f"{ref_str}::{content}".encode("utf-8")
+            chunk_id = str(uuid.UUID(hashlib.md5(hash_input).hexdigest()))
         
         try:
             # Generate dense embedding

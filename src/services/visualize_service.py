@@ -317,7 +317,6 @@ def visualize_subgraph(triples: list[dict]):
         color_cache = {}
         
         def get_node_color(node_id: str) -> str:
-            # For subgraph visualization, we might not have types, so use hash of ID
             if node_id not in color_cache:
                 color_cache[node_id] = _generate_color_from_category(node_id)
             return color_cache[node_id]
@@ -387,7 +386,7 @@ def visualize_subgraph(triples: list[dict]):
             "forceAtlas2Based": {
               "gravitationalConstant": -50,
               "centralGravity": 0.01,
-              "springLength": 100,
+              "springLength": 150,
               "springConstant": 0.08
             },
             "maxVelocity": 50,
@@ -415,7 +414,7 @@ def visualize_subgraph(triples: list[dict]):
         <style>
             * { margin: 0 !important; padding: 0 !important; box-sizing: border-box !important; border: none !important; }
             html, body { 
-                background-color: #0b0f19 !important; 
+                background-color: #1a1a2e !important; 
                 margin: 0 !important; 
                 padding: 0 !important; 
                 overflow: hidden !important;
@@ -423,7 +422,7 @@ def visualize_subgraph(triples: list[dict]):
                 height: 100% !important;
             }
             #mynetwork { 
-                background-color: #0b0f19 !important; 
+                background-color: #1a1a2e !important; 
                 width: 100% !important; 
                 height: 100vh !important; 
             }

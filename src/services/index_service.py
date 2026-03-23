@@ -76,7 +76,12 @@ class GraphIndexing:
             
             cleaned_nodes: List[Dict] = []
             chunk_provenance: List[Dict] = []
-            chunk_id = chunk.metadata.get("chunk_id") or str(uuid.uuid4())
+            chunk_id = chunk.metadata.get("chunk_id")
+            if not chunk_id:
+                import hashlib
+                ref_str = chunk.metadata.get("reference", "Unknown")
+                hash_input = f"{ref_str}::{text}".encode("utf-8")
+                chunk_id = str(uuid.UUID(hashlib.md5(hash_input).hexdigest()))
             # Ensure chunk has ID in metadata
             chunk.metadata["chunk_id"] = chunk_id
 
