@@ -57,18 +57,31 @@ def _generate_color_from_category(category: str) -> str:
     return hsl_to_rgb(hue, saturation, lightness)
 
 
-def visualize_knowledge_graph(graph_db: Neo4jGraph, limit: int = 100):
+def visualize_knowledge_graph(graph_db: Neo4jGraph, limit: int = 100, search_query: str = None):
     """Create interactive knowledge graph from Neo4j"""
     try:
-        query = """
-            MATCH (n:Entity)-[r]->(m:Entity)
-            RETURN n.id AS source_id, n.entity_type AS source_type, n.entity_role AS source_role,
-                   type(r) AS rel_type,
-                   m.id AS target_id, m.entity_type AS target_type, m.entity_role AS target_role
-            LIMIT $limit
-        """
+        if search_query:
+            query = """
+                MATCH (n:Entity)-[r]-(m:Entity)
+                WHERE toLower(n.id) CONTAINS toLower($search_query) 
+                   OR toLower(m.id) CONTAINS toLower($search_query)
+                RETURN n.id AS source_id, n.entity_type AS source_type, n.entity_role AS source_role,
+                       type(r) AS rel_type,
+                       m.id AS target_id, m.entity_type AS target_type, m.entity_role AS target_role
+                LIMIT $limit
+            """
+            params = {"limit": limit, "search_query": search_query}
+        else:
+            query = """
+                MATCH (n:Entity)-[r]->(m:Entity)
+                RETURN n.id AS source_id, n.entity_type AS source_type, n.entity_role AS source_role,
+                       type(r) AS rel_type,
+                       m.id AS target_id, m.entity_type AS target_type, m.entity_role AS target_role
+                LIMIT $limit
+            """
+            params = {"limit": limit}
         
-        results = graph_db.query(query, params={"limit": limit})
+        results = graph_db.query(query, params=params)
         
         if not results:
             return None

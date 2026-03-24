@@ -44,10 +44,11 @@ def remove_temp_file(path: str):
 async def get_graph_visualization(
     background_tasks: BackgroundTasks,
     limit: int = Query(100, ge=1, le=1000),
+    search: str = Query(None),
     graph_db: Neo4jGraph = Depends(get_neo4j_graph)
 ):
     try:
-        html_path = visualize_knowledge_graph(graph_db=graph_db, limit=limit)
+        html_path = visualize_knowledge_graph(graph_db=graph_db, limit=limit, search_query=search)
         
         if not html_path or not os.path.exists(html_path):
             raise HTTPException(status_code=404, detail="Could not generate graph visualization")

@@ -49,8 +49,27 @@ export const queryApi = {
 
 export const graphApi = {
   getStats: () => api.get<GraphStats>('/graph/stats'),
-  getVisualizationUrl: (limit: number = 100) => `/api/v1/graph/visualize?limit=${limit}`,
+  getVisualizationUrl: (limit: number = 100, search?: string) => {
+    let url = `/api/v1/graph/visualize?limit=${limit}`;
+    if (search) url += `&search=${encodeURIComponent(search)}`;
+    return url;
+  },
   visualizeSubgraph: (triples: any[]) => api.post<string>('/graph/visualize_subgraph', triples),
+};
+
+export const backupApi = {
+  downloadBackup: () => {
+    window.location.href = '/api/v1/backup/backup';
+  },
+  restoreGraph: (file: File, clearExisting: boolean = true) => {
+    const formData = new FormData();
+    formData.append('file', file);
+    return api.post(`/backup/restore?clear_existing=${clearExisting}`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+  },
 };
 
 export default api;

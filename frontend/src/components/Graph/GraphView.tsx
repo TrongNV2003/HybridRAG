@@ -1,5 +1,5 @@
 import React from 'react';
-import { Share2, RefreshCcw } from 'lucide-react';
+import { Share2, RefreshCcw, Search, X } from 'lucide-react';
 import { graphApi } from '../../services/api';
 import './GraphView.css';
 
@@ -10,13 +10,22 @@ interface GraphViewProps {
 const GraphView: React.FC<GraphViewProps> = ({ limit: initialLimit = 100 }) => {
   const [limit, setLimit] = React.useState<number | string>(initialLimit);
   const [searchLimit, setSearchLimit] = React.useState(initialLimit);
+  const [searchQuery, setSearchQuery] = React.useState('');
+  const [activeSearch, setActiveSearch] = React.useState('');
   const [refreshKey, setRefreshKey] = React.useState(0);
   
-  const visualizationUrl = `${graphApi.getVisualizationUrl(searchLimit)}&t=${refreshKey}`;
+  const visualizationUrl = `${graphApi.getVisualizationUrl(searchLimit, activeSearch)}&t=${refreshKey}`;
 
   const handleSearch = () => {
     const finalLimit = typeof limit === 'string' ? parseInt(limit) || 10 : limit;
     setSearchLimit(finalLimit);
+    setActiveSearch(searchQuery);
+    setRefreshKey(prev => prev + 1);
+  };
+
+  const handleClear = () => {
+    setSearchQuery('');
+    setActiveSearch('');
     setRefreshKey(prev => prev + 1);
   };
 
@@ -32,6 +41,23 @@ const GraphView: React.FC<GraphViewProps> = ({ limit: initialLimit = 100 }) => {
           <h3>Knowledge Graph Explorer</h3>
         </div>
         <div className="header-actions">
+          <div className="search-box">
+            <Search size={16} className="search-icon" />
+            <input 
+              type="text" 
+              placeholder="Search entities..." 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+              className="search-input"
+            />
+            {searchQuery && (
+              <button className="clear-search-btn" onClick={handleClear}>
+                <X size={14} />
+              </button>
+            )}
+          </div>
+          
           <div className="limit-selector">
             <span>Limit:</span>
             <input 

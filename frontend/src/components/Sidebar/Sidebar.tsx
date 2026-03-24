@@ -89,8 +89,10 @@ const Sidebar: React.FC<SidebarProps> = ({ activeItem, onNavigate, onNewSession,
           </div>
         )}
         <div className="footer-actions">
-          <button className="footer-btn"><SettingsIcon size={18} /></button>
-          <button className="footer-btn"><HelpCircle size={18} /></button>
+          <button className="footer-btn" onClick={() => onNavigate('settings')} title="Settings">
+            <SettingsIcon size={18} />
+          </button>
+          <button className="footer-btn" title="Help"><HelpCircle size={18} /></button>
         </div>
       </div>
     </div>

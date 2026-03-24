@@ -6,7 +6,8 @@ import Chat, { Message } from './components/Chat/Chat';
 import IndexingPanel from './components/Indexing/IndexingPanel';
 import GraphView from './components/Graph/GraphView';
 import SourcePanel from './components/Chat/SourcePanel';
-import { queryApi, graphApi } from './services/api';
+import { queryApi, graphApi, backupApi } from './services/api';
+import { Download, Upload, Loader2 } from 'lucide-react';
 import './App.css';
 
 function App() {
@@ -172,6 +173,7 @@ function App() {
               setNotification({ message: "Cấu hình đã được lưu thành công!", type: 'success' });
               setTimeout(() => setNotification(null), 3000);
             }}
+            onRefreshStats={fetchStats}
           />
         )}
       </div>
@@ -196,20 +198,52 @@ function App() {
 // Separate component for Settings Tab to manage its own local state
 const SettingsTab: React.FC<{
   currentSettings: any,
-  onSave: (settings: any) => void
-}> = ({ currentSettings, onSave }) => {
+  onSave: (settings: any) => void,
+  onRefreshStats: () => void
+}> = ({ currentSettings, onSave, onRefreshStats }) => {
   const [localSettings, setLocalSettings] = useState(currentSettings);
+  const [isRestoring, setIsRestoring] = useState(false);
+  const [restoreFile, setRestoreFile] = useState<File | null>(null);
 
   // Sync if current settings change externally (rare)
   useEffect(() => {
     setLocalSettings(currentSettings);
   }, [currentSettings.strategy]);
 
+  const handleBackup = () => {
+    try {
+      backupApi.downloadBackup();
+    } catch (err) {
+      console.error('Backup failed', err);
+    }
+  };
+
+  const handleRestore = async () => {
+    if (!restoreFile) return;
+    
+    setIsRestoring(true);
+    try {
+      const response = await backupApi.restoreGraph(restoreFile);
+      if (response.data.status === 'success') {
+        alert(`Restore thành công! Đã khôi phục ${response.data.nodes_restored} nodes.`);
+        onRefreshStats();
+        setRestoreFile(null);
+      }
+    } catch (err) {
+      console.error('Restore failed', err);
+      alert('Restore thất bại. Vui lòng kiểm tra lại file backup.');
+    } finally {
+      setIsRestoring(false);
+    }
+  };
+
   return (
     <div className="settings-page">
       <div className="settings-container glass">
-        <h2>RAG Configuration</h2>
-        <p className="settings-desc">Tùy chỉnh các tham số truy vấn cho hệ thống HybridRAG.</p>
+        <div className="settings-header-box">
+          <h2>RAG Configuration</h2>
+          <p className="settings-desc">Tùy chỉnh các tham số truy vấn cho hệ thống HybridRAG.</p>
+        </div>
 
         <div className="settings-group">
           {(localSettings.strategy !== 'graph') && (
@@ -271,6 +305,108 @@ const SettingsTab: React.FC<{
         >
           Save config
         </button>
+
+        <hr className="settings-divider" />
+
+        <div className="settings-header-box" style={{ marginTop: '2rem' }}>
+          <h2>Graph Data Management</h2>
+          <p className="settings-desc">Sao lưu và khôi phục toàn bộ cơ sở dữ liệu đồ thị.</p>
+        </div>
+
+        <div className="management-grid" style={{ 
+          display: 'grid', 
+          gridTemplateColumns: '1fr 1fr', 
+          gap: '1.5rem',
+          marginTop: '1.5rem'
+        }}>
+          <div className="mgmt-card glass-sm" style={{ padding: '1.5rem', borderRadius: '12px' }}>
+            <div className="mgmt-icon" style={{ marginBottom: '1rem', color: 'var(--accent)' }}>
+              <Download size={32} />
+            </div>
+            <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Backup Graph</h3>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
+              Tải xuống toàn bộ dữ liệu (Nodes, Relationships) dưới dạng file ZIP.
+            </p>
+            <button 
+              className="mgmt-btn export" 
+              onClick={handleBackup}
+              style={{
+                width: '100%',
+                padding: '0.75rem',
+                backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                border: '1px solid var(--border-soft)',
+                borderRadius: '8px',
+                color: 'var(--text-primary)',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.5rem'
+              }}
+            >
+              <Download size={16} /> Export ZIP
+            </button>
+          </div>
+
+          <div className="mgmt-card glass-sm" style={{ padding: '1.5rem', borderRadius: '12px' }}>
+            <div className="mgmt-icon" style={{ marginBottom: '1rem', color: 'var(--accent)' }}>
+              <Upload size={32} />
+            </div>
+            <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Restore Graph</h3>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
+              Khôi phục dữ liệu từ file backup. Lưu ý: Sẽ xóa dữ liệu hiện tại.
+            </p>
+            
+            <div className="file-upload-wrapper" style={{ marginBottom: '1rem' }}>
+              <input 
+                type="file" 
+                accept=".zip" 
+                id="restore-file"
+                onChange={(e) => setRestoreFile(e.target.files?.[0] || null)}
+                style={{ display: 'none' }}
+              />
+              <label 
+                htmlFor="restore-file" 
+                style={{
+                  display: 'block',
+                  padding: '0.75rem',
+                  backgroundColor: 'rgba(255, 255, 255, 0.02)',
+                  border: '1px dashed var(--border-soft)',
+                  borderRadius: '8px',
+                  textAlign: 'center',
+                  fontSize: '0.85rem',
+                  cursor: 'pointer',
+                  color: restoreFile ? 'var(--accent)' : 'var(--text-muted)'
+                }}
+              >
+                {restoreFile ? restoreFile.name : 'Chọn file backup (.zip)'}
+              </label>
+            </div>
+
+            <button 
+              className="mgmt-btn import" 
+              onClick={handleRestore}
+              disabled={!restoreFile || isRestoring}
+              style={{
+                width: '100%',
+                padding: '0.75rem',
+                backgroundColor: restoreFile ? 'var(--accent)' : 'rgba(255, 255, 255, 0.05)',
+                border: 'none',
+                borderRadius: '8px',
+                color: '#fff',
+                cursor: restoreFile ? 'pointer' : 'not-allowed',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.5rem',
+                opacity: (!restoreFile || isRestoring) ? 0.5 : 1
+              }}
+            >
+              {isRestoring ? <Loader2 className="spinner" size={16} /> : <Upload size={16} />} 
+              {isRestoring ? 'Restoring...' : 'Restore Now'}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
