@@ -45,3 +45,27 @@ Thumbs.db
 *.md
 !README.md
 storage/orders/*.json
+
+# Node.js / Frontend
+node_modules/
+**/node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.next/
+.npm/
+
+# Data and Exports
+storage/
+exports/
+data/
+*.ttl
+*.zip
+.fastembed_cache/
+
+# Cache and Temps
+__pycache__/
+**/*.py[cod]
+**/*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.cache/
