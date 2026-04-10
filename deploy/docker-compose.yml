@@ -7,13 +7,19 @@ services:
       - "7687:7687" # Bolt
     environment:
       - NEO4J_AUTH=${NEO4J_USERNAME:-neo4j}/${NEO4J_PASSWORD}
-      - NEO4J_PLUGINS=["apoc", "n10s"]
+      - NEO4J_PLUGINS=["apoc"]
       - NEO4J_dbms_security_procedures_unrestricted=apoc.*,n10s.*
-      - NEO4J_dbms_memory_heap_initial__size=512m
-      - NEO4J_dbms_memory_heap_max__size=1g
+
+      - NEO4J_server_memory_heap_initial__size=512m
+      - NEO4J_server_memory_heap_max__size=1g
+      - NEO4J_server_unmanaged__extension__classes=n10s.endpoint=/rdf
+
+      # Advanced Optimize Vector Search
+      - NEO4J_server_jvm_additional=--add-modules jdk.incubator.vector
     volumes:
       - neo4j_data:/data
       - neo4j_logs:/logs
+      - ./plugins:/plugins
     deploy:
       resources:
         limits:

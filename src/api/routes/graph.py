@@ -51,7 +51,10 @@ async def get_graph_visualization(
         html_path = visualize_knowledge_graph(graph_db=graph_db, limit=limit, search_query=search)
         
         if not html_path or not os.path.exists(html_path):
-            raise HTTPException(status_code=404, detail="Could not generate graph visualization")
+            raise HTTPException(
+                status_code=404, 
+                detail="No entities found in the graph. Please run indexing first to see the visualization."
+            )
         
         with open(html_path, "r", encoding="utf-8") as f:
             html_content = f.read()

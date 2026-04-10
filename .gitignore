@@ -152,3 +152,6 @@ celerybeat-schedule.dir
 app/**/models/
 tests/**/models/
 models
+
+# Folder Docker
+plugins/

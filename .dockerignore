@@ -69,3 +69,8 @@ __pycache__/
 .pytest_cache/
 .ipynb_checkpoints/
 .cache/
+.vscode/
+.idea/
+.git/
+*.log
+.DS_Store

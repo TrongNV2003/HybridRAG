@@ -69,6 +69,8 @@ The retrieval pipeline uses a sophisticated strategy:
 
 Watch [Deploy](deploy/README_DEPLOY.md) for more details
 
+Download neosemantics plugin for Neo4j: https://github.com/neo4j-labs/neosemantics/releases and put it in folder `deploy/plugins`
+
 ### Start the API Server
 
 The system is exposed via a production-ready FastAPI server:
