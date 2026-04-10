@@ -24,7 +24,12 @@ class DataLoader:
         if query is not None:
             logger.info(f"Searching Wikipedia for: {query}")
             
-            loader = WikipediaLoader(query=query, load_max_docs=load_max_docs)
+            loader = WikipediaLoader(
+                query=query,
+                # lang="vi",        # Default is English
+                load_max_docs=load_max_docs,
+                doc_content_chars_max=5000
+            )
             try:
                 documents = loader.load()
             except Exception as e:
@@ -35,9 +40,11 @@ class DataLoader:
                 {
                     "content": doc.page_content,
                     "metadata": {
-                        "reference": "Wikipedia",
+                        "id": i,
                         "title": doc.metadata.get("title", query),
-                        "id": i
+                        "summary": doc.metadata.get("summary", ""),
+                        "source": doc.metadata.get("source", ""),
+                        "reference": "Wikipedia"
                     }
                 }
                 for i, doc in enumerate(documents)
