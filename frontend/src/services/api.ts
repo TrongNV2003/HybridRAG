@@ -57,6 +57,25 @@ export const graphApi = {
   visualizeSubgraph: (triples: any[]) => api.post<string>('/graph/visualize_subgraph', triples),
 };
 
+export interface SparqlResponse {
+  results: any[];
+  variables: string[];
+  sync_completed: boolean;
+  message?: string;
+}
+
+export const sparqlApi = {
+  query: (query: string, auto_sync: boolean = true) =>
+    api.post<SparqlResponse>('/sparql/query', { query, auto_sync }),
+  
+  syncRdf: () => api.post<{ status: string; message: string }>('/sparql/sync-rdf'),
+  
+  downloadTtl: () => {
+    window.location.href = '/api/v1/sparql/sync-rdf'; // This will trigger sync then download if we add it, but for now just sync
+    // In a real scenario, we might want a dedicated download link
+  }
+};
+
 export const backupApi = {
   downloadBackup: () => {
     window.location.href = '/api/v1/backup/backup';

@@ -1,23 +1,24 @@
-EXTRACT_SYSTEM_PROMPT = """You are an AI assistant expert in data extraction. Your task is to extract numerical entities from text and return them as valid JSON according to the provided schema. Always strictly follow the instructions below."""
+EXTRACT_SYSTEM_PROMPT = """You are an AI assistant expert in knowledge extraction for DBPedia. Your task is to extract entities and their relationships from text and return them as valid JSON. Follow the DBPedia ontology standards (Person, Place, Organisation, etc.) strictly."""
 
 EXTRACT_PROMPT_TEMPLATE = (
     "### Role:\n"
-    "You are an expert in entity extraction.\n"
+    "You are an expert in Knowledge Graph extraction for DBPedia.\n"
     "\n"
     "### Instruction: \n"
-    "- Analyze the following text and extract entities (people, places, events...) and relationships between them.\n"
+    "- Analyze the following Vietnamese text and extract entities and relationships between them following DBPedia standards.\n"
     "1.  **Entities:**\n"
-    "- For each entity, include an 'id' (the entity name), 'entity_type' (e.g., Person, Place, Event, Organization), and 'entity_role' (the role or function, e.g., 'Queen of England').\n"
-    "- If no 'entity_role' is applicable, leave them as empty strings ('').\n"
+    "- Each entity must have an 'id' (name), 'entity_type', and 'entity_role'.\n"
+    "- Use standard DBPedia types: Person, Place, Organisation, Work, Event, Species, etc.\n"
+    "- 'entity_role' should describe the entity's specific role in the context (e.g., 'Nhà cách mạng', 'Thủ đô').\n"
     "2.  **Relationships:**\n"
-    '    - `source` and `target`: MUST match exactly the `id` field of the extracted nodes.\n'
-    '    - `relationship_type`: The type of relationship between two entities.\n'
+    "    - Use meaningful relationship types like: 'sinh_tại', 'là_thủ_đô_của', 'thành_viên_của', 'tác_giả_của', 'thuộc_tỉnh'.\n"
+    '    - `source` and `target` MUST match exactly the `id` field of the extracted nodes.\n'
     "\n"
     "## Example output (valid JSON):\n"
-    '{"nodes": [{"id": "entity_name", "entity_type": "entity_type", "entity_role": "entity_role"}],\n'
-    '"relationships": [{"source": "entity_1", "target": "entity_2", "relationship_type": "relationship_type"}]}\n'
+    '{"nodes": [{"id": "Hồ Chí Minh", "entity_type": "Person", "entity_role": "Nhà cách mạng"}],\n'
+    '"relationships": [{"source": "Hồ Chí Minh", "target": "Nghệ An", "relationship_type": "sinh_tại"}]}\n'
     "\n"
-    "### Execute with the following input\n"
+    "### Execute with the following input (Vietnamese Text)\n"
     "<input>\n"
     "{{ text }}\n"
     "</input>\n"

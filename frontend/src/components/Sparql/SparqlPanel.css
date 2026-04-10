@@ -1,0 +1,234 @@
+.sparql-panel {
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.header-info p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.sparql-main-grid {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.section-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.title-with-icon h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Editor Styling */
+.query-section {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.editor-wrapper {
+  position: relative;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.editor-wrapper textarea {
+  width: 100%;
+  height: 250px;
+  background: transparent;
+  border: none;
+  color: #d1d5db;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 1.5rem;
+  resize: vertical;
+  outline: none;
+}
+
+.run-btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+}
+
+.run-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.run-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* Predefined Dropdown */
+.predefined-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-soft);
+  color: var(--text-secondary);
+}
+
+.predefined-dropdown select {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  outline: none;
+  cursor: pointer;
+  max-width: 200px;
+}
+
+/* Results Section */
+.results-section {
+  display: flex;
+  flex-direction: column;
+  min-height: 300px;
+  overflow: hidden;
+}
+
+.table-responsive {
+  flex: 1;
+  overflow: auto;
+  padding: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: rgba(30, 41, 59, 1);
+  text-align: left;
+  padding: 1rem 1.25rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  border-bottom: 2px solid var(--border-soft);
+  z-index: 10;
+}
+
+td {
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--border-soft);
+  color: var(--text-primary);
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.uri-link {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dashed transparent;
+  transition: all 0.2s;
+}
+
+.uri-link:hover {
+  border-bottom-color: var(--accent);
+}
+
+.empty-results {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 4rem 1rem;
+}
+
+/* Status Messages */
+.status-msg {
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-soft);
+}
+
+.status-msg.error {
+  background: rgba(239, 68, 68, 0.05);
+  color: #f87171;
+}
+
+.status-msg.success {
+  background: rgba(34, 197, 94, 0.05);
+  color: #4ade80;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 1024px) {
+  .sparql-main-grid {
+    grid-template-rows: auto auto;
+  }
+}

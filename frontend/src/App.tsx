@@ -5,6 +5,7 @@ import Sidebar, { NavItem } from './components/Sidebar/Sidebar';
 import Chat, { Message } from './components/Chat/Chat';
 import IndexingPanel from './components/Indexing/IndexingPanel';
 import GraphView from './components/Graph/GraphView';
+import SparqlPanel from './components/Sparql/SparqlPanel';
 import SourcePanel from './components/Chat/SourcePanel';
 import { queryApi, graphApi, backupApi } from './services/api';
 import { Download, Upload, Loader2 } from 'lucide-react';
@@ -145,6 +146,9 @@ function App() {
         )}
         {activeTab === 'graph' && (
           <GraphView />
+        )}
+        {activeTab === 'sparql' && (
+          <SparqlPanel />
         )}
         {activeTab === 'stats' && (
           <div className="stats-dashboard">

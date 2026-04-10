@@ -7,6 +7,7 @@ from src.core.retrieval import HybridRetrieval
 from src.core.storage import GraphStorage, EmbedStorage
 from src.services.index_service import GraphIndexing
 from src.services.query_service import GraphQuerying
+from src.services.sparql_service import SparqlService
 from src.processing.dataloaders import DataLoader
 from src.processing.chunking import TwoPhaseDocumentChunker
 from src.processing.postprocessing import EntityPostprocessor
@@ -106,3 +107,8 @@ def get_querying_service() -> GraphQuerying:
         generator=generator,
         analyzer=analyzer
     )
+
+@lru_cache()
+def get_sparql_service() -> SparqlService:
+    graph_db = get_neo4j_graph()
+    return SparqlService(graph_db)

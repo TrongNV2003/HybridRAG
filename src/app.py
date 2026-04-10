@@ -125,12 +125,13 @@ def create_app() -> FastAPI:
 
 
     # Include Routes
-    from src.api.routes import indexing, querying, graph, backup
+    from src.api.routes import indexing, querying, graph, backup, sparql
     
     app.include_router(indexing.router, prefix=f"{settings.api_v1_prefix}/indexing", tags=["Indexing"])
     app.include_router(querying.router, prefix=f"{settings.api_v1_prefix}/query", tags=["Querying"])
     app.include_router(graph.router, prefix=f"{settings.api_v1_prefix}/graph", tags=["Graph"])
     app.include_router(backup.router, prefix=f"{settings.api_v1_prefix}/backup", tags=["Backup"])
+    app.include_router(sparql.router, prefix=f"{settings.api_v1_prefix}/sparql", tags=["SPARQL"])
     
     return app
 

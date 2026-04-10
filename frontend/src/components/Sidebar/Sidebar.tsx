@@ -6,11 +6,12 @@ import {
   TrendingUp, 
   Settings as SettingsIcon,
   HelpCircle,
-  Plus
+  Plus,
+  Terminal
 } from 'lucide-react';
 import './Sidebar.css';
 
-export type NavItem = 'chat' | 'indexing' | 'graph' | 'stats' | 'settings';
+export type NavItem = 'chat' | 'indexing' | 'graph' | 'stats' | 'sparql' | 'settings';
 
 interface SidebarProps {
   activeItem: NavItem;
@@ -65,6 +66,13 @@ const Sidebar: React.FC<SidebarProps> = ({ activeItem, onNavigate, onNewSession,
         >
           <TrendingUp size={20} />
           <span>System Insights</span>
+        </button>
+        <button 
+          className={`nav-item ${activeItem === 'sparql' ? 'active' : ''}`}
+          onClick={() => onNavigate('sparql')}
+        >
+          <Terminal size={20} />
+          <span>Semantic Hub</span>
         </button>
         <button 
           className={`nav-item ${activeItem === 'settings' ? 'active' : ''}`}

@@ -128,6 +128,7 @@ class GraphStorage:
                     "id": id,
                     "entity_type": entity_type,
                     "entity_role": entity_role,
+                    "en_dbpedia_url": node.get("en_dbpedia_url", None),
                     "reference": reference
                 }
             })

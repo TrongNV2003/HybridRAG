@@ -59,3 +59,17 @@ class SearchResponse(BaseModel):
     chunks: List[Dict[str, Any]] = Field(default_factory=list)
     total: int
     search_type: str
+
+
+# ===== SPARQL Schemas =====
+
+class SparqlRequest(BaseModel):
+    query: str = Field(..., description="The SPARQL query to execute")
+    auto_sync: bool = Field(True, description="Whether to sync RDF from Neo4j before querying")
+
+
+class SparqlResponse(BaseModel):
+    results: List[Dict[str, Any]]
+    variables: List[str]
+    sync_completed: bool = False
+    message: Optional[str] = None

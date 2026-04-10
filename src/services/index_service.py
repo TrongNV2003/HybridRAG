@@ -91,6 +91,7 @@ class GraphIndexing:
                     "id": node_id,
                     "entity_type": self.postprocessor(node.get("entity_type", "")),
                     "entity_role": self.postprocessor(node.get("entity_role", "")),
+                    "en_dbpedia_url": chunk.metadata.get("en_dbpedia_url", None),
                     "reference": chunk.metadata.get("reference", "Unknown")
                 })
                 # Link Chunk -> Entity
