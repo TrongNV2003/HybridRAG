@@ -1,6 +1,6 @@
 services:
   neo4j:
-    image: neo4j:2025.12.1
+    image: neo4j:5.26-community
     container_name: hybridrag-neo4j
     ports:
       - "7474:7474" # HTTP Browser
@@ -8,18 +8,15 @@ services:
     environment:
       - NEO4J_AUTH=${NEO4J_USERNAME:-neo4j}/${NEO4J_PASSWORD}
       - NEO4J_PLUGINS=["apoc"]
-      - NEO4J_dbms_security_procedures_unrestricted=apoc.*,n10s.*
-
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
       - NEO4J_server_memory_heap_initial__size=512m
       - NEO4J_server_memory_heap_max__size=1g
-      - NEO4J_server_unmanaged__extension__classes=n10s.endpoint=/rdf
 
       # Advanced Optimize Vector Search
       - NEO4J_server_jvm_additional=--add-modules jdk.incubator.vector
     volumes:
       - neo4j_data:/data
       - neo4j_logs:/logs
-      - ./plugins:/plugins
     deploy:
       resources:
         limits:
