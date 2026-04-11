@@ -28,6 +28,37 @@
   gap: 0.75rem;
 }
 
+.btn-secondary.glass {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-secondary.glass:hover:not(:disabled) {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+
+.btn-secondary.glass:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-secondary.glass:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+
 .sparql-main-grid {
   display: grid;
   grid-template-rows: auto 1fr;
@@ -129,6 +160,12 @@
   outline: none;
   cursor: pointer;
   max-width: 200px;
+  padding: 0.2rem 0;
+}
+
+.predefined-dropdown select option {
+  background-color: var(--surface);
+  color: var(--text-primary);
 }
 
 /* Results Section */

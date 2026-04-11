@@ -127,7 +127,7 @@ const SparqlPanel: React.FC = () => {
             {isSyncing ? <Loader2 className="spinner" size={16} /> : <RotateCw size={16} />}
             <span>Sync Knowledge</span>
           </button>
-          <button className="btn-secondary glass" onClick={() => window.open('/api/v1/sparql/sync-rdf', '_blank')}>
+          <button className="btn-secondary glass" onClick={() => window.open('/api/v1/sparql/export-ttl', '_blank')}>
             <Download size={16} />
             <span>Export TTL</span>
           </button>

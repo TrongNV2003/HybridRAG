@@ -1,9 +1,13 @@
-from fastapi import APIRouter, Depends, HTTPException
+import os
+from fastapi.responses import FileResponse
+from fastapi import APIRouter, HTTPException, Depends
+
 from src.services.sparql_service import SparqlService
 from src.config.schemas import SparqlRequest, SparqlResponse
 from src.api.dependencies import get_sparql_service
 
 router = APIRouter()
+
 
 @router.post("/query", response_model=SparqlResponse)
 async def sparql_query(
@@ -41,3 +45,24 @@ async def sync_rdf(
         return {"status": "success", "message": "RDF synchronization completed successfully"}
     else:
         raise HTTPException(status_code=500, detail="RDF synchronization failed")
+
+@router.get("/export-ttl")
+async def export_ttl(
+    sparql_service: SparqlService = Depends(get_sparql_service)
+):
+    """
+    Download the generated .ttl file.
+    """
+    file_path = sparql_service.rdf_file_path
+    
+    if not os.path.exists(file_path):
+        sparql_service.sync_rdf()
+        
+    if os.path.exists(file_path):
+        return FileResponse(
+            path=file_path,
+            filename="vietnamese_dbpedia.ttl",
+            media_type="application/x-turtle"
+        )
+    else:
+        raise HTTPException(status_code=404, detail="TTL file not found and could not be generated.")

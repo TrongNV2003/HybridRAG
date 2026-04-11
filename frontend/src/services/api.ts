@@ -71,8 +71,7 @@ export const sparqlApi = {
   syncRdf: () => api.post<{ status: string; message: string }>('/sparql/sync-rdf'),
   
   downloadTtl: () => {
-    window.location.href = '/api/v1/sparql/sync-rdf'; // This will trigger sync then download if we add it, but for now just sync
-    // In a real scenario, we might want a dedicated download link
+    window.location.href = '/api/v1/sparql/export-ttl';
   }
 };
 

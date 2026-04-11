@@ -5,6 +5,7 @@ from langchain_neo4j import Neo4jGraph
 from typing import List, Optional, Dict
 
 from src.config.dataclass import StructuralChunk
+from src.services.sparql_service import SparqlService
 from src.engines.llm_engine import EntityExtractionLLM
 from src.core.storage import GraphStorage, EmbedStorage
 from src.processing.chunking import TwoPhaseDocumentChunker
@@ -156,6 +157,14 @@ class GraphIndexing:
         
         logger.info(f"Indexing Session Summary - Entities: {counts['entities_count']}, Relationships: {counts['relationships_count']}, Chunks: {counts['chunks_count']}")
         
+        # Trigger RDF Synchronization for SPARQL queries
+        try:
+            logger.info("Triggering automatic RDF synchronization after indexing...")
+            sparql_service = SparqlService(self.graph_db)
+            sparql_service.sync_rdf()
+        except Exception as e:
+            logger.error(f"Automatic RDF synchronization failed: {e}")
+
         return counts
             
     def _deduplicate_entities(self, entities: List[Dict]) -> List[Dict]:

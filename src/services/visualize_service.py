@@ -66,8 +66,10 @@ def visualize_knowledge_graph(graph_db: Neo4jGraph, limit: int = 100, search_que
                 WHERE toLower(n.id) CONTAINS toLower($search_query) 
                    OR toLower(m.id) CONTAINS toLower($search_query)
                 RETURN n.id AS source_id, n.entity_type AS source_type, n.entity_role AS source_role,
+                       n.reference AS source_ref, n.en_dbpedia_url AS source_link,
                        type(r) AS rel_type,
-                       m.id AS target_id, m.entity_type AS target_type, m.entity_role AS target_role
+                       m.id AS target_id, m.entity_type AS target_type, m.entity_role AS target_role,
+                       m.reference AS target_ref, m.en_dbpedia_url AS target_link
                 LIMIT $limit
             """
             params = {"limit": limit, "search_query": search_query}
@@ -75,8 +77,10 @@ def visualize_knowledge_graph(graph_db: Neo4jGraph, limit: int = 100, search_que
             query = """
                 MATCH (n:Entity)-[r]->(m:Entity)
                 RETURN n.id AS source_id, n.entity_type AS source_type, n.entity_role AS source_role,
+                       n.reference AS source_ref, n.en_dbpedia_url AS source_link,
                        type(r) AS rel_type,
-                       m.id AS target_id, m.entity_type AS target_type, m.entity_role AS target_role
+                       m.id AS target_id, m.entity_type AS target_type, m.entity_role AS target_role,
+                       m.reference AS target_ref, m.en_dbpedia_url AS target_link
                 LIMIT $limit
             """
             params = {"limit": limit}
@@ -121,13 +125,21 @@ def visualize_knowledge_graph(graph_db: Neo4jGraph, limit: int = 100, search_que
             target_role = record.get("target_role")
             rel_type = record["rel_type"]
             
-            source_hover = f"{source_id}<br>Type: {source_category}"
+            source_hover = f"NAME: {source_id}\nTYPE: {source_category}"
             if source_role:
-                source_hover += f"<br>Role: {source_role}"
+                source_hover += f"\nROLE: {source_role}"
+            if record.get("source_ref"):
+                source_hover += f"\nREF: {record['source_ref']}"
+            if record.get("source_link"):
+                source_hover += f"\nDBPEDIA: {record['source_link']}"
             
-            target_hover = f"{target_id}<br>Type: {target_category}"
+            target_hover = f"NAME: {target_id}\nTYPE: {target_category}"
             if target_role:
-                target_hover += f"<br>Role: {target_role}"
+                target_hover += f"\nROLE: {target_role}"
+            if record.get("target_ref"):
+                target_hover += f"\nREF: {record['target_ref']}"
+            if record.get("target_link"):
+                target_hover += f"\nDBPEDIA: {record['target_link']}"
             
             # Add nodes
             net.add_node(
@@ -284,6 +296,20 @@ def visualize_knowledge_graph(graph_db: Neo4jGraph, limit: int = 100, search_que
             /* Hide any headers */
             center, h1 {
                 display: none !important;
+            }
+
+            /* Premium Tooltip Styling */
+            div.vis-tooltip {
+                background-color: #151b28 !important;
+                color: #f8fafc !important;
+                border: 1px solid #38bdf8 !important;
+                border-radius: 8px !important;
+                padding: 12px !important;
+                font-family: 'Inter', -apple-system, sans-serif !important;
+                font-size: 13px !important;
+                line-height: 1.5 !important;
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4) !important;
+                white-space: pre-wrap !important;
             }
         </style>
         """

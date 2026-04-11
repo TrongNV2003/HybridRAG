@@ -1,4 +1,3 @@
-import sys
 from rdflib import Graph
 from loguru import logger
 

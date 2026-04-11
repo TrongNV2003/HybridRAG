@@ -1,13 +1,13 @@
 import os
 from rdflib import Graph, Literal, RDF, URIRef, Namespace
-from rdflib.namespace import OWL, RDFS, XSD
+from rdflib.namespace import OWL, RDFS
 from langchain_neo4j import Neo4jGraph
 from loguru import logger
 from src.config.settings import neo4j_config
 
 # Define Namespaces
 DBO = Namespace("http://dbpedia.org/ontology/")
-DBR_VI = Namespace("http://vi.dbpedia.org/resource/")
+DBR_VI = Namespace("http://dbpedia.org/resource/")
 DBR_EN = Namespace("http://dbpedia.org/resource/")
 
 class RDFExporter:

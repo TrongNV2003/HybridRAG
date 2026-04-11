@@ -239,6 +239,11 @@ class QdrantVectorStore(QdrantSearchMixin):
     
     def get_collection_info(self, name: str) -> Optional[Dict[str, Any]]:
         """Get collection information"""
+        
+        # First check if the collection exists
+        if not self.collection_exists(name):
+            return None
+            
         client = self._get_client()
         
         try:

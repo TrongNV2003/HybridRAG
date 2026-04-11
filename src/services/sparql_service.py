@@ -35,13 +35,13 @@ class SparqlService:
             logger.error(f"RDF synchronization FAILED: {e}")
             return False
 
-    def execute_query(self, query: str, auto_sync: bool = True) -> Tuple[List[Dict[str, Any]], List[str], bool]:
+    def execute_query(self, query: str, auto_sync: bool = False) -> Tuple[List[Dict[str, Any]], List[str], bool]:
         """
-        Execute a SPARQL query using Neosemantics (n10s) directly on Neo4j.
+        Execute a SPARQL query using rdflib on a synchronized RDF snapshot.
         
         Args:
             query (str): The SPARQL query string.
-            auto_sync (bool): Whether to sync the static RDF file (for export purposes).
+            auto_sync (bool): Whether to sync the static RDF file first.
             
         Returns:
             Tuple: (results, variables, sync_completed)
@@ -50,29 +50,39 @@ class SparqlService:
         if auto_sync:
             sync_completed = self.sync_rdf()
         
-        logger.info("Executing SPARQL query via Neosemantics (n10s) natively on Neo4j...")
-        
-        # Use n10s.sparql.query procedure in Neo4j
-        # This executes the SPARQL query directly on the property graph using mappings
-        cypher_query = "CALL n10s.sparql.query($sparql) YIELD keys, row"
+        logger.info("Executing SPARQL query via rdflib on local RDF snapshot...")
         
         try:
-            records = self.graph_db.query(cypher_query, {"sparql": query})
+            # Parse/Refresh the RDF graph from the synchronized file
+            if os.path.exists(self.rdf_file_path):
+                self.rdf_graph = Graph()
+                self.rdf_graph.parse(self.rdf_file_path, format="turtle")
+            else:
+                logger.warning(f"RDF file {self.rdf_file_path} not found. Attempting a fresh sync...")
+                self.sync_rdf()
+                if os.path.exists(self.rdf_file_path):
+                    self.rdf_graph.parse(self.rdf_file_path, format="turtle")
+                else:
+                    return [], [], sync_completed
             
-            if not records:
-                return [], [], sync_completed
-                
-            variables = records[0].get("keys", [])
+            # Execute query using rdflib's SPARQL engine
+            query_res = self.rdf_graph.query(query)
+            
+            # Extract variables (column names)
+            variables = [str(var) for var in query_res.vars]
+            
+            # Format results into list of dictionaries
             results = []
-            
-            for record in records:
-                row_data = record.get("row", {})
-                # Format each row to match SparqlResponse schema
-                formatted_row = {var: str(row_data.get(var)) if row_data.get(var) is not None else None for var in variables}
+            for row in query_res:
+                formatted_row = {}
+                for var in variables:
+                    # Accessing attribute by variable name for rdflib ResultRow
+                    val = getattr(row, var)
+                    formatted_row[var] = str(val) if val is not None else None
                 results.append(formatted_row)
                 
             return results, variables, sync_completed
             
         except Exception as e:
-            logger.error(f"SPARQL query via n10s failed: {e}")
+            logger.error(f"SPARQL query via rdflib failed: {e}")
             raise e
