@@ -22,12 +22,26 @@ RELATIONSHIP_MAP = {
     "anh_của": "relative",
     "chị_của": "relative",
     "em_của": "relative",
-    "tác_giả_của": "author",
+    "là_tác_giả_của": "author",
     "là_thành_viên_của": "member",
     "thuộc_quốc_gia": "country",
     "thuộc_tỉnh": "province",
     "nằm_trong": "isPartOf",
     "là_thủ_đô_của": "capital",
+    "là_tên_khác_của": "alias",
+    "lãnh_đạo_của": "commander",
+}
+
+# Entity type mapping for standardizing DBO classes
+ENTITY_TYPE_MAP = {
+    "người": "Person",
+    "địa_điểm": "Place",
+    "tổ_chức": "Organisation",
+    "sự_kiện": "Event",
+    "tác_phẩm": "Work",
+    "quốc_gia": "Country",
+    "tỉnh": "Province",
+    "thành_phố": "City",
 }
 
 class RDFExporter:
@@ -60,7 +74,8 @@ class RDFExporter:
             subject_uri = DBR_VI[node_id]
             
             # rdf:type
-            entity_type = node.get('entity_type', 'Thing')
+            raw_type = node.get('entity_type', 'Thing')
+            entity_type = ENTITY_TYPE_MAP.get(raw_type.lower(), raw_type)
             self.rdf_graph.add((subject_uri, RDF.type, DBO[entity_type]))
             
             # rdfs:label

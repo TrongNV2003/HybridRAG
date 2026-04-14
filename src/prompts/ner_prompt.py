@@ -8,16 +8,17 @@ EXTRACT_PROMPT_TEMPLATE = (
     "- Analyze the following Vietnamese text and extract entities and relationships between them following DBPedia standards.\n"
     "1.  **Entities:**\n"
     "- Each entity must have an 'id' (name), 'entity_type', and 'entity_role'.\n"
-    "- Use standard DBPedia types: Person, Place, Organisation, Work, Event, Species, etc.\n"
+    "- Strictly use one of the following for 'entity_type': 'người', 'địa_điểm', 'tổ_chức', 'sự_kiện', 'tác_phẩm', 'quốc_gia', 'tỉnh', 'thành_phố'.\n"
     "- 'entity_role' should describe the entity's specific role in the context (e.g., 'Nhà cách mạng', 'Thủ đô').\n"
     "2.  **Relationships:**\n"
-    "    - Use meaningful relationship types. Preferred English names: 'birthPlace', 'deathPlace', 'parent', 'author', 'country', 'locatedIn'.\n"
-    "    - If an English term is not available, use Vietnamese: 'sinh_tại', 'là_thủ_đô_của', 'thành_viên_của', 'tác_giả_của', 'thuộc_tỉnh'.\n"
-    '    - `source` and `target` MUST match exactly the `id` field of the extracted nodes.\n'
+    "    - Use meaningful relationship types in VIETNAMESE ONLY.\n"
+    "    - Strictly use the following keywords if applicable: 'sinh_tại', 'mất_tại', 'là_thành_viên_của', 'là_tác_giả_của', 'thuộc_quốc_gia', 'nằm_trong', 'là_tên_khác_của', 'lãnh_đạo_của', 'con_của', 'vợ_của', 'chồng_của'.\n"
+    "    - DO NOT use English terms like 'birthPlace', 'SAMEAS', 'locatedIn'.\n"
+    "    - `source` and `target` MUST match exactly the `id` field of the extracted nodes.\n"
     "\n"
     "## Example output (valid JSON):\n"
-    '{"nodes": [{"id": "Hồ Chí Minh", "entity_type": "Person", "entity_role": "Nhà cách mạng"}],\n'
-    '"relationships": [{"source": "Hồ Chí Minh", "target": "Nghệ An", "relationship_type": "birthPlace"}]}\n'
+    '{"nodes": [{"id": "Hồ Chí Minh", "entity_type": "người", "entity_role": "Nhà cách mạng"}],\n'
+    '"relationships": [{"source": "Hồ Chí Minh", "target": "Nghệ An", "relationship_type": "sinh_tại"}]}\n'
     "\n"
     "### Execute with the following input (Vietnamese Text)\n"
     "<input>\n"

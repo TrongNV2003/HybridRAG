@@ -10,6 +10,7 @@ interface IndexingPanelProps {
 const IndexingPanel: React.FC<IndexingPanelProps> = ({ onIndexingComplete }) => {
   const [query, setQuery] = useState('Elizabeth I');
   const [maxDocs, setMaxDocs] = useState(10);
+  const [clearOld, setClearOld] = useState(false);
   const [isIndexing, setIsIndexing] = useState(false);
   const [result, setResult] = useState<IndexingResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -23,7 +24,7 @@ const IndexingPanel: React.FC<IndexingPanelProps> = ({ onIndexingComplete }) => 
     setResult(null);
 
     try {
-      const response = await indexingApi.wikipedia(query, maxDocs);
+      const response = await indexingApi.wikipedia(query, maxDocs, clearOld);
       setResult(response.data);
       onIndexingComplete(response.data);
     } catch (err: any) {
@@ -67,6 +68,18 @@ const IndexingPanel: React.FC<IndexingPanelProps> = ({ onIndexingComplete }) => 
             disabled={isIndexing}
             className="indexing-number-input"
           />
+        </div>
+
+        <div className="form-group checkbox-group">
+          <label className="checkbox-container">
+            <input 
+              type="checkbox" 
+              checked={clearOld} 
+              onChange={(e) => setClearOld(e.target.checked)}
+              disabled={isIndexing}
+            />
+            <span className="checkbox-label">Clear existing graph data before indexing</span>
+          </label>
         </div>
 
         <button type="submit" className="index-btn" disabled={isIndexing}>

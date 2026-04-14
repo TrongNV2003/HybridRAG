@@ -91,7 +91,7 @@ class GraphIndexing:
                 
                 article_id = chunk.metadata.get("id", "")
                 en_url = None
-                if node_id.lower() == article_id.lower():
+                if node_id.lower().replace(" ", "_") == article_id.lower().replace(" ", "_"):
                     en_url = chunk.metadata.get("en_dbpedia_url")
 
                 cleaned_nodes.append({
