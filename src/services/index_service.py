@@ -88,11 +88,17 @@ class GraphIndexing:
 
             for node in extracted_data.get("nodes", []):
                 node_id = self.postprocessor(node.get("id", ""))
+                
+                article_id = chunk.metadata.get("id", "")
+                en_url = None
+                if node_id.lower() == article_id.lower():
+                    en_url = chunk.metadata.get("en_dbpedia_url")
+
                 cleaned_nodes.append({
                     "id": node_id,
                     "entity_type": self.postprocessor(node.get("entity_type", "")),
                     "entity_role": self.postprocessor(node.get("entity_role", "")),
-                    "en_dbpedia_url": chunk.metadata.get("en_dbpedia_url", None),
+                    "en_dbpedia_url": en_url,
                     "reference": chunk.metadata.get("reference", "Unknown")
                 })
                 # Link Chunk -> Entity

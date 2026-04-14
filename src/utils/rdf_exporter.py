@@ -7,8 +7,28 @@ from src.config.settings import neo4j_config
 
 # Define Namespaces
 DBO = Namespace("http://dbpedia.org/ontology/")
-DBR_VI = Namespace("http://dbpedia.org/resource/")
+DBR_VI = Namespace("http://vi.dbpedia.org/resource/")
 DBR_EN = Namespace("http://dbpedia.org/resource/")
+
+# Relationship mapping from Vietnamese/LLM-extracted terms to standard DBO predicates
+RELATIONSHIP_MAP = {
+    "sinh_tại": "birthPlace",
+    "mất_tại": "deathPlace",
+    "cha_của": "parent",
+    "mẹ_của": "parent",
+    "vợ_của": "spouse",
+    "chồng_của": "spouse",
+    "con_của": "child",
+    "anh_của": "relative",
+    "chị_của": "relative",
+    "em_của": "relative",
+    "tác_giả_của": "author",
+    "là_thành_viên_của": "member",
+    "thuộc_quốc_gia": "country",
+    "thuộc_tỉnh": "province",
+    "nằm_trong": "isPartOf",
+    "là_thủ_đô_của": "capital",
+}
 
 class RDFExporter:
     """
@@ -64,7 +84,11 @@ class RDFExporter:
         for rel in rels:
             source_uri = DBR_VI[rel['source'].replace(" ", "_")]
             target_uri = DBR_VI[rel['target'].replace(" ", "_")]
-            predicate_uri = DBO[rel['type'].lower()]
+            
+            raw_type = rel['type']
+            # Map Vietnamese/Raw type to standard English DBO property if exists
+            mapped_type = RELATIONSHIP_MAP.get(raw_type.lower(), raw_type)
+            predicate_uri = DBO[mapped_type]
             
             self.rdf_graph.add((source_uri, predicate_uri, target_uri))
 

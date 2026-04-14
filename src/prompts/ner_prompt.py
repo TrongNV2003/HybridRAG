@@ -1,4 +1,4 @@
-EXTRACT_SYSTEM_PROMPT = """You are an AI assistant expert in knowledge extraction for DBPedia. Your task is to extract entities and their relationships from text and return them as valid JSON. Follow the DBPedia ontology standards (Person, Place, Organisation, etc.) strictly."""
+EXTRACT_SYSTEM_PROMPT = """You are an AI assistant expert in knowledge extraction for DBPedia. Your task is to extract entities and their relationships from text and return them as valid JSON. Follow the DBPedia ontology standards (Person, Place, Organisation, etc.) strictly. Use standard English predicate names for relationships if possible."""
 
 EXTRACT_PROMPT_TEMPLATE = (
     "### Role:\n"
@@ -11,12 +11,13 @@ EXTRACT_PROMPT_TEMPLATE = (
     "- Use standard DBPedia types: Person, Place, Organisation, Work, Event, Species, etc.\n"
     "- 'entity_role' should describe the entity's specific role in the context (e.g., 'Nhà cách mạng', 'Thủ đô').\n"
     "2.  **Relationships:**\n"
-    "    - Use meaningful relationship types like: 'sinh_tại', 'là_thủ_đô_của', 'thành_viên_của', 'tác_giả_của', 'thuộc_tỉnh'.\n"
+    "    - Use meaningful relationship types. Preferred English names: 'birthPlace', 'deathPlace', 'parent', 'author', 'country', 'locatedIn'.\n"
+    "    - If an English term is not available, use Vietnamese: 'sinh_tại', 'là_thủ_đô_của', 'thành_viên_của', 'tác_giả_của', 'thuộc_tỉnh'.\n"
     '    - `source` and `target` MUST match exactly the `id` field of the extracted nodes.\n'
     "\n"
     "## Example output (valid JSON):\n"
     '{"nodes": [{"id": "Hồ Chí Minh", "entity_type": "Person", "entity_role": "Nhà cách mạng"}],\n'
-    '"relationships": [{"source": "Hồ Chí Minh", "target": "Nghệ An", "relationship_type": "sinh_tại"}]}\n'
+    '"relationships": [{"source": "Hồ Chí Minh", "target": "Nghệ An", "relationship_type": "birthPlace"}]}\n'
     "\n"
     "### Execute with the following input (Vietnamese Text)\n"
     "<input>\n"
