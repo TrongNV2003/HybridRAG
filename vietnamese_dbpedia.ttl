@@ -1,0 +1,3272 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbr-en: <http://dbpedia.org/resource/> .
+@prefix dbr-vi: <http://vi.dbpedia.org/resource/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+dbr-vi:Aleksey_Kosygin a dbo:Person ;
+    rdfs:label "Aleksey Kosygin"@vi ;
+    dbo:commander dbr-vi:Đảng_Cộng_sản_Liên_Xô ;
+    rdfs:comment "Chủ tịch Hội đồng Bộ trưởng Liên Xô"@vi .
+
+dbr-vi:Ban_Chấp_hành_Đảng_bộ_Thành_phố_Hồ_Chí_Minh a dbo:Organisation ;
+    rdfs:label "Ban Chấp hành Đảng bộ Thành phố Hồ Chí Minh"@vi ;
+    dbo:member dbr-vi:Đảng_bộ_Thành_phố_Hồ_Chí_Minh ;
+    rdfs:comment "Ban Chấp hành của Đảng bộ Thành phố Hồ Chí Minh"@vi .
+
+dbr-vi:Ban_Thường_vụ_Thành_ủy a dbo:Organisation ;
+    rdfs:label "Ban Thường vụ Thành ủy"@vi ;
+    dbo:alias dbr-vi:Ban_Thường_vụ_Thành_ủy_Thành_phố_Hồ_Chí_Minh ;
+    dbo:member dbr-vi:Ban_Bí_thư,
+        dbr-vi:Ban_Chấp_hành_Đảng_bộ_Thành_phố,
+        dbr-vi:Bộ_Chính_trị,
+        dbr-vi:Thành_ủy_Thành_phố_Hồ_Chí_Minh ;
+    rdfs:comment "Tên gọi tắt của Ban Thường vụ Thành ủy Thành phố Hồ Chí Minh"@vi .
+
+dbr-vi:Ban_phụ_trách_quy_hoạch_A a dbo:Organisation ;
+    rdfs:label "Ban phụ trách quy hoạch A"@vi ;
+    dbo:member dbr-vi:Nguyễn_Lương_Bằng,
+        dbr-vi:Phùng_Thế_Tài,
+        dbr-vi:Trần_Quốc_Hoàn ;
+    rdfs:comment "Ban phụ trách quy hoạch xây dựng Lăng Hồ Chủ tịch"@vi .
+
+dbr-vi:Ban_tang_lễ_Đại_tướng_Võ_Nguyên_Giáp a dbo:Organisation ;
+    rdfs:label "Ban tang lễ Đại tướng Võ Nguyên Giáp"@vi ;
+    dbo:commander dbr-vi:Tổng_Bí_thư_Nguyễn_Phú_Trọng ;
+    dbo:member dbr-vi:Đại_tướng_Võ_Nguyên_Giáp ;
+    rdfs:comment "Ban tang lễ"@vi .
+
+dbr-vi:Bình_Phước_cũ a dbo:Place ;
+    rdfs:label "Bình Phước cũ"@vi ;
+    dbo:country dbr-vi:Việt_Nam ;
+    rdfs:comment "Tỉnh cũ"@vi .
+
+dbr-vi:Bắc_Sơn a dbo:Place ;
+    rdfs:label "Bắc Sơn"@vi ;
+    rdfs:comment "huyện"@vi .
+
+dbr-vi:Bộ_Chính_trị_Ban_Chấp_hành_Trung_ương_Đảng_khóa_III a dbo:Organisation ;
+    rdfs:label "Bộ Chính trị Ban Chấp hành Trung ương Đảng khóa III"@vi ;
+    dbo:GIỮ_GÌN_THI_HÀI_CỦA dbr-vi:Chủ_tịch_Hồ_Chí_Minh ;
+    rdfs:comment "Tổ chức chính trị"@vi .
+
+dbr-vi:Bộ_Chính_trị_số_151 a dbo:Work ;
+    rdfs:label "Bộ Chính trị số 151"@vi ;
+    dbo:CÔNG_BỐ dbr-vi:Ban_Chấp_hành_Trung_ương_Đảng_khóa_VI ;
+    dbo:author dbr-vi:Bộ_Chính_trị ;
+    rdfs:comment "Thông báo của Bộ Chính trị"@vi .
+
+dbr-vi:Bộ_Chính_trị_Đảng_Lao_động_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Bộ Chính trị Đảng Lao động Việt Nam"@vi ;
+    dbo:ĐỀ_NGHỊ_TÊN_GỌI_THAY_THẾ dbr-vi:Chiến_dịch_Hồ_Chí_Minh ;
+    rdfs:comment "Bộ Chính trị"@vi .
+
+dbr-vi:Bộ_Công_an a dbo:Organisation ;
+    rdfs:label "Bộ Công an"@vi ;
+    dbo:member dbr-vi:Hội_đồng_Quốc_phòng_và_An_ninh ;
+    rdfs:comment "Cơ quan nhà nước"@vi .
+
+dbr-vi:Bộ_trưởng_Bộ_Công_an a dbo:Person ;
+    rdfs:label "Bộ trưởng Bộ Công an"@vi ;
+    dbo:member dbr-vi:Hội_đồng_Quốc_phòng_và_An_ninh_Việt_Nam ;
+    rdfs:comment "Ủy viên của Hội đồng Quốc phòng và An ninh Việt Nam"@vi .
+
+dbr-vi:Bộ_trưởng_Bộ_Ngoại_giao a dbo:Person ;
+    rdfs:label "Bộ trưởng Bộ Ngoại giao"@vi ;
+    dbo:member dbr-vi:Hội_đồng_Quốc_phòng_và_An_ninh_Việt_Nam ;
+    rdfs:comment "Ủy viên của Hội đồng Quốc phòng và An ninh Việt Nam"@vi .
+
+dbr-vi:Bộ_trưởng_Bộ_Quốc_phòng a dbo:Person ;
+    rdfs:label "Bộ trưởng Bộ Quốc phòng"@vi ;
+    dbo:member dbr-vi:Hội_đồng_Quốc_phòng_và_An_ninh_Việt_Nam ;
+    rdfs:comment "Ủy viên của Hội đồng Quốc phòng và An ninh Việt Nam"@vi .
+
+dbr-vi:CIA a dbo:Organisation ;
+    rdfs:label "CIA"@vi ;
+    dbo:GIẢ_DANH dbr-vi:Đài_Phát_thanh_Giải_phóng ;
+    dbo:alias dbr-vi:Cơ_quan_Tình_báo_Trung_ương_Mỹ ;
+    rdfs:comment "Cơ quan tình báo"@vi .
+
+dbr-vi:Cao_Văn_Viên a dbo:Person ;
+    rdfs:label "Cao Văn Viên"@vi ;
+    dbo:member dbr-vi:Nguyễn_Văn_Thiệu ;
+    rdfs:comment "Tướng dưới quyền"@vi .
+
+dbr-vi:Charles_de_Gaulle a dbo:Person ;
+    rdfs:label "Charles de Gaulle"@vi ;
+    dbo:commander dbr-vi:Pháp ;
+    rdfs:comment "Lãnh đạo Pháp"@vi .
+
+dbr-vi:Chiến_dịch_Phan_Rang_-_Xuân_Lộc a dbo:Event ;
+    rdfs:label "Chiến dịch Phan Rang - Xuân Lộc"@vi ;
+    dbo:member dbr-vi:Quân_Giải_phóng ;
+    rdfs:comment "Chiến dịch quân sự"@vi .
+
+dbr-vi:Chiến_dịch_Điện_Biên_Phủ a dbo:Event ;
+    rdfs:label "Chiến dịch Điện Biên Phủ"@vi ;
+    dbo:isPartOf dbr-vi:Chiến_tranh_Đông_Dương ;
+    rdfs:comment "Chiến dịch quân sự"@vi .
+
+dbr-vi:Chiến_tranh_thế_giới_thứ_hai a dbo:Event ;
+    rdfs:label "Chiến tranh thế giới thứ hai"@vi ;
+    rdfs:comment "Cuộc chiến tranh"@vi .
+
+dbr-vi:Chiến_tranh_Đông_Dương_lần_thứ_nhất a dbo:Event ;
+    rdfs:label "Chiến tranh Đông Dương lần thứ nhất"@vi ;
+    dbo:isPartOf dbr-vi:Miền_Nam_Việt_Nam ;
+    rdfs:comment "Cuộc chiến tranh"@vi .
+
+dbr-vi:Choummaly_Sayasone a dbo:Person ;
+    rdfs:label "Choummaly Sayasone"@vi ;
+    dbo:commander dbr-vi:CHDCND_Lào ;
+    rdfs:comment "Tổng Bí thư Ban Chấp hành Trung ương Đảng Nhân dân Cách mạng Lào"@vi .
+
+dbr-vi:Chu_Đạt_Quan a dbo:Person ;
+    rdfs:label "Chu Đạt Quan"@vi ;
+    rdfs:comment "Tác giả sách Chân Lạp phong thổ ký"@vi .
+
+dbr-vi:Chân_Lạp a dbo:Place ;
+    rdfs:label "Chân Lạp"@vi ;
+    rdfs:comment "Vùng đất"@vi .
+
+dbr-vi:Chín_Dũng a dbo:Person ;
+    rdfs:label "Chín Dũng"@vi ;
+    dbo:alias dbr-vi:Võ_Văn_Kiệt ;
+    rdfs:comment "Bí danh của Võ Văn Kiệt"@vi .
+
+dbr-vi:Chính_phủ_Cách_mạng_lâm_thời_Cộng_hòa_miền_Nam_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Chính phủ Cách mạng lâm thời Cộng hòa miền Nam Việt Nam"@vi ;
+    dbo:TIẾP_QUAN_TẠI dbr-vi:Đồng_bằng_sông_Cửu_Long ;
+    rdfs:comment "Chính phủ tiếp quản"@vi .
+
+dbr-vi:Chính_phủ_Liên_Xô a dbo:Organisation ;
+    rdfs:label "Chính phủ Liên Xô"@vi ;
+    dbo:HỖ_TRỢ_THIẾT_KẾ dbr-vi:Lăng_Hồ_Chủ_tịch ;
+    dbo:country dbr-vi:Việt_Nam ;
+    rdfs:comment "Chính phủ"@vi .
+
+dbr-vi:Chúa_Nguyễn a dbo:Person ;
+    rdfs:label "Chúa Nguyễn"@vi ;
+    dbo:commander dbr-vi:Nam_Bộ ;
+    rdfs:comment "Lãnh đạo công cuộc khai phá miền Nam"@vi .
+
+dbr-vi:Chợ_Lớn a dbo:Place ;
+    rdfs:label "Chợ Lớn"@vi ;
+    dbo:isPartOf dbr-vi:Sài_Gòn ;
+    rdfs:comment "Khu vực có đông người Hoa sinh sống thế kỷ 18"@vi .
+
+dbr-vi:Chủ_nghĩa_Mác_-_Lênin a dbo:Work ;
+    rdfs:label "Chủ nghĩa Mác - Lênin"@vi ;
+    rdfs:comment "Hệ tư tưởng chính trị"@vi .
+
+dbr-vi:Chủ_nghĩa_cộng_sản a dbo:Work ;
+    rdfs:label "Chủ nghĩa cộng sản"@vi ;
+    rdfs:comment "Hệ tư tưởng chính trị"@vi .
+
+dbr-vi:Chủ_nhiệm_Uỷ_ban_Nhà_nước a dbo:Person ;
+    rdfs:label "Chủ nhiệm Uỷ ban Nhà nước"@vi ;
+    rdfs:comment "Chức vụ"@vi .
+
+dbr-vi:Chủ_nhiệm_các_Uỷ_ban_Nhà_nước a dbo:Person ;
+    rdfs:label "Chủ nhiệm các Uỷ ban Nhà nước"@vi ;
+    dbo:member dbr-vi:Hội_đồng_Chính_phủ ;
+    rdfs:comment "Chức vụ"@vi .
+
+dbr-vi:Chủ_tịch_nước_Việt_Nam a dbo:Person ;
+    rdfs:label "Chủ tịch nước Việt Nam"@vi ;
+    dbo:commander dbr-vi:Hội_đồng_Quốc_phòng_và_An_ninh_Việt_Nam ;
+    rdfs:comment "Chủ tịch của Hội đồng Quốc phòng và An ninh Việt Nam"@vi .
+
+dbr-vi:Cách_mạng_Tháng_Tám a dbo:Event ;
+    rdfs:label "Cách mạng Tháng Tám"@vi ;
+    rdfs:comment "Cuộc cách mạng"@vi .
+
+dbr-vi:Công_an_nhân_dân a dbo:Organisation ;
+    rdfs:label "Công an nhân dân"@vi ;
+    dbo:member <http://vi.dbpedia.org/resource/Bộ,_ban,_ngành> ;
+    rdfs:comment "Lực lượng công an"@vi .
+
+dbr-vi:Cộng_hòa_Miền_Nam_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Cộng hòa Miền Nam Việt Nam"@vi ;
+    dbo:commander <http://vi.dbpedia.org/resource/Thành_phố_Sài_Gòn_–_Gia_Định> ;
+    rdfs:comment "Nhà nước"@vi .
+
+dbr-vi:Cụ_Phó_bảng a dbo:Person ;
+    rdfs:label "Cụ Phó bảng"@vi ;
+    dbo:alias dbr-vi:Nguyễn_Sinh_Sắc ;
+    rdfs:comment "Biệt danh của Nguyễn Sinh Sắc"@vi .
+
+dbr-vi:Daniel_Grandcléme a dbo:Person ;
+    rdfs:label "Daniel Grandcléme"@vi ;
+    dbo:author dbr-vi:Trần_Trọng_Kim ;
+    rdfs:comment "Tác giả"@vi .
+
+dbr-vi:Franklin_D._Roosevelt a dbo:Person ;
+    rdfs:label "Franklin D. Roosevelt"@vi ;
+    dbo:member dbr-vi:Hoa_Kỳ ;
+    rdfs:comment "Tổng thống Hoa Kỳ"@vi .
+
+dbr-vi:Gia_đình_cụ_Nghiêm a dbo:Organisation ;
+    rdfs:label "Gia đình cụ Nghiêm"@vi ;
+    dbo:VAY_NỢ_TỪ dbr-vi:nhà_Khóa_Uy ;
+    rdfs:comment "Gia đình nghèo"@vi .
+
+dbr-vi:Giai_cấp_công_nhân_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Giai cấp công nhân Việt Nam"@vi ;
+    dbo:MÂU_THUẪN_VỚI dbr-vi:Giai_cấp_tư_sản ;
+    rdfs:comment "Giai cấp xã hội"@vi .
+
+dbr-vi:Giới_lãnh_đạo_quân_sự_Nhật a dbo:Organisation ;
+    rdfs:label "Giới lãnh đạo quân sự Nhật"@vi ;
+    dbo:HỦY_BỎ_KẾ_HOẠCH dbr-vi:Cường_Để,
+        dbr-vi:Ngô_Đình_Diệm ;
+    dbo:country dbr-vi:Nhật_Bản ;
+    rdfs:comment "Lãnh đạo quân sự"@vi .
+
+dbr-vi:Hiến_pháp_1959 a dbo:Work ;
+    rdfs:label "Hiến pháp 1959"@vi ;
+    rdfs:comment "Hiến pháp"@vi .
+
+dbr-vi:Hiến_pháp_2013 a dbo:Work ;
+    rdfs:label "Hiến pháp 2013"@vi ;
+    dbo:QUY_ĐỊNH_CẤU_TRÚC_CỦA dbr-vi:Chính_phủ ;
+    rdfs:comment "Văn bản pháp luật"@vi .
+
+dbr-vi:Hiệp_ước_Harmand a dbo:Event ;
+    rdfs:label "Hiệp ước Harmand"@vi ;
+    dbo:alias dbr-vi:Đế_quốc_Pháp ;
+    dbo:country dbr-vi:An_Nam ;
+    rdfs:comment "Hiệp ước"@vi .
+
+dbr-vi:Hiệp_ước_Patenôtre a dbo:Event ;
+    rdfs:label "Hiệp ước Patenôtre"@vi ;
+    dbo:country dbr-vi:Việt_Nam ;
+    rdfs:comment "Hiệp ước"@vi .
+
+dbr-vi:Huân_chương_Quân_công_hạng_Nhất a dbo:Work ;
+    rdfs:label "Huân chương Quân công hạng Nhất"@vi ;
+    rdfs:comment "Huân chương cao quý của Việt Nam"@vi .
+
+dbr-vi:Huân_chương_Độc_lập_hạng_Nhất a dbo:Work ;
+    rdfs:label "Huân chương Độc lập hạng Nhất"@vi ;
+    rdfs:comment "Huân chương cao quý của Việt Nam"@vi .
+
+dbr-vi:Hà_Thị_Hy a dbo:Person ;
+    rdfs:label "Hà Thị Hy"@vi ;
+    dbo:parent dbr-vi:Nguyễn_Sinh_Sắc ;
+    rdfs:comment "Mẹ của Nguyễn Sinh Sắc"@vi .
+
+dbr-vi:Hàn_Quốc a dbo:Place ;
+    rdfs:label "Hàn Quốc"@vi ;
+    dbo:member dbr-vi:Việt_Nam_Cộng_hòa ;
+    rdfs:comment "Đồng minh phương Tây"@vi .
+
+<http://vi.dbpedia.org/resource/Hòa_Lạc_–_Xuân_Mai> a dbo:Place ;
+    rdfs:label "Hòa Lạc – Xuân Mai"@vi ;
+    dbo:BẮT_ĐẦU_TẠI dbr-vi:Hòa_Lạc ;
+    dbo:KẾT_THÚC_TẠI dbr-vi:Xuân_Mai ;
+    rdfs:comment "Đoạn đường"@vi .
+
+dbr-vi:Hồ_Chủ_Tịch a dbo:Person ;
+    rdfs:label "Hồ Chủ Tịch"@vi ;
+    dbo:alias dbr-vi:Chủ_tịch_Hồ_Chí_Minh .
+
+dbr-vi:Hội_nghị_bất_thường_của_Ban_Chấp_hành_Trung_ương_Đảng a dbo:Event ;
+    rdfs:label "Hội nghị bất thường của Ban Chấp hành Trung ương Đảng"@vi ;
+    dbo:GIAO_TRÁCH_NHIỆM_CHO dbr-vi:Bộ_Chính_trị ;
+    dbo:member dbr-vi:Ban_Chấp_hành_Trung_ương_Đảng ;
+    rdfs:comment "Hội nghị bất thường"@vi .
+
+dbr-vi:Hội_trường_Thống_Nhất a dbo:Place ;
+    rdfs:label "Hội trường Thống Nhất"@vi ;
+    dbo:isPartOf dbr-vi:Thành_phố_Hồ_Chí_Minh ;
+    rdfs:comment "Hội trường"@vi .
+
+dbr-vi:Hội_trường_Thống_Nhất_Thành_phố_Hồ_Chí_Minh a dbo:Place ;
+    rdfs:label "Hội trường Thống Nhất Thành phố Hồ Chí Minh"@vi ;
+    dbo:isPartOf dbr-vi:Thành_phố_Hồ_Chí_Minh ;
+    rdfs:comment "Hội trường"@vi .
+
+dbr-vi:Hội_đồng_Quốc_phòng_Tối_cao a dbo:Organisation ;
+    rdfs:label "Hội đồng Quốc phòng Tối cao"@vi ;
+    dbo:alias dbr-vi:Hội_đồng_Quốc_phòng_và_An_ninh ;
+    rdfs:comment "Tên gọi trước đây của Hội đồng Quốc phòng và An ninh"@vi .
+
+dbr-vi:Hội_đồng_nhân_dân_Thành_phố_Hồ_Chí_Minh a dbo:Organisation ;
+    rdfs:label "Hội đồng nhân dân Thành phố Hồ Chí Minh"@vi ;
+    rdfs:comment "Cơ quan lập pháp của Thành phố Hồ Chí Minh"@vi .
+
+dbr-vi:Hội_đồng_nhân_dân_thành_phố a dbo:Organisation ;
+    rdfs:label "Hội đồng nhân dân thành phố"@vi ;
+    dbo:isPartOf dbr-vi:Thành_phố_Hồ_Chí_Minh ;
+    rdfs:comment "Cơ quan quyền lực của Thành phố Hồ Chí Minh"@vi .
+
+dbr-vi:Hội_đồng_nhân_dân_thành_phố_Hải_Phòng a dbo:Organisation ;
+    rdfs:label "Hội đồng nhân dân thành phố Hải Phòng"@vi ;
+    dbo:commander dbr-vi:Cầu_Võ_Nguyên_Giáp ;
+    rdfs:comment "Tổ chức chính quyền địa phương"@vi .
+
+dbr-vi:Liên_hợp_quốc a dbo:Organisation ;
+    rdfs:label "Liên hợp quốc"@vi ;
+    dbo:member dbr-vi:Hội_đồng_Quốc_phòng_và_An_ninh ;
+    rdfs:comment "Tổ chức quốc tế"@vi .
+
+dbr-vi:Làng_Chùa a dbo:Place ;
+    rdfs:label "Làng Chùa"@vi ;
+    dbo:alias dbr-vi:Làng_Hoàng_Trù ;
+    rdfs:comment "Tên Nôm của làng Hoàng Trù"@vi .
+
+dbr-vi:Lê_Duẩn a dbo:Person ;
+    rdfs:label "Lê Duẩn"@vi ;
+    dbo:LIÊN_HỆ_VỚI dbr-vi:Liên_Xô ;
+    dbo:member dbr-vi:Di_chúc_của_Chủ_tịch_Hồ_Chí_Minh,
+        dbr-vi:Đảng_Cộng_sản_Việt_Nam ;
+    rdfs:comment "Nhà cách mạng"@vi .
+
+dbr-vi:Lê_Hữu_Đức a dbo:Person ;
+    rdfs:label "Lê Hữu Đức"@vi ;
+    dbo:member dbr-vi:Bộ_Quốc_phòng ;
+    rdfs:comment "Thứ trưởng Bộ Quốc phòng"@vi .
+
+dbr-vi:Lê_Khả_Phiêu a dbo:Person ;
+    rdfs:label "Lê Khả Phiêu"@vi ;
+    dbo:commander dbr-vi:Tổng_Bí_thư ;
+    rdfs:comment "Nguyên Tổng Bí thư"@vi .
+
+dbr-vi:Lê_Quý_Đôn a dbo:Person ;
+    rdfs:label "Lê Quý Đôn"@vi ;
+    rdfs:comment "Nhà sử học"@vi .
+
+dbr-vi:Lê_Thần_Tông a dbo:Person ;
+    rdfs:label "Lê Thần Tông"@vi ;
+    dbo:alias dbr-vi:Lê_Thánh_Đức ;
+    rdfs:comment "Tên khác của Lê Thánh Đức"@vi .
+
+dbr-vi:Lê_Trọng_Tấn a dbo:Person ;
+    rdfs:label "Lê Trọng Tấn"@vi ;
+    dbo:commander dbr-vi:Chiến_dịch_Hồ_Chí_Minh ;
+    rdfs:comment "Phó Tư lệnh Chiến dịch Hồ Chí Minh"@vi .
+
+dbr-vi:Lê_Đức_Anh a dbo:Person ;
+    rdfs:label "Lê Đức Anh"@vi ;
+    dbo:commander dbr-vi:Chiến_dịch_Hồ_Chí_Minh ;
+    rdfs:comment "Đại tướng"@vi .
+
+dbr-vi:Lăng_Bác a dbo:Place ;
+    rdfs:label "Lăng Bác"@vi ;
+    dbo:alias dbr-vi:Lăng_Chủ_tịch_Hồ_Chí_Minh ;
+    rdfs:comment "Tên khác của Lăng Chủ tịch Hồ Chí Minh"@vi .
+
+dbr-vi:Moscow a dbo:Place ;
+    rdfs:label "Moscow"@vi ;
+    dbo:country dbr-vi:Liên_Xô ;
+    rdfs:comment "Thủ đô"@vi .
+
+dbr-vi:Nguyễn_Bá_Cẩn a dbo:Person ;
+    rdfs:label "Nguyễn Bá Cẩn"@vi ;
+    dbo:member dbr-vi:Nguyễn_Văn_Thiệu ;
+    rdfs:comment "Thủ tướng"@vi .
+
+dbr-vi:Nguyễn_Dương_Lâm a dbo:Person ;
+    rdfs:label "Nguyễn Dương Lâm"@vi ;
+    dbo:author dbr-vi:Sài_Gòn ;
+    rdfs:comment "Thống suất"@vi .
+
+dbr-vi:Nguyễn_Hữu_Cảnh a dbo:Person ;
+    rdfs:label "Nguyễn Hữu Cảnh"@vi ;
+    dbo:commander dbr-vi:Huyện_Tân_Bình ;
+    rdfs:comment "Người lập huyện Tân Bình"@vi .
+
+dbr-vi:Nguyễn_Minh_Triết a dbo:Person ;
+    rdfs:label "Nguyễn Minh Triết"@vi ;
+    dbo:commander dbr-vi:Chủ_tịch_nước ;
+    rdfs:comment "Nguyên Chủ tịch nước"@vi .
+
+dbr-vi:Nguyễn_Phú_Trọng a dbo:Person ;
+    rdfs:label "Nguyễn Phú Trọng"@vi ;
+    rdfs:comment "Tổng Bí thư Ban Chấp hành Trung ương"@vi .
+
+dbr-vi:Nguyễn_Sinh_Côn a dbo:Person ;
+    rdfs:label "Nguyễn Sinh Côn"@vi ;
+    dbo:alias dbr-vi:Hồ_Chí_Minh ;
+    rdfs:comment "Tên lúc nhỏ của Hồ Chí Minh"@vi .
+
+dbr-vi:Nguyễn_Sinh_Huy a dbo:Person ;
+    rdfs:label "Nguyễn Sinh Huy"@vi ;
+    dbo:alias dbr-vi:Nguyễn_Sinh_Sắc ;
+    rdfs:comment "Tên khác của Nguyễn Sinh Sắc"@vi .
+
+dbr-vi:Nguyễn_Sinh_Hùng a dbo:Person ;
+    rdfs:label "Nguyễn Sinh Hùng"@vi ;
+    dbo:commander dbr-vi:Quốc_hội ;
+    rdfs:comment "Chủ tịch Quốc hội"@vi .
+
+dbr-vi:Nguyễn_Sinh_Khiêm a dbo:Person ;
+    rdfs:label "Nguyễn Sinh Khiêm"@vi ;
+    dbo:alias dbr-vi:Cả_Khiêm,
+        dbr-vi:Thầy_Nghệ,
+        dbr-vi:Tất_Đạt ;
+    dbo:child dbr-vi:Hoàng_Thị_Loan,
+        dbr-vi:Nguyễn_Sinh_Cung,
+        dbr-vi:Nguyễn_Sinh_Nhuận,
+        dbr-vi:Nguyễn_Thị_Thanh,
+        dbr-vi:cha_ông ;
+    dbo:relative dbr-vi:Nguyễn_Sinh_Cung ;
+    dbo:spouse dbr-vi:Nguyễn_Thị_Giáng ;
+    rdfs:comment "con thứ hai trong gia đình cụ Phó bảng, thầy thuốc và thầy địa lý"@vi .
+
+dbr-vi:Nguyễn_Sinh_Nhậm a dbo:Person ;
+    rdfs:label "Nguyễn Sinh Nhậm"@vi ;
+    dbo:child dbr-vi:Nguyễn_Sinh_Tài ;
+    dbo:parent dbr-vi:Nguyễn_Sinh_Sắc ;
+    rdfs:comment "Cha của Nguyễn Sinh Sắc"@vi .
+
+dbr-vi:Nguyễn_Thị_Từ a dbo:Person ;
+    rdfs:label "Nguyễn Thị Từ"@vi ;
+    dbo:child dbr-vi:Trường_Chinh ;
+    rdfs:comment "Mẹ của Trường Chinh"@vi .
+
+dbr-vi:Nguyễn_Tấn_Dũng a dbo:Person ;
+    rdfs:label "Nguyễn Tấn Dũng"@vi ;
+    dbo:commander dbr-vi:Chính_phủ ;
+    rdfs:comment "Thủ tướng Chính phủ"@vi .
+
+dbr-vi:Nguyễn_Văn_An a dbo:Person ;
+    rdfs:label "Nguyễn Văn An"@vi ;
+    dbo:commander dbr-vi:Chủ_tịch_Quốc_hội ;
+    rdfs:comment "Nguyên Chủ tịch Quốc hội"@vi .
+
+dbr-vi:Nguyễn_Văn_Cừ a dbo:Person ;
+    rdfs:label "Nguyễn Văn Cừ"@vi ;
+    dbo:commander dbr-vi:Đảng_Cộng_sản_Việt_Nam ;
+    rdfs:comment "Tổng bí thư Đảng Cộng sản Việt Nam"@vi .
+
+dbr-vi:Nguyễn_Văn_Hảo a dbo:Person ;
+    rdfs:label "Nguyễn Văn Hảo"@vi ;
+    dbo:member dbr-vi:Nguyễn_Văn_Thiệu ;
+    rdfs:comment "Bộ trưởng Kinh tế"@vi .
+
+dbr-vi:Nguyễn_Văn_Linh a dbo:Person ;
+    rdfs:label "Nguyễn Văn Linh"@vi ;
+    dbo:PHỤ_TRÁCH_CÔNG_TÁC_PHÁT_ĐỘNG_QUẦN_CHÚNG_NỔI_DẬY dbr-vi:Bộ_Chỉ_huy_Chiến_dịch_Giải_phóng_Sài_Gòn_-_Gia_Định ;
+    dbo:commander dbr-vi:Bộ_Chỉ_huy_Chiến_dịch_Giải_phóng_Sài_Gòn_-_Gia_Định ;
+    rdfs:comment "Lãnh đạo không phải quân nhân"@vi .
+
+dbr-vi:Ngày_19_tháng_5_năm_1959 a dbo:Event ;
+    rdfs:label "Ngày 19 tháng 5 năm 1959"@vi ;
+    dbo:QUYẾT_ĐỊNH_BỞI dbr-vi:Chủ_tịch_Hồ_Chí_Minh ;
+    rdfs:comment "quyết định thành lập tuyến vận tải chiến lược"@vi .
+
+dbr-vi:Ngày_3_tháng_2_năm_2004 a dbo:Event ;
+    rdfs:label "Ngày 3 tháng 2 năm 2004"@vi ;
+    dbo:BAN_HÀNH <http://vi.dbpedia.org/resource/Nghị_quyết_số_38/2004/QH11> ;
+    rdfs:comment "kỳ họp thứ 6, khóa XI, Quốc hội Việt Nam"@vi .
+
+dbr-vi:Ngày_5_tháng_4_năm_2000 a dbo:Event ;
+    rdfs:label "Ngày 5 tháng 4 năm 2000"@vi ;
+    dbo:KHỞI_CÔNG_XÂY_DỰNG dbr-vi:Đường_Hồ_Chí_Minh ;
+    rdfs:comment "Ngày khởi công"@vi .
+
+<http://vi.dbpedia.org/resource/Ngọc_Hồi_–_Tân_Cảnh> a dbo:Place ;
+    rdfs:label "Ngọc Hồi – Tân Cảnh"@vi ;
+    dbo:isPartOf dbr-vi:Thanh_Hóa ;
+    rdfs:comment "Đoạn đường"@vi .
+
+dbr-vi:Nhà_Nguyễn a dbo:Organisation ;
+    rdfs:label "Nhà Nguyễn"@vi ;
+    dbo:member dbr-vi:Việt_Nam ;
+    rdfs:comment "Chính quyền"@vi .
+
+dbr-vi:Nhà_nước_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Nhà nước Việt Nam"@vi ;
+    dbo:commander dbr-vi:Quân_đội_nhân_dân_Việt_Nam ;
+    rdfs:comment "Nhà nước"@vi .
+
+dbr-vi:Nhà_tang_lễ_Quốc_gia_số_5_Trần_Thánh_Tông a dbo:Place ;
+    rdfs:label "Nhà tang lễ Quốc gia số 5 Trần Thánh Tông"@vi ;
+    dbo:isPartOf dbr-vi:Hà_Nội ;
+    rdfs:comment "Nhà tang lễ"@vi .
+
+dbr-vi:Nhánh_Tây a dbo:Place ;
+    rdfs:label "Nhánh Tây"@vi ;
+    dbo:isPartOf dbr-vi:Hệ_thống_đường_Hồ_Chí_Minh ;
+    rdfs:comment "Nhánh đường"@vi .
+
+dbr-vi:Nhánh_Đông a dbo:Place ;
+    rdfs:label "Nhánh Đông"@vi ;
+    dbo:isPartOf dbr-vi:Hệ_thống_đường_Hồ_Chí_Minh ;
+    rdfs:comment "Nhánh đường"@vi .
+
+dbr-vi:Nhân_dân_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Nhân dân Việt Nam"@vi ;
+    dbo:TRUNG_THÀNH_VỚI dbr-vi:Đảng ;
+    rdfs:comment "Nhân dân lao động"@vi .
+
+dbr-vi:Nông_Đức_Mạnh a dbo:Person ;
+    rdfs:label "Nông Đức Mạnh"@vi ;
+    dbo:commander dbr-vi:Tổng_Bí_thư ;
+    rdfs:comment "Nguyên Tổng Bí thư"@vi .
+
+dbr-vi:Núi_Động_Tranh a dbo:Place ;
+    rdfs:label "Núi Động Tranh"@vi ;
+    dbo:isPartOf dbr-vi:Dãy_núi_Đại_Huệ ;
+    rdfs:comment "Núi"@vi .
+
+dbr-vi:Paul_Drayfrus a dbo:Person ;
+    rdfs:label "Paul Drayfrus"@vi ;
+    dbo:MÔ_TẢ dbr-vi:Sài_Gòn ;
+    rdfs:comment "Nhà báo"@vi .
+
+dbr-vi:Phan_Anh a dbo:Person ;
+    rdfs:label "Phan Anh"@vi ;
+    dbo:member dbr-vi:Hội_đồng_Quốc_phòng ;
+    rdfs:comment "Bộ trưởng Bộ Kinh tế, ủy viên Hội đồng Quốc phòng"@vi .
+
+dbr-vi:Phan_Kế_Toại a dbo:Person ;
+    rdfs:label "Phan Kế Toại"@vi ;
+    dbo:member dbr-vi:Hội_đồng_Quốc_phòng ;
+    rdfs:comment "Quyền Bộ trưởng Bộ Nội vụ, ủy viên Hội đồng Quốc phòng"@vi .
+
+dbr-vi:Phan_Văn_Khải a dbo:Person ;
+    rdfs:label "Phan Văn Khải"@vi ;
+    dbo:commander dbr-vi:Thủ_tướng_Chính_phủ ;
+    rdfs:comment "Nguyên Thủ tướng"@vi .
+
+dbr-vi:Phong_trào_Cần_vương a dbo:Event ;
+    rdfs:label "Phong trào Cần vương"@vi ;
+    dbo:commander dbr-vi:Sĩ_phu,
+        dbr-vi:Văn_thân ;
+    rdfs:comment "Phong trào khởi nghĩa"@vi .
+
+dbr-vi:Phó_Thủ_tướng_thường_trực_Chính_phủ a dbo:Organisation ;
+    rdfs:label "Phó Thủ tướng thường trực Chính phủ"@vi ;
+    dbo:KIÊM dbr-vi:Phó_Bí_thư_Thường_trực_Đảng_ủy_Chính_phủ ;
+    dbo:THAY_THẾ_KHI_THỦ_TƯỚNG_KHÔNG_THỂ_LÀM_VIỆC dbr-vi:Thủ_tướng_Chính_phủ ;
+    dbo:THƯỜNG_LÀ dbr-vi:Ủy_viên_Bộ_Chính_trị ;
+    dbo:alias dbr-vi:Phó_Chủ_tịch_thứ_nhất_Hội_đồng_Bộ_trưởng ;
+    rdfs:comment "Chức danh đặc biệt trong Chính phủ Việt Nam"@vi .
+
+dbr-vi:Phó_chủ_tịch a dbo:Person ;
+    rdfs:label "Phó chủ tịch"@vi ;
+    dbo:country dbr-vi:Việt_Nam_Dân_chủ_Cộng_hòa ;
+    rdfs:comment "Chức vụ"@vi .
+
+dbr-vi:Phùng_Quang_Thanh a dbo:Person ;
+    rdfs:label "Phùng Quang Thanh"@vi ;
+    dbo:commander dbr-vi:Bộ_Quốc_phòng ;
+    rdfs:comment "Đại tướng, Bộ Quốc phòng"@vi .
+
+dbr-vi:Phạm_Hùng a dbo:Person ;
+    rdfs:label "Phạm Hùng"@vi ;
+    dbo:commander dbr-vi:Bộ_Chỉ_huy_Chiến_dịch_Giải_phóng_Sài_Gòn_-_Gia_Định ;
+    rdfs:comment "Chính ủy"@vi .
+
+dbr-vi:Phạm_Quỳnh a dbo:Person ;
+    rdfs:label "Phạm Quỳnh"@vi ;
+    dbo:THÂN_CẬN_VỚI dbr-vi:Pháp ;
+    dbo:TẠM_QUYỀN_LÃNH_ĐẠO dbr-vi:Việt_Nam ;
+    rdfs:comment "Nhà chính trị"@vi .
+
+dbr-vi:Phạm_Văn_Đồng a dbo:Person ;
+    rdfs:label "Phạm Văn Đồng"@vi ;
+    dbo:THAY_THẾ dbr-vi:Lê_Văn_Hiến ;
+    dbo:member dbr-vi:Hội_đồng_Quốc_phòng ;
+    rdfs:comment "Phó Thủ tướng, Phó Chủ tịch Hội đồng Quốc phòng"@vi .
+
+dbr-vi:Quân_đội_Đế_quốc_Nhật_Bản a dbo:Organisation ;
+    rdfs:label "Quân đội Đế quốc Nhật Bản"@vi ;
+    dbo:HOẠT_ĐỘNG_TẠI dbr-vi:Bắc_Việt_Nam ;
+    rdfs:comment "Quân đội"@vi .
+
+dbr-vi:Quốc_hội_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Quốc hội Việt Nam"@vi ;
+    dbo:BAN_HÀNH <http://vi.dbpedia.org/resource/Nghị_quyết_số_38/2004/QH11> ;
+    dbo:PHÊ_CHUẨN_DANH_SÁCH_THÀNH_VIÊN_CỦA dbr-vi:Hội_đồng_Quốc_phòng_và_An_ninh_Việt_Nam ;
+    rdfs:comment "Cơ quan phê chuẩn danh sách thành viên Hội đồng Quốc phòng và An ninh Việt Nam"@vi .
+
+dbr-vi:Quốc_hội_khóa_VII a dbo:Event ;
+    rdfs:label "Quốc hội khóa VII"@vi ;
+    rdfs:comment "Nhiệm kỳ Quốc hội 1981-1987"@vi .
+
+dbr-vi:Quốc_hội_nước_Việt_Nam_thống_nhất a dbo:Organisation ;
+    rdfs:label "Quốc hội nước Việt Nam thống nhất"@vi ;
+    dbo:author dbr-vi:Hồ_Chí_Minh ;
+    dbo:commander <http://vi.dbpedia.org/resource/Thành_phố_Sài_Gòn_–_Gia_Định> ;
+    rdfs:comment "Cơ quan lập pháp"@vi .
+
+dbr-vi:Quốc_lộ_1 a dbo:Place ;
+    rdfs:label "Quốc lộ 1"@vi ;
+    dbo:isPartOf dbr-vi:Việt_Nam,
+        dbr-vi:đồng_bằng_ven_biển_phía_Đông ;
+    rdfs:comment "Quốc lộ"@vi .
+
+dbr-vi:Quốc_lộ_12B a dbo:Place ;
+    rdfs:label "Quốc lộ 12B"@vi ;
+    rdfs:comment "Quốc lộ"@vi .
+
+dbr-vi:Quốc_lộ_14 a dbo:Place ;
+    rdfs:label "Quốc lộ 14"@vi ;
+    rdfs:comment "Quốc lộ"@vi .
+
+dbr-vi:Quốc_lộ_14B a dbo:Place ;
+    rdfs:label "Quốc lộ 14B"@vi ;
+    rdfs:comment "Quốc lộ"@vi .
+
+dbr-vi:Quốc_lộ_14E a dbo:Place ;
+    rdfs:label "Quốc lộ 14E"@vi ;
+    rdfs:comment "Quốc lộ"@vi .
+
+dbr-vi:Quốc_lộ_15 a dbo:Place ;
+    rdfs:label "Quốc lộ 15"@vi ;
+    rdfs:comment "Quốc lộ"@vi .
+
+dbr-vi:Quốc_lộ_2 a dbo:Place ;
+    rdfs:label "Quốc lộ 2"@vi ;
+    rdfs:comment "Quốc lộ"@vi .
+
+dbr-vi:Quốc_lộ_21A a dbo:Place ;
+    rdfs:label "Quốc lộ 21A"@vi ;
+    rdfs:comment "Quốc lộ"@vi .
+
+dbr-vi:Quốc_lộ_2C a dbo:Place ;
+    rdfs:label "Quốc lộ 2C"@vi ;
+    rdfs:comment "Quốc lộ"@vi .
+
+dbr-vi:Quốc_lộ_3 a dbo:Place ;
+    rdfs:label "Quốc lộ 3"@vi ;
+    rdfs:comment "Quốc lộ"@vi .
+
+dbr-vi:Quốc_lộ_61 a dbo:Place ;
+    rdfs:label "Quốc lộ 61"@vi ;
+    rdfs:comment "Quốc lộ"@vi .
+
+dbr-vi:Quốc_lộ_63 a dbo:Place ;
+    rdfs:label "Quốc lộ 63"@vi ;
+    rdfs:comment "Quốc lộ"@vi .
+
+dbr-vi:Samdech_Heng_Samrin a dbo:Person ;
+    rdfs:label "Samdech Heng Samrin"@vi ;
+    dbo:commander dbr-vi:Vương_quốc_Campuchia ;
+    rdfs:comment "Chủ tịch danh dự Đảng Nhân dân Campuchia"@vi .
+
+dbr-vi:Sáu_Dân a dbo:Person ;
+    rdfs:label "Sáu Dân"@vi ;
+    dbo:alias dbr-vi:Võ_Văn_Kiệt ;
+    rdfs:comment "Bí danh của Võ Văn Kiệt"@vi .
+
+dbr-vi:Sơn_Tùng a dbo:Person ;
+    rdfs:label "Sơn Tùng"@vi ;
+    rdfs:comment "Nhà văn"@vi .
+
+dbr-vi:TP._HCM a dbo:Place ;
+    rdfs:label "TP. HCM"@vi ;
+    dbo:alias dbr-vi:Thành_phố_Hồ_Chí_Minh ;
+    rdfs:comment "Tên viết tắt của Thành phố Hồ Chí Minh"@vi .
+
+dbr-vi:Thanh_niên a dbo:Organisation ;
+    rdfs:label "Thanh niên"@vi ;
+    dbo:member dbr-vi:Đảng ;
+    rdfs:comment "Đội hậu bị của Đảng"@vi .
+
+dbr-vi:Thiếu_tướng_Bùi_Phùng a dbo:Person ;
+    rdfs:label "Thiếu tướng Bùi Phùng"@vi ;
+    dbo:commander dbr-vi:Bộ_Chỉ_huy_Chiến_dịch_Giải_phóng_Sài_Gòn_-_Gia_Định ;
+    rdfs:comment "Chủ nhiệm Hậu cần"@vi .
+
+dbr-vi:Thiếu_tướng_Lê_Ngọc_Hiền a dbo:Person ;
+    rdfs:label "Thiếu tướng Lê Ngọc Hiền"@vi ;
+    dbo:commander dbr-vi:Bộ_Chỉ_huy_Chiến_dịch_Giải_phóng_Sài_Gòn_-_Gia_Định ;
+    rdfs:comment "Quyền Tham mưu trưởng"@vi .
+
+dbr-vi:Thành_ủy_Hà_Nội a dbo:Organisation ;
+    rdfs:label "Thành ủy Hà Nội"@vi ;
+    rdfs:comment "Thành ủy của Thành phố Hà Nội"@vi .
+
+dbr-vi:Thành_ủy_thành_phố_Hồ_Chí_Minh a dbo:Organisation ;
+    rdfs:label "Thành ủy thành phố Hồ Chí Minh"@vi ;
+    dbo:alias dbr-vi:Đảng_bộ_Thành_phố_Hồ_Chí_Minh ;
+    rdfs:comment "Thành ủy của Thành phố Hồ Chí Minh"@vi .
+
+dbr-vi:Thái_Lan a dbo:Place ;
+    rdfs:label "Thái Lan"@vi ;
+    dbo:member dbr-vi:Việt_Nam_Cộng_hòa ;
+    rdfs:comment "Đồng minh phương Tây"@vi .
+
+dbr-vi:Thượng_tướng_Trần_Văn_Trà a dbo:Person ;
+    rdfs:label "Thượng tướng Trần Văn Trà"@vi ;
+    dbo:commander dbr-vi:Bộ_Chỉ_huy_Chiến_dịch_Giải_phóng_Sài_Gòn_-_Gia_Định ;
+    rdfs:comment "Phó Tư lệnh"@vi .
+
+dbr-vi:Thụ_Nại a dbo:Place ;
+    rdfs:label "Thụ Nại"@vi ;
+    dbo:alias dbr-vi:Sài_Gòn ;
+    rdfs:comment "Tên gọi cũ của vùng đất Sài Gòn"@vi .
+
+dbr-vi:Thủ_tướng_Chính_phủ_Việt_Nam a dbo:Person ;
+    rdfs:label "Thủ tướng Chính phủ Việt Nam"@vi ;
+    dbo:member dbr-vi:Hội_đồng_Quốc_phòng_và_An_ninh_Việt_Nam ;
+    rdfs:comment "Phó Chủ tịch của Hội đồng Quốc phòng và An ninh Việt Nam"@vi .
+
+dbr-vi:Trung_tướng_Lê_Quang_Hòa a dbo:Person ;
+    rdfs:label "Trung tướng Lê Quang Hòa"@vi ;
+    dbo:commander dbr-vi:Bộ_Chỉ_huy_Chiến_dịch_Giải_phóng_Sài_Gòn_-_Gia_Định ;
+    rdfs:comment "Phó Chính ủy kiêm Chủ nhiệm Chính trị"@vi .
+
+dbr-vi:Trung_tướng_Lê_Trọng_Tấn a dbo:Person ;
+    rdfs:label "Trung tướng Lê Trọng Tấn"@vi ;
+    dbo:commander dbr-vi:Bộ_Chỉ_huy_Chiến_dịch_Giải_phóng_Sài_Gòn_-_Gia_Định ;
+    rdfs:comment "Phó Tư lệnh"@vi .
+
+dbr-vi:Trung_tướng_Lê_Đức_Anh a dbo:Person ;
+    rdfs:label "Trung tướng Lê Đức Anh"@vi ;
+    dbo:commander dbr-vi:Bộ_Chỉ_huy_Chiến_dịch_Giải_phóng_Sài_Gòn_-_Gia_Định ;
+    rdfs:comment "Phó Tư lệnh"@vi .
+
+dbr-vi:Trung_tướng_Đinh_Đức_Thiện a dbo:Person ;
+    rdfs:label "Trung tướng Đinh Đức Thiện"@vi ;
+    dbo:commander dbr-vi:Bộ_Chỉ_huy_Chiến_dịch_Giải_phóng_Sài_Gòn_-_Gia_Định ;
+    rdfs:comment "Phó Tư lệnh"@vi .
+
+dbr-vi:Truyền_hình_Quân_đội_nhân_dân a dbo:Organisation ;
+    rdfs:label "Truyền hình Quân đội nhân dân"@vi ;
+    dbo:country dbr-vi:Việt_Nam ;
+    rdfs:comment "Kênh truyền hình"@vi .
+
+dbr-vi:Trĩ_Côn a dbo:Place ;
+    rdfs:label "Trĩ Côn"@vi ;
+    dbo:alias dbr-vi:Sài_Gòn ;
+    rdfs:comment "Tên quận thuộc Chân Lạp"@vi .
+
+dbr-vi:Trương_Tấn_Sang a dbo:Person ;
+    rdfs:label "Trương Tấn Sang"@vi ;
+    dbo:commander dbr-vi:Chủ_tịch_nước ;
+    rdfs:comment "Chủ tịch nước"@vi .
+
+dbr-vi:Trần_Kim_Anh a dbo:Person ;
+    rdfs:label "Trần Kim Anh"@vi ;
+    dbo:BỊ_TẤN_CÔNG_BỞI dbr-vi:Hoa_Kỳ ;
+    dbo:spouse dbr-vi:Võ_Văn_Kiệt ;
+    rdfs:comment "Vợ đầu tiên của Võ Văn Kiệt"@vi .
+
+dbr-vi:Trần_Văn_Trà a dbo:Person ;
+    rdfs:label "Trần Văn Trà"@vi ;
+    dbo:commander dbr-vi:Chiến_dịch_Hồ_Chí_Minh ;
+    rdfs:comment "Phó Tư lệnh Chiến dịch Hồ Chí Minh"@vi .
+
+dbr-vi:Trần_Văn_Đôn a dbo:Person ;
+    rdfs:label "Trần Văn Đôn"@vi ;
+    dbo:member dbr-vi:Nguyễn_Văn_Thiệu ;
+    rdfs:comment "Tướng dưới quyền"@vi .
+
+dbr-vi:Trần_Đại_Quang a dbo:Person ;
+    rdfs:label "Trần Đại Quang"@vi ;
+    dbo:commander dbr-vi:Hội_đồng_Quốc_phòng_và_An_ninh ;
+    rdfs:comment "Chủ tịch nước, Chủ tịch Hội đồng Quốc phòng và An ninh"@vi .
+
+dbr-vi:Trần_Đức_Lương a dbo:Person ;
+    rdfs:label "Trần Đức Lương"@vi ;
+    dbo:commander dbr-vi:Chủ_tịch_nước ;
+    rdfs:comment "Nguyên Chủ tịch nước"@vi .
+
+dbr-vi:Tsuchihashi_Yuitsu a dbo:Person ;
+    rdfs:label "Tsuchihashi Yuitsu"@vi ;
+    dbo:KIỂM_SOÁT dbr-vi:Việt_Nam ;
+    dbo:member dbr-vi:Nhật ;
+    rdfs:comment "Trung tướng Nhật Bản"@vi .
+
+<http://vi.dbpedia.org/resource/Tuyên_Quang_–_Rạch_Sỏi> a dbo:Place ;
+    rdfs:label "Tuyên Quang – Rạch Sỏi"@vi ;
+    rdfs:comment "Đoạn đường"@vi .
+
+dbr-vi:Tám_Thuận a dbo:Person ;
+    rdfs:label "Tám Thuận"@vi ;
+    dbo:alias dbr-vi:Võ_Văn_Kiệt ;
+    rdfs:comment "Bí danh của Võ Văn Kiệt"@vi .
+
+dbr-vi:Tạ_Quang_Bửu a dbo:Person ;
+    rdfs:label "Tạ Quang Bửu"@vi ;
+    dbo:member dbr-vi:Hội_đồng_Quốc_phòng ;
+    rdfs:comment "Thứ trưởng Bộ Quốc phòng, ủy viên Hội đồng Quốc phòng"@vi .
+
+dbr-vi:Tỉnh_ủy_Bà_Rịa_-_Vũng_Tàu a dbo:Organisation ;
+    rdfs:label "Tỉnh ủy Bà Rịa - Vũng Tàu"@vi ;
+    rdfs:comment "Tỉnh ủy của tỉnh Bà Rịa - Vũng Tàu"@vi .
+
+dbr-vi:Tỉnh_ủy_Bình_Dương a dbo:Organisation ;
+    rdfs:label "Tỉnh ủy Bình Dương"@vi ;
+    rdfs:comment "Tỉnh ủy của tỉnh Bình Dương"@vi .
+
+dbr-vi:Tổng_giám_đốc_ngân_hàng_Nhà_nước a dbo:Person ;
+    rdfs:label "Tổng giám đốc ngân hàng Nhà nước"@vi ;
+    dbo:member dbr-vi:Hội_đồng_Chính_phủ ;
+    rdfs:comment "Chức vụ"@vi .
+
+dbr-vi:VTV1 a dbo:Organisation ;
+    rdfs:label "VTV1"@vi ;
+    dbo:member dbr-vi:Đài_Truyền_hình_Việt_Nam ;
+    rdfs:comment "Kênh truyền hình"@vi .
+
+dbr-vi:Võ_Nguyên_Thân a dbo:Person ;
+    rdfs:label "Võ Nguyên Thân"@vi ;
+    dbo:child dbr-vi:Võ_Nguyên_Giáp ;
+    dbo:member dbr-vi:Phong_trào_Cần_Vương,
+        dbr-vi:Phong_trào_Văn_Thân ;
+    rdfs:comment "Ông ngoại của Võ Nguyên Giáp"@vi .
+
+dbr-vi:Văn_hóa_Sa_Huỳnh a dbo:Work ;
+    rdfs:label "Văn hóa Sa Huỳnh"@vi ;
+    dbo:isPartOf dbr-vi:Sài_Gòn ;
+    rdfs:comment "Nền văn hóa cổ"@vi .
+
+dbr-vi:Vũ_Kỳ a dbo:Person ;
+    rdfs:label "Vũ Kỳ"@vi ;
+    rdfs:comment "Thư ký riêng của Hồ Chí Minh"@vi .
+
+dbr-vi:Vườn_Quốc_gia_Cúc_Phương a dbo:Place ;
+    rdfs:label "Vườn Quốc gia Cúc Phương"@vi ;
+    dbo:isPartOf dbr-vi:Thanh_Hóa ;
+    rdfs:comment "Vườn quốc gia"@vi .
+
+dbr-vi:William_J._Duiker a dbo:Person ;
+    rdfs:label "William J. Duiker"@vi ;
+    dbo:author dbr-vi:Nguyễn_Sinh_Cung ;
+    rdfs:comment "Học giả"@vi .
+
+dbr-vi:Yuri_Lopukhin a dbo:Person ;
+    rdfs:label "Yuri Lopukhin"@vi ;
+    dbo:BẢO_QUẢN_THI_HÀI_CỦA dbr-vi:Hồ_Chí_Minh ;
+    dbo:member dbr-vi:Viện_Lăng_Lenin ;
+    dbo:ĐẾN_THĂM dbr-vi:Hà_Nội ;
+    rdfs:comment "Giáo sư Viện sĩ, cựu Hiệu trưởng Trường Đại học Y khoa Moscow số 2"@vi .
+
+dbr-vi:ba_sư_đoàn_Quân_Giải_phóng a dbo:Organisation ;
+    rdfs:label "ba sư đoàn Quân Giải phóng"@vi ;
+    dbo:birthPlace dbr-vi:Hà_Nội ;
+    rdfs:comment "Đơn vị quân sự"@vi .
+
+dbr-vi:cầu_Rào_2 a dbo:Work ;
+    rdfs:label "cầu Rào 2"@vi ;
+    dbo:alias dbr-vi:Cầu_Võ_Nguyên_Giáp ;
+    rdfs:comment "Tên cũ của cầu Võ Nguyên Giáp"@vi .
+
+dbr-vi:cụ_Hoàng_Xuân_Đường a dbo:Person ;
+    rdfs:label "cụ Hoàng Xuân Đường"@vi ;
+    dbo:CHA_VỢ_CỦA dbr-vi:Nguyễn_Sinh_Sắc ;
+    rdfs:comment "Cha vợ của Nguyễn Sinh Sắc"@vi .
+
+dbr-vi:km_0 a dbo:Event ;
+    rdfs:label "km 0"@vi ;
+    dbo:alias dbr-vi:di_tích_lịch_sử_quốc_gia ;
+    dbo:birthPlace dbr-vi:thị_trấn_Lạt ;
+    dbo:ĐƯỢC_CÔNG_NHẬN_VÀO dbr-vi:Ngày_27_tháng_4_năm_1990 ;
+    dbo:ĐƯỢC_ĐÁNH_DẤU_BẰNG dbr-vi:cột_mốc_số_0 ;
+    rdfs:comment "điểm xuất phát của Đường Hồ Chí Minh"@vi .
+
+dbr-vi:tháp_Phương_Trạch a dbo:Place ;
+    rdfs:label "tháp Phương Trạch"@vi ;
+    dbo:isPartOf dbr-vi:trung_tâm_hành_chinh_mới_Đông_Anh ;
+    rdfs:comment "Tòa tháp cao 108 tầng"@vi .
+
+dbr-vi:triều_đình a dbo:Organisation ;
+    rdfs:label "triều đình"@vi ;
+    dbo:commander dbr-vi:Nguyễn_Sinh_Cung ;
+    rdfs:comment "Chính quyền"@vi .
+
+dbr-vi:Úc a dbo:Place ;
+    rdfs:label "Úc"@vi ;
+    dbo:member dbr-vi:Việt_Nam_Cộng_hòa ;
+    rdfs:comment "Đồng minh phương Tây"@vi .
+
+<http://vi.dbpedia.org/resource/Đường_Võ_Nguyên_Giáp_–_Hà_Nội> a dbo:Place ;
+    rdfs:label "Đường Võ Nguyên Giáp – Hà Nội"@vi ;
+    dbo:NỐI dbr-vi:Sân_bay_quốc_tế_Nội_Bài ;
+    dbo:SONG_SONG_VỚI dbr-vi:quốc_lộ_3,
+        dbr-vi:đường_Võ_Văn_Kiệt ;
+    dbo:alias dbr-vi:Võ_Nguyên_Giáp,
+        dbr-vi:Đường_xuyên_Á_AH14 ;
+    dbo:isPartOf dbr-vi:Hà_Nội,
+        dbr-vi:Sóc_Sơn,
+        dbr-vi:Đông_Anh ;
+    rdfs:comment "Tuyến đường hiện đại nhất thủ đô Hà Nội"@vi .
+
+dbr-vi:Đường_cao_tốc_Bãi_Vọt_-_Hàm_Nghi a dbo:Place ;
+    rdfs:label "Đường cao tốc Bãi Vọt - Hàm Nghi"@vi ;
+    rdfs:comment "Đường cao tốc"@vi .
+
+dbr-vi:Đường_cao_tốc_Bùng_-_Vạn_Ninh a dbo:Place ;
+    rdfs:label "Đường cao tốc Bùng - Vạn Ninh"@vi ;
+    rdfs:comment "Đường cao tốc"@vi .
+
+<http://vi.dbpedia.org/resource/Đường_cao_tốc_Bắc_–_Nam_phía_Tây> a dbo:Place ;
+    rdfs:label "Đường cao tốc Bắc – Nam phía Tây"@vi ;
+    rdfs:comment "Đường cao tốc"@vi .
+
+<http://vi.dbpedia.org/resource/Đường_cao_tốc_Bắc_–_Nam_phía_Đông> a dbo:Work ;
+    rdfs:label "Đường cao tốc Bắc – Nam phía Đông"@vi ;
+    dbo:isPartOf dbr-vi:Việt_Nam,
+        dbr-vi:đồng_bằng_ven_biển_phía_Đông ;
+    rdfs:comment "con đường giao thông huyết mạch"@vi .
+
+dbr-vi:Đường_cao_tốc_Cam_Lộ_-_La_Sơn a dbo:Place ;
+    rdfs:label "Đường cao tốc Cam Lộ - La Sơn"@vi ;
+    rdfs:comment "Đường cao tốc"@vi .
+
+<http://vi.dbpedia.org/resource/Đường_cao_tốc_Cao_Lãnh_–_Lộ_Tẻ> a dbo:Place ;
+    rdfs:label "Đường cao tốc Cao Lãnh – Lộ Tẻ"@vi ;
+    rdfs:comment "Đường cao tốc"@vi .
+
+<http://vi.dbpedia.org/resource/Đường_cao_tốc_Chơn_Thành_–_Đức_Hòa> a dbo:Place ;
+    rdfs:label "Đường cao tốc Chơn Thành – Đức Hòa"@vi ;
+    rdfs:comment "Đường cao tốc"@vi .
+
+dbr-vi:Đường_cao_tốc_Diễn_Châu_-_Bãi_Vọt a dbo:Place ;
+    rdfs:label "Đường cao tốc Diễn Châu - Bãi Vọt"@vi ;
+    rdfs:comment "Đường cao tốc"@vi .
+
+dbr-vi:Đường_cao_tốc_Gia_Nghĩa_-_Chơn_Thành a dbo:Place ;
+    rdfs:label "Đường cao tốc Gia Nghĩa - Chơn Thành"@vi ;
+    rdfs:comment "Đường cao tốc"@vi .
+
+dbr-vi:Đường_cao_tốc_Hàm_Nghi_-_Vũng_Áng a dbo:Place ;
+    rdfs:label "Đường cao tốc Hàm Nghi - Vũng Áng"@vi ;
+    rdfs:comment "Đường cao tốc"@vi .
+
+dbr-vi:Đường_cao_tốc_La_Sơn_-_Túy_Loan a dbo:Place ;
+    rdfs:label "Đường cao tốc La Sơn - Túy Loan"@vi ;
+    rdfs:comment "Đường cao tốc"@vi .
+
+<http://vi.dbpedia.org/resource/Đường_cao_tốc_Lộ_Tẻ_–_Rạch_Sỏi> a dbo:Place ;
+    rdfs:label "Đường cao tốc Lộ Tẻ – Rạch Sỏi"@vi ;
+    rdfs:comment "Đường cao tốc"@vi .
+
+<http://vi.dbpedia.org/resource/Đường_cao_tốc_Mỹ_An_–_Cao_Lãnh> a dbo:Place ;
+    rdfs:label "Đường cao tốc Mỹ An – Cao Lãnh"@vi ;
+    rdfs:comment "Đường cao tốc"@vi .
+
+dbr-vi:Đường_cao_tốc_Tuyên_Quang_-_Phú_Thọ a dbo:Place ;
+    rdfs:label "Đường cao tốc Tuyên Quang - Phú Thọ"@vi ;
+    rdfs:comment "Đường cao tốc"@vi .
+
+dbr-vi:Đường_cao_tốc_Vinh_-_Thanh_Thủy a dbo:Place ;
+    rdfs:label "Đường cao tốc Vinh - Thanh Thủy"@vi ;
+    rdfs:comment "Đường cao tốc"@vi .
+
+dbr-vi:Đường_cao_tốc_Vũng_Áng_-_Bùng a dbo:Place ;
+    rdfs:label "Đường cao tốc Vũng Áng - Bùng"@vi ;
+    rdfs:comment "Đường cao tốc"@vi .
+
+dbr-vi:Đường_cao_tốc_Vạn_Ninh_-_Cam_Lộ a dbo:Place ;
+    rdfs:label "Đường cao tốc Vạn Ninh - Cam Lộ"@vi ;
+    rdfs:comment "Đường cao tốc"@vi .
+
+dbr-vi:Đường_tỉnh_203 a dbo:Place ;
+    rdfs:label "Đường tỉnh 203"@vi ;
+    rdfs:comment "Đường tỉnh"@vi .
+
+dbr-vi:Đại_tướng_Văn_Tiến_Dũng a dbo:Person ;
+    rdfs:label "Đại tướng Văn Tiến Dũng"@vi ;
+    dbo:commander dbr-vi:Bộ_Chỉ_huy_Chiến_dịch_Giải_phóng_Sài_Gòn_-_Gia_Định ;
+    rdfs:comment "Tư lệnh"@vi .
+
+dbr-vi:Đặng_Xuân_Bảng a dbo:Person ;
+    rdfs:label "Đặng Xuân Bảng"@vi ;
+    dbo:child dbr-vi:Trường_Chinh ;
+    rdfs:comment "Ông nội của Trường Chinh"@vi .
+
+dbr-vi:Đặng_Xuân_Viện a dbo:Person ;
+    rdfs:label "Đặng Xuân Viện"@vi ;
+    dbo:author dbr-vi:Minh_đô_sử ;
+    dbo:child dbr-vi:Trường_Chinh ;
+    dbo:member dbr-vi:Nam_Việt_đồng_thiên_hội ;
+    rdfs:comment "Cha của Trường Chinh"@vi .
+
+dbr-vi:Đỗ_Mười a dbo:Person ;
+    rdfs:label "Đỗ Mười"@vi ;
+    dbo:commander dbr-vi:Tổng_Bí_thư ;
+    rdfs:comment "Nguyên Tổng Bí thư"@vi .
+
+dbr-vi:Đội_tuyển_U19_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Đội tuyển U19 Việt Nam"@vi ;
+    rdfs:comment "Đội tuyển bóng đá"@vi .
+
+<http://vi.dbpedia.org/resource/đường_cao_tốc_Bắc_–_Nam_phía_Tây> a dbo:Work ;
+    rdfs:label "đường cao tốc Bắc – Nam phía Tây"@vi ;
+    rdfs:comment "dự kiến nâng cấp từ Đường Hồ Chí Minh"@vi .
+
+dbr-vi:đường_ven_biển_Việt_Nam a dbo:Work ;
+    rdfs:label "đường ven biển Việt Nam"@vi ;
+    dbo:isPartOf dbr-vi:Việt_Nam ;
+    rdfs:comment "con đường giao thông huyết mạch"@vi .
+
+dbr-vi:ព្រៃនគរ a dbo:Place ;
+    rdfs:label "ព្រៃនគរ"@vi ;
+    dbo:alias dbr-vi:Prey_Nokor ;
+    rdfs:comment "Tên cũ của vùng đất"@vi .
+
+dbr-vi:Ủy_ban_Kiểm_tra_Thành_ủy a dbo:Organisation ;
+    rdfs:label "Ủy ban Kiểm tra Thành ủy"@vi ;
+    dbo:member dbr-vi:Thành_ủy_Thành_phố_Hồ_Chí_Minh ;
+    rdfs:comment "Ủy ban Kiểm tra của Thành ủy Thành phố Hồ Chí Minh"@vi .
+
+dbr-vi:Ủy_ban_Nhân_dân_tỉnh_Quảng_Bình a dbo:Organisation ;
+    rdfs:label "Ủy ban Nhân dân tỉnh Quảng Bình"@vi ;
+    dbo:isPartOf dbr-vi:Quảng_Bình ;
+    rdfs:comment "Ủy ban Nhân dân"@vi .
+
+dbr-vi:Ủy_ban_Quốc_tế_về_Giám_sát_và_Kiểm_soát a dbo:Organisation ;
+    rdfs:label "Ủy ban Quốc tế về Giám sát và Kiểm soát"@vi ;
+    dbo:member dbr-vi:Hiệp_định_Genève ;
+    rdfs:comment "Ủy ban giám sát tổng tuyển cử"@vi .
+
+dbr-vi:Ủy_ban_nhân_dân_Thành_phố_Hồ_Chí_Minh a dbo:Organisation ;
+    rdfs:label "Ủy ban nhân dân Thành phố Hồ Chí Minh"@vi ;
+    rdfs:comment "Cơ quan hành chính của Thành phố Hồ Chí Minh"@vi .
+
+dbr-vi:Ủy_ban_nhân_dân_thành_phố a dbo:Organisation ;
+    rdfs:label "Ủy ban nhân dân thành phố"@vi ;
+    dbo:isPartOf dbr-vi:Thành_phố_Hồ_Chí_Minh ;
+    rdfs:comment "Cơ quan hành chính của Thành phố Hồ Chí Minh"@vi .
+
+dbr-vi:30_Hoàng_Diệu a dbo:Place ;
+    rdfs:label "30 Hoàng Diệu"@vi ;
+    dbo:isPartOf dbr-vi:Hà_Nội ;
+    rdfs:comment "Nhà riêng"@vi .
+
+dbr-vi:An_Nam a dbo:Place ;
+    rdfs:label "An Nam"@vi ;
+    rdfs:comment "Khu vực thuộc Việt Nam"@vi .
+
+dbr-vi:An_Xá a dbo:Place ;
+    rdfs:label "An Xá"@vi ;
+    dbo:isPartOf dbr-vi:Đại_Phong_Lộc ;
+    rdfs:comment "Làng"@vi .
+
+dbr-vi:Ban_Bí_thư a dbo:Organisation ;
+    rdfs:label "Ban Bí thư"@vi ;
+    rdfs:comment "Cơ quan chỉ định thành viên Ban Thường vụ Thành ủy"@vi .
+
+dbr-vi:Ban_Bí_thư_Trung_ương_Đảng a dbo:Organisation ;
+    rdfs:label "Ban Bí thư Trung ương Đảng"@vi ;
+    rdfs:comment "Cơ quan lãnh đạo của Đảng Cộng sản Việt Nam"@vi .
+
+dbr-vi:Ban_Chấp_hành_Trung_ương_Đảng_Lao_động_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Ban Chấp hành Trung ương Đảng Lao động Việt Nam"@vi ;
+    rdfs:comment "Tổ chức chính trị"@vi .
+
+dbr-vi:Ban_Chấp_hành_Trung_ương_Đảng_khóa_VI a dbo:Organisation ;
+    rdfs:label "Ban Chấp hành Trung ương Đảng khóa VI"@vi ;
+    dbo:member dbr-vi:Bộ_Chính_trị ;
+    rdfs:comment "Ban Chấp hành Trung ương Đảng khóa VI"@vi .
+
+dbr-vi:Ban_Chấp_hành_Đảng_bộ_Thành_phố a dbo:Organisation ;
+    rdfs:label "Ban Chấp hành Đảng bộ Thành phố"@vi ;
+    rdfs:comment "Ban Chấp hành của Đảng bộ Thành phố Hồ Chí Minh"@vi .
+
+dbr-vi:Ban_Chấp_hành_Đảng_bộ_Đảng_Cộng_sản_Việt_Nam_Thành_phố_Hồ_Chí_Minh a dbo:Organisation ;
+    rdfs:label "Ban Chấp hành Đảng bộ Đảng Cộng sản Việt Nam Thành phố Hồ Chí Minh"@vi ;
+    rdfs:comment "Tên đầy đủ của Thành ủy Thành phố Hồ Chí Minh"@vi .
+
+dbr-vi:Ban_Thường_vụ_Thành_ủy_Thành_phố_Hồ_Chí_Minh a dbo:Organisation ;
+    rdfs:label "Ban Thường vụ Thành ủy Thành phố Hồ Chí Minh"@vi ;
+    dbo:commander dbr-vi:Đảng_bộ_Thành_phố_Hồ_Chí_Minh ;
+    rdfs:comment "Cơ quan lãnh đạo của Đảng bộ Thành phố Hồ Chí Minh giữa các kỳ hội nghị"@vi .
+
+dbr-vi:Binh_chủng a dbo:Organisation ;
+    rdfs:label "Binh chủng"@vi ;
+    dbo:member dbr-vi:Bộ_Quốc_phòng ;
+    rdfs:comment "Đơn vị quân sự thuộc Bộ Quốc phòng"@vi .
+
+dbr-vi:Bác_Hồ a dbo:Person ;
+    rdfs:label "Bác Hồ"@vi ;
+    dbo:alias dbr-vi:Chủ_tịch_Hồ_Chí_Minh .
+
+dbr-vi:Báo_Cờ_giải_phóng a dbo:Work ;
+    rdfs:label "Báo Cờ giải phóng"@vi ;
+    dbo:country dbr-vi:Xứ_ủy_Bắc_Kỳ ;
+    rdfs:comment "Báo chí"@vi .
+
+dbr-vi:Báo_Tin_tức a dbo:Work ;
+    rdfs:label "Báo Tin tức"@vi ;
+    rdfs:comment "Báo chí"@vi .
+
+dbr-vi:Bình_Khê a dbo:Place ;
+    rdfs:label "Bình Khê"@vi ;
+    dbo:isPartOf dbr-vi:tỉnh_Bình_Định ;
+    rdfs:comment "Huyện nơi Nguyễn Sinh Sắc làm Tri huyện"@vi .
+
+dbr-vi:Bí_thư a dbo:Organisation ;
+    rdfs:label "Bí thư"@vi ;
+    rdfs:comment "Chức vụ trong Đảng"@vi .
+
+dbr-vi:Bí_thư_Trung_ương_Đảng a dbo:Organisation ;
+    rdfs:label "Bí thư Trung ương Đảng"@vi ;
+    rdfs:comment "Chức vụ trong Đảng"@vi .
+
+dbr-vi:Bạc_Liêu a dbo:Place ;
+    rdfs:label "Bạc Liêu"@vi ;
+    rdfs:comment "Tỉnh"@vi .
+
+dbr-vi:Bạch_Liên_nữ_sĩ a dbo:Person ;
+    rdfs:label "Bạch Liên nữ sĩ"@vi ;
+    rdfs:comment "Hiệu khác của Nguyễn Thị Thanh"@vi .
+
+dbr-vi:Bắc_Kỳ a dbo:Place ;
+    rdfs:label "Bắc Kỳ"@vi ;
+    rdfs:comment "Khu vực"@vi .
+
+dbr-vi:Bắc_Ninh a dbo:Place ;
+    rdfs:label "Bắc Ninh"@vi ;
+    rdfs:comment "Tỉnh"@vi .
+
+dbr-vi:Bệnh_viện_Trung_ương_Quân_đội_108 a dbo:Organisation ;
+    rdfs:label "Bệnh viện Trung ương Quân đội 108"@vi ;
+    dbo:isPartOf dbr-vi:Hà_Nội ;
+    rdfs:comment "Bệnh viện"@vi .
+
+dbr-vi:Bộ_Giáo_dục a dbo:Organisation ;
+    rdfs:label "Bộ Giáo dục"@vi ;
+    rdfs:comment "Bộ"@vi .
+
+dbr-vi:Bộ_Quốc_phòng_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Bộ Quốc phòng Việt Nam"@vi ;
+    rdfs:comment "cơ quan quản lý quân sự"@vi .
+
+dbr-vi:CHDCND_Lào a dbo:Place ;
+    rdfs:label "CHDCND Lào"@vi ;
+    dbo:alias dbr-vi:Lào ;
+    rdfs:comment "Quốc gia"@vi .
+
+dbr-vi:Campuchia a dbo:Place ;
+    rdfs:label "Campuchia"@vi ;
+    rdfs:comment "Quốc gia"@vi .
+
+dbr-vi:Cao_Bằng a dbo:Place ;
+    rdfs:label "Cao Bằng"@vi ;
+    rdfs:comment "nơi thành lập Đội Việt Nam Tuyên truyền Giải phóng quân"@vi .
+
+dbr-vi:Cao_Lãnh a dbo:Place ;
+    rdfs:label "Cao Lãnh"@vi ;
+    dbo:isPartOf dbr-vi:tỉnh_Sa_Đéc ;
+    rdfs:comment "Phường nơi làng Hòa An nằm"@vi .
+
+dbr-vi:Carl_von_Clausewitz a dbo:Person ;
+    rdfs:label "Carl von Clausewitz"@vi ;
+    rdfs:comment "Nhà lãnh đạo lịch sử"@vi .
+
+dbr-vi:Chiến_dịch_Biên_giới a dbo:Event ;
+    rdfs:label "Chiến dịch Biên giới"@vi ;
+    dbo:isPartOf dbr-vi:Trung_Quốc,
+        dbr-vi:Việt_Nam ;
+    rdfs:comment "chiến dịch quân sự"@vi .
+
+dbr-vi:Chiến_dịch_Giải_phóng_Sài_Gòn_-_Gia_Định a dbo:Event ;
+    rdfs:label "Chiến dịch Giải phóng Sài Gòn - Gia Định"@vi ;
+    rdfs:comment "Tên chiến dịch cũ"@vi .
+
+<http://vi.dbpedia.org/resource/Chiến_dịch_Giải_phóng_Sài_Gòn_–_Gia_Định> a dbo:Event ;
+    rdfs:label "Chiến dịch Giải phóng Sài Gòn – Gia Định"@vi ;
+    rdfs:comment "Tên ban đầu của Chiến dịch Hồ Chí Minh"@vi .
+
+<http://vi.dbpedia.org/resource/Chiến_tranh_biên_giới_Việt_–_Trung> a dbo:Event ;
+    rdfs:label "Chiến tranh biên giới Việt – Trung"@vi ;
+    rdfs:comment "Chiến tranh"@vi .
+
+dbr-vi:Chu_Văn_Tấn a dbo:Person ;
+    rdfs:label "Chu Văn Tấn"@vi ;
+    rdfs:comment "chỉ huy"@vi .
+
+dbr-vi:Chánh_án_Tòa_án_nhân_dân_tối_cao a dbo:Organisation ;
+    rdfs:label "Chánh án Tòa án nhân dân tối cao"@vi ;
+    rdfs:comment "Chức vụ trong hệ thống tư pháp"@vi .
+
+dbr-vi:Chín_Hòa a dbo:Person ;
+    rdfs:label "Chín Hòa"@vi ;
+    dbo:alias dbr-vi:Võ_Văn_Kiệt ;
+    rdfs:comment "Biệt danh của Võ Văn Kiệt"@vi .
+
+dbr-vi:Chính_phủ_Mỹ a dbo:Organisation ;
+    rdfs:label "Chính phủ Mỹ"@vi ;
+    rdfs:comment "Chính phủ"@vi .
+
+dbr-vi:Chính_phủ_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Chính phủ Việt Nam"@vi ;
+    rdfs:comment "Chính phủ quốc gia Việt Nam"@vi .
+
+dbr-vi:Chủ_nghĩa_Lenin a dbo:Work ;
+    rdfs:label "Chủ nghĩa Lenin"@vi ;
+    rdfs:comment "Hệ tư tưởng"@vi .
+
+dbr-vi:Chủ_nghĩa_Marx a dbo:Work ;
+    rdfs:label "Chủ nghĩa Marx"@vi ;
+    rdfs:comment "Hệ tư tưởng"@vi .
+
+dbr-vi:Chủ_tịch_nước_Việt_Nam_Dân_chủ_Cộng_hòa a dbo:Person ;
+    rdfs:label "Chủ tịch nước Việt Nam Dân chủ Cộng hòa"@vi ;
+    dbo:country dbr-vi:Việt_Nam_Dân_chủ_Cộng_hòa ;
+    rdfs:comment "Chức vụ"@vi .
+
+dbr-vi:Chủ_tịch_Ủy_ban_Trung_ương_Mặt_trận_Tổ_quốc_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Chủ tịch Ủy ban Trung ương Mặt trận Tổ quốc Việt Nam"@vi ;
+    rdfs:comment "Chức vụ trong tổ chức Mặt trận Tổ quốc"@vi .
+
+dbr-vi:Cuộc_Tổng_tấn_công_và_nổi_dậy_mùa_Xuân_năm_1975 a dbo:Event ;
+    rdfs:label "Cuộc Tổng tấn công và nổi dậy mùa Xuân năm 1975"@vi ;
+    rdfs:comment "Sự kiện lịch sử"@vi .
+
+dbr-vi:Cách_mạng_Pháp_năm_1789 a dbo:Event ;
+    rdfs:label "Cách mạng Pháp năm 1789"@vi ;
+    rdfs:comment "Cuộc cách mạng"@vi .
+
+dbr-vi:Cách_mạng_Trung_Quốc_năm_1911 a dbo:Event ;
+    rdfs:label "Cách mạng Trung Quốc năm 1911"@vi ;
+    rdfs:comment "Cuộc cách mạng"@vi .
+
+dbr-vi:Cơ_quan_Tình_báo_Trung_ương_Mỹ a dbo:Organisation ;
+    rdfs:label "Cơ quan Tình báo Trung ương Mỹ"@vi ;
+    rdfs:comment "Cơ quan tình báo"@vi .
+
+dbr-vi:Cường_Để a dbo:Person ;
+    rdfs:label "Cường Để"@vi ;
+    rdfs:comment "Hoàng thân"@vi .
+
+dbr-vi:Cả_Khiêm a dbo:Person ;
+    rdfs:label "Cả Khiêm"@vi ;
+    rdfs:comment "biệt danh của Nguyễn Sinh Khiêm"@vi .
+
+dbr-vi:Cẩm_Ly a dbo:Place ;
+    rdfs:label "Cẩm Ly"@vi ;
+    dbo:isPartOf dbr-vi:Trường_Sơn ;
+    rdfs:comment "Sông"@vi .
+
+dbr-vi:Cộng_hòa_Xã_hội_Chủ_nghĩa_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Cộng hòa Xã hội Chủ nghĩa Việt Nam"@vi ;
+    rdfs:comment "Nhà nước hiện nay"@vi .
+
+dbr-vi:Cục_lưu_trữ_Văn_phòng_Trung_ương_Đảng a dbo:Organisation ;
+    rdfs:label "Cục lưu trữ Văn phòng Trung ương Đảng"@vi ;
+    rdfs:comment "Cục lưu trữ"@vi .
+
+dbr-vi:Dãy_núi_Đại_Huệ a dbo:Place ;
+    rdfs:label "Dãy núi Đại Huệ"@vi ;
+    rdfs:comment "Dãy núi"@vi .
+
+dbr-vi:En_Avant a dbo:Work ;
+    rdfs:label "En Avant"@vi ;
+    rdfs:comment "Báo chí"@vi .
+
+dbr-vi:George_Washington a dbo:Person ;
+    rdfs:label "George Washington"@vi ;
+    rdfs:comment "Nhà lãnh đạo lịch sử"@vi .
+
+dbr-vi:Giai_cấp_tư_sản a dbo:Organisation ;
+    rdfs:label "Giai cấp tư sản"@vi ;
+    rdfs:comment "Giai cấp xã hội"@vi .
+
+dbr-vi:Hiến_pháp_1946 a dbo:Work ;
+    rdfs:label "Hiến pháp 1946"@vi ;
+    rdfs:comment "Hiến pháp"@vi .
+
+dbr-vi:Hiến_pháp_1980 a dbo:Work ;
+    rdfs:label "Hiến pháp 1980"@vi ;
+    rdfs:comment "Hiến pháp"@vi .
+
+dbr-vi:Hiến_pháp_1992 a dbo:Work ;
+    rdfs:label "Hiến pháp 1992"@vi ;
+    dbo:QUY_ĐỊNH_QUYỀN_HẠN_CỦA dbr-vi:Thủ_tướng_Chính_phủ ;
+    rdfs:comment "Văn bản pháp luật"@vi .
+
+dbr-vi:Hiệp_định_Genève a dbo:Event ;
+    rdfs:label "Hiệp định Genève"@vi ;
+    dbo:CÔNG_NHẬN_NỀN_ĐỘC_LẬP_CỦA dbr-vi:Việt_Nam_Dân_chủ_Cộng_hòa ;
+    dbo:LIÊN_QUAN_ĐẾN dbr-vi:Miền_Bắc_Việt_Nam,
+        dbr-vi:Miền_Nam_Việt_Nam ;
+    dbo:isPartOf dbr-vi:Chiến_tranh_Đông_Dương,
+        dbr-vi:Vĩ_tuyến_17 ;
+    rdfs:comment "Hiệp định hòa bình năm 1954"@vi .
+
+dbr-vi:Hoàng_Phạm_Quỳnh a dbo:Person ;
+    rdfs:label "Hoàng Phạm Quỳnh"@vi ;
+    rdfs:comment "Thầy giáo"@vi .
+
+dbr-vi:Hoàng_Quốc_Việt a dbo:Person ;
+    rdfs:label "Hoàng Quốc Việt"@vi ;
+    rdfs:comment "Nhà cách mạng"@vi .
+
+dbr-vi:Hoàng_Văn_Thái a dbo:Person ;
+    rdfs:label "Hoàng Văn Thái"@vi ;
+    dbo:ĐỐI_ĐẦU_VỚI dbr-vi:Quân_lực_Việt_Nam_Cộng_hòa ;
+    rdfs:comment "Tướng"@vi .
+
+dbr-vi:Hoàng_Văn_Thụ a dbo:Person ;
+    rdfs:label "Hoàng Văn Thụ"@vi ;
+    rdfs:comment "Nhà cách mạng"@vi .
+
+dbr-vi:Hoàng_Xuân_Đường a dbo:Person ;
+    rdfs:label "Hoàng Xuân Đường"@vi ;
+    rdfs:comment "Cha của Hoàng Thị Loan"@vi .
+
+dbr-vi:Huyện_Nam_Đàn a dbo:Place ;
+    rdfs:label "Huyện Nam Đàn"@vi ;
+    rdfs:comment "Huyện chứa tổng Lâm Thịnh"@vi .
+
+dbr-vi:Huân_chương_Hồ_Chí_Minh a dbo:Work ;
+    rdfs:label "Huân chương Hồ Chí Minh"@vi ;
+    dbo:CÓ_CÔNG_LAO_TRONG dbr-vi:dân_tộc,
+        dbr-vi:Đảng ;
+    dbo:author dbr-vi:Binh_chủng,
+        <http://vi.dbpedia.org/resource/Bộ,_ban,_ngành>,
+        dbr-vi:Quân_chủng,
+        dbr-vi:Quân_khu,
+        dbr-vi:Quân_đoàn,
+        dbr-vi:Quốc_hội,
+        dbr-vi:Tổng_cục ;
+    dbo:country dbr-vi:Cộng_hòa_Xã_hội_Chủ_nghĩa_Việt_Nam,
+        dbr-vi:Nhà_nước_Việt_Nam_Dân_chủ_Cộng_hòa ;
+    dbo:ĐIỀU_CHỈNH_BỞI dbr-vi:Pháp_lệnh_số_10-HĐNN ;
+    dbo:ĐƯỢC_ĐẶT_RA_BỞI dbr-vi:Luật_Thi_đua_-_Khen_thưởng,
+        dbr-vi:Sắc_lệnh_58-SL ;
+    dbo:ĐẢM_NHIỆM_CHỨC_VỤ dbr-vi:Bí_thư,
+        dbr-vi:Bí_thư_Trung_ương_Đảng,
+        dbr-vi:Bộ_trưởng,
+        dbr-vi:Chánh_án_Tòa_án_nhân_dân_tối_cao,
+        dbr-vi:Chủ_tịch_Quốc_hội,
+        dbr-vi:Chủ_tịch_nước,
+        dbr-vi:Chủ_tịch_Ủy_ban_Trung_ương_Mặt_trận_Tổ_quốc_Việt_Nam,
+        dbr-vi:Khu_ủy_viên,
+        dbr-vi:Phó_Bí_thư_Tỉnh_ủy,
+        dbr-vi:Phó_Chủ_tịch_Quốc_hội,
+        dbr-vi:Phó_Chủ_tịch_nước,
+        dbr-vi:Phó_Thủ_tướng_Chính_phủ,
+        dbr-vi:Phó_Trưởng_ban_của_Đảng_ở_trung_ương,
+        dbr-vi:Thường_trực_Ban_Bí_thư,
+        dbr-vi:Thượng_tướng_lực_lượng_vũ_trang_nhân_dân,
+        dbr-vi:Thủ_tướng_Chính_phủ,
+        dbr-vi:Thứ_trưởng,
+        dbr-vi:Trung_tướng_lực_lượng_vũ_trang_nhân_dân,
+        dbr-vi:Trưởng_ban_của_Đảng_ở_trung_ương,
+        dbr-vi:Tổng_Bí_thư,
+        dbr-vi:Viện_trưởng_Viện_kiểm_sát_nhân_dân_tối_cao,
+        dbr-vi:Xứ_ủy_viên,
+        dbr-vi:Đại_tướng_lực_lượng_vũ_trang_nhân_dân,
+        dbr-vi:Ủy_viên_Ban_Bí_thư,
+        dbr-vi:Ủy_viên_Bộ_Chính_trị ;
+    rdfs:comment "Huân chương cao quý của Việt Nam"@vi ;
+    owl:sameAs dbr-en:Order_of_Ho_Chi_Minh .
+
+dbr-vi:Hàm_Nghi a dbo:Person ;
+    rdfs:label "Hàm Nghi"@vi ;
+    rdfs:comment "Vua"@vi .
+
+dbr-vi:Hành_Thiện a dbo:Place ;
+    rdfs:label "Hành Thiện"@vi ;
+    dbo:isPartOf dbr-vi:Xuân_Hồng ;
+    rdfs:comment "Thôn nơi sinh của Trường Chinh"@vi .
+
+dbr-vi:Hòa_ước_Giáp_Thân a dbo:Event ;
+    rdfs:label "Hòa ước Giáp Thân"@vi ;
+    rdfs:comment "Hiệp ước"@vi .
+
+dbr-vi:Hậu_Giang a dbo:Place ;
+    rdfs:label "Hậu Giang"@vi ;
+    rdfs:comment "Tỉnh"@vi .
+
+dbr-vi:Hội_nghị_Trung_ương_7 a dbo:Event ;
+    rdfs:label "Hội nghị Trung ương 7"@vi ;
+    dbo:isPartOf dbr-vi:Làng_Đình_Bảng ;
+    rdfs:comment "Hội nghị"@vi .
+
+dbr-vi:Hội_trường_Thành_phố a dbo:Place ;
+    rdfs:label "Hội trường Thành phố"@vi ;
+    dbo:isPartOf dbr-vi:Thành_phố_Hồ_Chí_Minh,
+        dbr-vi:Võ_Thị_Sáu ;
+    rdfs:comment "Địa điểm tổ chức Đại hội Đảng bộ Thành phố Hồ Chí Minh"@vi .
+
+dbr-vi:Hội_đồng_Liên_bang a dbo:Organisation ;
+    rdfs:label "Hội đồng Liên bang"@vi ;
+    rdfs:comment "Cơ quan tự trị"@vi .
+
+dbr-vi:Hội_đồng_Nhà_nước_Cộng_hòa_Xã_hội_Chủ_nghĩa_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Hội đồng Nhà nước Cộng hòa Xã hội Chủ nghĩa Việt Nam"@vi ;
+    rdfs:comment "Cơ quan ban hành pháp lệnh"@vi .
+
+dbr-vi:Hội_đồng_bộ_trưởng a dbo:Organisation ;
+    rdfs:label "Hội đồng bộ trưởng"@vi ;
+    dbo:alias dbr-vi:Chính_phủ ;
+    dbo:country dbr-vi:Cộng_hòa_Xã_hội_chủ_nghĩa_Việt_Nam ;
+    rdfs:comment "Chính phủ"@vi .
+
+dbr-vi:Jean-Jacque_Rousseau a dbo:Person ;
+    rdfs:label "Jean-Jacque Rousseau"@vi ;
+    rdfs:comment "Triết gia Pháp"@vi .
+
+dbr-vi:Khu_ủy_viên a dbo:Organisation ;
+    rdfs:label "Khu ủy viên"@vi ;
+    rdfs:comment "Chức vụ trong Đảng"@vi .
+
+dbr-vi:Khối_Xô_Viết a dbo:Organisation ;
+    rdfs:label "Khối Xô Viết"@vi ;
+    rdfs:comment "Khối chính trị"@vi .
+
+dbr-vi:Khởi_nghĩa_Bắc_Sơn a dbo:Event ;
+    rdfs:label "Khởi nghĩa Bắc Sơn"@vi ;
+    rdfs:comment "cuộc khởi nghĩa"@vi .
+
+dbr-vi:Kim_Liên a dbo:Place ;
+    rdfs:label "Kim Liên"@vi ;
+    dbo:isPartOf dbr-vi:Nam_Đàn ;
+    rdfs:comment "Xã"@vi .
+
+dbr-vi:Le_Travail a dbo:Work ;
+    rdfs:label "Le Travail"@vi ;
+    rdfs:comment "Báo chí"@vi .
+
+dbr-vi:Long_An a dbo:Place ;
+    rdfs:label "Long An"@vi ;
+    rdfs:comment "Tỉnh thuộc phủ Gia Định"@vi .
+
+dbr-vi:Luật_Thi_đua_-_Khen_thưởng a dbo:Work ;
+    rdfs:label "Luật Thi đua - Khen thưởng"@vi ;
+    rdfs:comment "Luật đặt ra Huân chương lần hai"@vi .
+
+dbr-vi:Làng_Sen a dbo:Place ;
+    rdfs:label "Làng Sen"@vi ;
+    dbo:alias dbr-vi:Làng_Kim_Liên ;
+    dbo:isPartOf dbr-vi:Kim_Liên ;
+    rdfs:comment "Làng"@vi .
+
+dbr-vi:Làng_Đình_Bảng a dbo:Place ;
+    rdfs:label "Làng Đình Bảng"@vi ;
+    dbo:isPartOf dbr-vi:Từ_Sơn ;
+    rdfs:comment "Làng"@vi .
+
+dbr-vi:Lê_Văn_Hiến a dbo:Person ;
+    rdfs:label "Lê Văn Hiến"@vi ;
+    dbo:member dbr-vi:Hội_đồng_Quốc_phòng ;
+    rdfs:comment "Phó Chủ tịch Hội đồng, Bộ trưởng Bộ Tài chính"@vi .
+
+dbr-vi:Lạng_Sơn a dbo:Place ;
+    rdfs:label "Lạng Sơn"@vi ;
+    rdfs:comment "nơi thành lập Cứu quốc quân"@vi .
+
+dbr-vi:Lệ_Ninh a dbo:Place ;
+    rdfs:label "Lệ Ninh"@vi ;
+    dbo:isPartOf dbr-vi:Quảng_Trị ;
+    rdfs:comment "Xã họ ngoại hiện nay"@vi .
+
+dbr-vi:Lộc_Ninh a dbo:Place ;
+    rdfs:label "Lộc Ninh"@vi ;
+    rdfs:comment "Địa điểm"@vi .
+
+dbr-vi:Mao_Trạch_Đông a dbo:Person ;
+    rdfs:label "Mao Trạch Đông"@vi ;
+    rdfs:comment "Nhà lãnh đạo"@vi .
+
+dbr-vi:Minh_đô_sử a dbo:Work ;
+    rdfs:label "Minh đô sử"@vi ;
+    rdfs:comment "Tác phẩm do Đặng Xuân Viện biên soạn"@vi .
+
+dbr-vi:Miền_Nam a dbo:Place ;
+    rdfs:label "Miền Nam"@vi ;
+    dbo:isPartOf dbr-vi:Việt_Nam ;
+    rdfs:comment "Khu vực miền Nam Việt Nam"@vi .
+
+dbr-vi:Miền_Đông_Nam_Bộ a dbo:Place ;
+    rdfs:label "Miền Đông Nam Bộ"@vi ;
+    rdfs:comment "Khu vực căn cứ bí mật"@vi .
+
+dbr-vi:Montesquieu a dbo:Person ;
+    rdfs:label "Montesquieu"@vi ;
+    rdfs:comment "Triết gia Pháp"@vi .
+
+dbr-vi:Mặt_trận_Việt_Minh a dbo:Organisation ;
+    rdfs:label "Mặt trận Việt Minh"@vi ;
+    rdfs:comment "tổ chức chính trị"@vi .
+
+dbr-vi:Mỹ_Đức a dbo:Place ;
+    rdfs:label "Mỹ Đức"@vi ;
+    dbo:alias dbr-vi:Lệ_Ninh ;
+    dbo:isPartOf dbr-vi:Cẩm_Ly,
+        dbr-vi:Sơn_Thủy ;
+    rdfs:comment "Thôn họ ngoại"@vi .
+
+dbr-vi:Nam_Bộ a dbo:Place ;
+    rdfs:label "Nam Bộ"@vi ;
+    dbo:country dbr-vi:Đại_Việt,
+        dbr-vi:Đế_chế_Khmer ;
+    dbo:deathPlace dbr-vi:Đế_chế_Khmer ;
+    rdfs:comment "Vùng đất"@vi .
+
+dbr-vi:Nam_Phong a dbo:Work ;
+    rdfs:label "Nam Phong"@vi ;
+    rdfs:comment "Tờ báo nơi Trường Chinh viết bài"@vi .
+
+dbr-vi:Nam_Việt_Nam a dbo:Place ;
+    rdfs:label "Nam Việt Nam"@vi ;
+    rdfs:comment "Khu vực"@vi .
+
+dbr-vi:Nam_Việt_đồng_thiên_hội a dbo:Organisation ;
+    rdfs:label "Nam Việt đồng thiên hội"@vi ;
+    rdfs:comment "Tổ chức mà Đặng Xuân Viện là thành viên"@vi .
+
+dbr-vi:Nam_Đàn a dbo:Place ;
+    rdfs:label "Nam Đàn"@vi ;
+    dbo:isPartOf dbr-vi:Nghệ_An ;
+    rdfs:comment "Huyện"@vi .
+
+dbr-vi:Napoléon a dbo:Person ;
+    rdfs:label "Napoléon"@vi ;
+    rdfs:comment "Nhà lãnh đạo lịch sử"@vi .
+
+dbr-vi:Nghĩa_trang_liệt_sĩ_huyện_Lệ_Thủy a dbo:Place ;
+    rdfs:label "Nghĩa trang liệt sĩ huyện Lệ Thủy"@vi ;
+    rdfs:comment "Nghĩa trang"@vi .
+
+dbr-vi:Nguyễn_Bá_Ban a dbo:Person ;
+    rdfs:label "Nguyễn Bá Ban"@vi ;
+    dbo:child dbr-vi:Nguyễn_Bá_Bạc ;
+    rdfs:comment "Tổ đời thứ 3"@vi .
+
+dbr-vi:Nguyễn_Bá_Bạc a dbo:Person ;
+    rdfs:label "Nguyễn Bá Bạc"@vi ;
+    dbo:child dbr-vi:Nguyễn_Bá_Phụ ;
+    rdfs:comment "Tổ đời thứ 2"@vi .
+
+dbr-vi:Nguyễn_Bá_Phụ a dbo:Person ;
+    rdfs:label "Nguyễn Bá Phụ"@vi ;
+    rdfs:comment "Thái bảo, Hoàng sơ tổ khảo"@vi .
+
+dbr-vi:Nguyễn_Khắc_Lương a dbo:Person ;
+    rdfs:label "Nguyễn Khắc Lương"@vi ;
+    rdfs:comment "Nhà hoạt động phong trào sinh viên"@vi .
+
+dbr-vi:Nguyễn_Kiên a dbo:Person ;
+    rdfs:label "Nguyễn Kiên"@vi ;
+    rdfs:comment "Cộng sự của Nguyễn Thị Thanh"@vi .
+
+dbr-vi:Nguyễn_Lương_Bằng a dbo:Person ;
+    rdfs:label "Nguyễn Lương Bằng"@vi ;
+    rdfs:comment "Thành viên Ban phụ trách quy hoạch A"@vi .
+
+dbr-vi:Nguyễn_Sinh_Nhuận a dbo:Person ;
+    rdfs:label "Nguyễn Sinh Nhuận"@vi ;
+    dbo:EM_TRAI_CỦA dbr-vi:Nguyễn_Sinh_Cung ;
+    dbo:child dbr-vi:Hoàng_Thị_Loan ;
+    rdfs:comment "em trai của Nguyễn Sinh Khiêm"@vi .
+
+dbr-vi:Nguyễn_Sinh_Tài a dbo:Person ;
+    rdfs:label "Nguyễn Sinh Tài"@vi ;
+    dbo:child dbr-vi:Nguyễn_Sinh_Vật ;
+    rdfs:comment "Tổ đời thứ 6, đỗ Hiếu sinh và Tam trường khoa thi Hội"@vi .
+
+dbr-vi:Nguyễn_Sinh_Vật a dbo:Person ;
+    rdfs:label "Nguyễn Sinh Vật"@vi ;
+    dbo:alias dbr-vi:Lê_Thánh_Đức ;
+    dbo:child dbr-vi:Nguyễn_Văn_Dân ;
+    rdfs:comment "Tổ đời thứ 5, Giám sinh đời Lê Thánh Đức"@vi .
+
+dbr-vi:Nguyễn_Thị_Giáng a dbo:Person ;
+    rdfs:label "Nguyễn Thị Giáng"@vi ;
+    rdfs:comment "vợ của Nguyễn Sinh Khiêm"@vi .
+
+dbr-vi:Nguyễn_Thị_Kiên a dbo:Person ;
+    rdfs:label "Nguyễn Thị Kiên"@vi ;
+    rdfs:comment "Mẹ của Võ Nguyên Giáp"@vi .
+
+dbr-vi:Nguyễn_Thị_Thanh a dbo:Person ;
+    rdfs:label "Nguyễn Thị Thanh"@vi ;
+    dbo:BỊ_GIAM_TẠI dbr-vi:Nhà_lao_Quảng_Ngãi,
+        dbr-vi:Nhà_tù ;
+    dbo:CẢI_TÁNG_HÀI_CỐT_MẸ_TẠI dbr-vi:Nghệ_An ;
+    dbo:HOẠT_ĐỘNG_TẠI dbr-vi:Vinh ;
+    dbo:HỢP_TÁC_VỚI dbr-vi:Nguyễn_Kiên ;
+    dbo:alias dbr-vi:Bạch_Liên_nữ_sĩ ;
+    dbo:child dbr-vi:Hoàng_Thị_Loan ;
+    dbo:deathPlace dbr-vi:Làng_Sen ;
+    dbo:member dbr-vi:Phan_Bội_Châu ;
+    dbo:relative dbr-vi:Nguyễn_Sinh_Cung ;
+    dbo:ĐƯỢC_PHẠM_BÁ_PHỔ_TÔN_TRỌNG dbr-vi:Phạm_Bá_Phổ ;
+    rdfs:comment "chị cả trong gia đình cụ Phó bảng"@vi .
+
+dbr-vi:Nguyễn_Văn_Dân a dbo:Person ;
+    rdfs:label "Nguyễn Văn Dân"@vi ;
+    dbo:child dbr-vi:Nguyễn_Bá_Ban ;
+    rdfs:comment "Tổ đời thứ 4"@vi .
+
+dbr-vi:Nguyễn_Văn_Hoan a dbo:Person ;
+    rdfs:label "Nguyễn Văn Hoan"@vi ;
+    rdfs:comment "Nhà hoạt động phong trào sinh viên"@vi .
+
+dbr-vi:Nguyễn_Ái_Quốc a dbo:Person ;
+    rdfs:label "Nguyễn Ái Quốc"@vi ;
+    rdfs:comment "Tên gọi phổ biến của Hồ Chí Minh"@vi .
+
+dbr-vi:Nguyễn_Đức_Cảnh a dbo:Person ;
+    rdfs:label "Nguyễn Đức Cảnh"@vi ;
+    rdfs:comment "Nhà hoạt động phong trào sinh viên"@vi .
+
+dbr-vi:Ngày_22_tháng_12 a dbo:Event ;
+    rdfs:label "Ngày 22 tháng 12"@vi ;
+    rdfs:comment "ngày truyền thống của Quân đội nhân dân Việt Nam"@vi .
+
+dbr-vi:Ngày_27_tháng_4_năm_1990 a dbo:Event ;
+    rdfs:label "Ngày 27 tháng 4 năm 1990"@vi ;
+    rdfs:comment "công nhận km 0 là di tích lịch sử quốc gia"@vi .
+
+dbr-vi:Ngọ_Báo a dbo:Work ;
+    rdfs:label "Ngọ Báo"@vi ;
+    rdfs:comment "Tờ báo nơi Trường Chinh viết bài"@vi .
+
+dbr-vi:Nhà_khách_Bộ_Quốc_phòng a dbo:Place ;
+    rdfs:label "Nhà khách Bộ Quốc phòng"@vi ;
+    dbo:isPartOf dbr-vi:Hà_Nội ;
+    rdfs:comment "Địa điểm tổ chức lễ"@vi .
+
+dbr-vi:Nhà_nước_Việt_Nam_Dân_chủ_Cộng_hòa a dbo:Organisation ;
+    rdfs:label "Nhà nước Việt Nam Dân chủ Cộng hòa"@vi ;
+    rdfs:comment "Nhà nước trước đây"@vi .
+
+dbr-vi:Nhà_tù a dbo:Place ;
+    rdfs:label "Nhà tù"@vi ;
+    rdfs:comment "Nơi giam giữ Nguyễn Thị Thanh"@vi .
+
+dbr-vi:Nhân_dân a dbo:Organisation ;
+    rdfs:label "Nhân dân"@vi ;
+    rdfs:comment "Nhân dân Việt Nam"@vi .
+
+dbr-vi:Nhật a dbo:Place ;
+    rdfs:label "Nhật"@vi ;
+    dbo:BẢO_HỘ dbr-vi:Việt_Nam ;
+    dbo:KIỂM_SOÁT dbr-vi:Việt_Nam ;
+    rdfs:comment "Quốc gia"@vi .
+
+dbr-vi:Ninh_Bình a dbo:Place ;
+    rdfs:label "Ninh Bình"@vi ;
+    rdfs:comment "Tỉnh hiện nay của xã Xuân Hồng"@vi .
+
+dbr-vi:Nội_các a dbo:Organisation ;
+    rdfs:label "Nội các"@vi ;
+    dbo:isPartOf dbr-vi:Chính_phủ ;
+    rdfs:comment "Bộ phận trong Chính phủ"@vi .
+
+dbr-vi:Okinawa a dbo:Place ;
+    rdfs:label "Okinawa"@vi ;
+    rdfs:comment "Địa điểm đặt đài phát thanh"@vi .
+
+dbr-vi:Phan_Chu_Trinh a dbo:Person ;
+    rdfs:label "Phan Chu Trinh"@vi ;
+    rdfs:comment "Nhà yêu nước"@vi .
+
+dbr-vi:Phan_Văn_Chi a dbo:Person ;
+    rdfs:label "Phan Văn Chi"@vi ;
+    rdfs:comment "Ông chú họ của Võ Văn Kiệt"@vi .
+
+dbr-vi:Phan_Văn_Dựa a dbo:Person ;
+    rdfs:label "Phan Văn Dựa"@vi ;
+    dbo:birthPlace dbr-vi:ấp_Bình_Phụng ;
+    rdfs:comment "Cha của Võ Văn Kiệt"@vi .
+
+dbr-vi:Phan_Văn_Hòa a dbo:Person ;
+    rdfs:label "Phan Văn Hòa"@vi ;
+    dbo:alias dbr-vi:Võ_Văn_Kiệt ;
+    rdfs:comment "Tên khai sinh của Võ Văn Kiệt"@vi .
+
+dbr-vi:Phong_trào_Văn_Thân a dbo:Event ;
+    rdfs:label "Phong trào Văn Thân"@vi ;
+    rdfs:comment "Phong trào"@vi .
+
+dbr-vi:Pháp_lệnh_số_10-HĐNN a dbo:Work ;
+    rdfs:label "Pháp lệnh số 10-HĐNN"@vi ;
+    dbo:ĐƯỢC_BAN_HÀNH_BỞI dbr-vi:Hội_đồng_Nhà_nước_Cộng_hòa_Xã_hội_Chủ_nghĩa_Việt_Nam ;
+    rdfs:comment "Pháp lệnh điều chỉnh Huân chương"@vi .
+
+dbr-vi:Phó_Bí_thư_Thường_trực_Đảng_ủy_Chính_phủ a dbo:Organisation ;
+    rdfs:label "Phó Bí thư Thường trực Đảng ủy Chính phủ"@vi ;
+    rdfs:comment "Chức vụ trong Đảng ủy Chính phủ"@vi .
+
+dbr-vi:Phó_Bí_thư_Tỉnh_ủy a dbo:Organisation ;
+    rdfs:label "Phó Bí thư Tỉnh ủy"@vi ;
+    rdfs:comment "Chức vụ trong Đảng"@vi .
+
+dbr-vi:Phó_Bí_thư_liên_Tỉnh_ủy_Hậu_Giang a dbo:Organisation ;
+    rdfs:label "Phó Bí thư liên Tỉnh ủy Hậu Giang"@vi ;
+    dbo:isPartOf dbr-vi:Hậu_Giang ;
+    rdfs:comment "Chức vụ"@vi .
+
+dbr-vi:Phó_Chủ_tịch_Quốc_hội a dbo:Organisation ;
+    rdfs:label "Phó Chủ tịch Quốc hội"@vi ;
+    rdfs:comment "Chức vụ trong chính phủ"@vi .
+
+dbr-vi:Phó_Chủ_tịch_nước a dbo:Organisation ;
+    rdfs:label "Phó Chủ tịch nước"@vi ;
+    rdfs:comment "Chức vụ trong chính phủ"@vi .
+
+dbr-vi:Phó_Chủ_tịch_thứ_nhất_Hội_đồng_Bộ_trưởng a dbo:Organisation ;
+    rdfs:label "Phó Chủ tịch thứ nhất Hội đồng Bộ trưởng"@vi ;
+    rdfs:comment "Tên gọi của Phó Thủ tướng thường trực Chính phủ"@vi .
+
+dbr-vi:Phó_Thủ_tướng a dbo:Person ;
+    rdfs:label "Phó Thủ tướng"@vi ;
+    dbo:GIÚP dbr-vi:Thủ_tướng ;
+    dbo:alias dbr-vi:Phó_Chủ_tịch_Hội_đồng_Bộ_trưởng ;
+    dbo:isPartOf dbr-vi:Nội_các ;
+    dbo:member dbr-vi:Hội_đồng_Chính_phủ ;
+    dbo:ỦY_NHIỆM_THAY dbr-vi:Thủ_tướng ;
+    rdfs:comment "Chức vụ"@vi .
+
+dbr-vi:Phó_Trưởng_ban_của_Đảng_ở_trung_ương a dbo:Organisation ;
+    rdfs:label "Phó Trưởng ban của Đảng ở trung ương"@vi ;
+    rdfs:comment "Chức vụ trong Đảng"@vi .
+
+dbr-vi:Phùng_Thế_Tài a dbo:Person ;
+    rdfs:label "Phùng Thế Tài"@vi ;
+    rdfs:comment "Thành viên Ban phụ trách quy hoạch A"@vi .
+
+dbr-vi:Phạm_Bá_Phổ a dbo:Person ;
+    rdfs:label "Phạm Bá Phổ"@vi ;
+    dbo:LÀM_VIỆC_TẠI dbr-vi:Nhà_lao_Quảng_Ngãi ;
+    dbo:member dbr-vi:Triều_đình_Huế,
+        dbr-vi:Xô ;
+    rdfs:comment "Án sát tỉnh Quảng Ngãi"@vi .
+
+dbr-vi:Phạm_Năng_Độ a dbo:Person ;
+    rdfs:label "Phạm Năng Độ"@vi ;
+    rdfs:comment "Nhà hoạt động phong trào sinh viên"@vi .
+
+dbr-vi:Phủ_Chủ_tịch a dbo:Place ;
+    rdfs:label "Phủ Chủ tịch"@vi ;
+    rdfs:comment "Nơi tổ chức phiên họp của Hội đồng Quốc phòng và An ninh Việt Nam"@vi .
+
+dbr-vi:Phủ_Gia_Định a dbo:Place ;
+    rdfs:label "Phủ Gia Định"@vi ;
+    dbo:isPartOf dbr-vi:Long_An,
+        dbr-vi:Tây_Ninh ;
+    rdfs:comment "Phủ bao gồm Sài Gòn và các tỉnh xung quanh"@vi .
+
+dbr-vi:Prey_Nokor a dbo:Place ;
+    rdfs:label "Prey Nokor"@vi ;
+    rdfs:comment "Tên cũ của vùng đất"@vi .
+
+<http://vi.dbpedia.org/resource/Quyết_định_số_321-QĐ/TW> a dbo:Work ;
+    rdfs:label "Quyết định số 321-QĐ/TW"@vi ;
+    dbo:BAN_HÀNH_BỞI dbr-vi:Bộ_Chính_trị ;
+    rdfs:comment "Quyết định của Bộ Chính trị"@vi .
+
+dbr-vi:Quân_Giải_phóng a dbo:Organisation ;
+    rdfs:label "Quân Giải phóng"@vi ;
+    dbo:HOẠT_ĐỘNG_TẠI dbr-vi:đồng_bằng_sông_Cửu_Long ;
+    rdfs:comment "Lực lượng quân sự"@vi .
+
+dbr-vi:Quân_Giải_phóng_miền_Nam_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Quân Giải phóng miền Nam Việt Nam"@vi ;
+    dbo:CHẤM_DỨT dbr-vi:Việt_Nam_Cộng_hòa ;
+    dbo:ĐÁNH_CHIẾM dbr-vi:Sài_Gòn ;
+    rdfs:comment "Lực lượng quân sự"@vi .
+
+dbr-vi:Quân_chủng a dbo:Organisation ;
+    rdfs:label "Quân chủng"@vi ;
+    dbo:member dbr-vi:Bộ_Quốc_phòng ;
+    rdfs:comment "Đơn vị quân sự thuộc Bộ Quốc phòng"@vi .
+
+dbr-vi:Quân_khu a dbo:Organisation ;
+    rdfs:label "Quân khu"@vi ;
+    dbo:member dbr-vi:Bộ_Quốc_phòng ;
+    rdfs:comment "Đơn vị quân sự thuộc Bộ Quốc phòng"@vi .
+
+dbr-vi:Quân_đoàn a dbo:Organisation ;
+    rdfs:label "Quân đoàn"@vi ;
+    dbo:member dbr-vi:Bộ_Quốc_phòng ;
+    rdfs:comment "Đơn vị quân sự thuộc Bộ Quốc phòng"@vi .
+
+dbr-vi:Quân_đội_Nhân_dân_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Quân đội Nhân dân Việt Nam"@vi ;
+    dbo:THÀNH_LẬP dbr-vi:đại_đoàn_quân_chủ_lực_30,
+        dbr-vi:đại_đoàn_quân_chủ_lực_308 ;
+    dbo:ĐỔI_TÊN_THÀNH dbr-vi:Quân_đội_Quốc_gia_Việt_Nam ;
+    rdfs:comment "lực lượng quân sự"@vi ;
+    owl:sameAs <http://dbpedia.org/resource/People's_Army_of_Vietnam> .
+
+dbr-vi:Quân_ủy_Trung_ương a dbo:Organisation ;
+    rdfs:label "Quân ủy Trung ương"@vi ;
+    rdfs:comment "Cơ quan chỉ huy"@vi .
+
+dbr-vi:Quảng_Ninh a dbo:Place ;
+    rdfs:label "Quảng Ninh"@vi ;
+    dbo:isPartOf dbr-vi:Quảng_Bình ;
+    rdfs:comment "Phủ"@vi .
+
+dbr-vi:Quảng_Trạch a dbo:Place ;
+    rdfs:label "Quảng Trạch"@vi ;
+    dbo:isPartOf dbr-vi:Quảng_Bình ;
+    rdfs:comment "Quê nhà của Võ Nguyên Giáp"@vi .
+
+dbr-vi:Quảng_trường_Ba_Đình a dbo:Place ;
+    rdfs:label "Quảng trường Ba Đình"@vi ;
+    dbo:country dbr-vi:Việt_Nam ;
+    rdfs:comment "Quảng trường"@vi .
+
+dbr-vi:Quốc_kỳ_Việt_Nam a dbo:Work ;
+    rdfs:label "Quốc kỳ Việt Nam"@vi ;
+    rdfs:comment "quân kỳ của Quân đội nhân dân Việt Nam"@vi .
+
+dbr-vi:Rassemblement a dbo:Work ;
+    rdfs:label "Rassemblement"@vi ;
+    rdfs:comment "Báo chí"@vi .
+
+dbr-vi:Rạch_Giá a dbo:Place ;
+    rdfs:label "Rạch Giá"@vi ;
+    rdfs:comment "Tỉnh"@vi .
+
+dbr-vi:Singapore a dbo:Place ;
+    rdfs:label "Singapore"@vi ;
+    rdfs:comment "Thành phố"@vi .
+
+dbr-vi:Sân_bay_quốc_tế_Nội_Bài a dbo:Place ;
+    rdfs:label "Sân bay quốc tế Nội Bài"@vi ;
+    rdfs:comment "Sân bay quốc tế"@vi .
+
+dbr-vi:Sóc_Sơn a dbo:Place ;
+    rdfs:label "Sóc Sơn"@vi ;
+    rdfs:comment "Huyện"@vi .
+
+dbr-vi:Sóng_Hồng a dbo:Work ;
+    rdfs:label "Sóng Hồng"@vi ;
+    rdfs:comment "Bút danh nhà thơ cách mạng của Trường Chinh"@vi .
+
+dbr-vi:Sĩ_phu a dbo:Person ;
+    rdfs:label "Sĩ phu"@vi ;
+    rdfs:comment "Lãnh đạo phong trào Cần vương"@vi .
+
+dbr-vi:Sơn_La a dbo:Place ;
+    rdfs:label "Sơn La"@vi ;
+    rdfs:comment "Nơi đày"@vi .
+
+dbr-vi:Sơn_Thủy a dbo:Place ;
+    rdfs:label "Sơn Thủy"@vi ;
+    dbo:isPartOf dbr-vi:Lệ_Thủy ;
+    rdfs:comment "Xã họ ngoại"@vi .
+
+dbr-vi:Sắc_lệnh_58-SL a dbo:Work ;
+    rdfs:label "Sắc lệnh 58-SL"@vi ;
+    dbo:commander dbr-vi:Chủ_tịch_nước_Việt_Nam_Dân_chủ_Cộng_hòa ;
+    rdfs:comment "Văn bản pháp luật đặt ra Huân chương lần đầu"@vi .
+
+dbr-vi:T._E._Lawrence a dbo:Person ;
+    rdfs:label "T. E. Lawrence"@vi ;
+    rdfs:comment "Nhà lãnh đạo lịch sử"@vi .
+
+dbr-vi:Thành_viên_khác_của_Chính_phủ a dbo:Person ;
+    rdfs:label "Thành viên khác của Chính phủ"@vi ;
+    rdfs:comment "Chức vụ"@vi .
+
+dbr-vi:Thái_Nguyên a dbo:Place ;
+    rdfs:label "Thái Nguyên"@vi ;
+    rdfs:comment "nơi thành lập Việt Nam Giải phóng quân"@vi .
+
+dbr-vi:Thường_trực_Ban_Bí_thư a dbo:Organisation ;
+    rdfs:label "Thường trực Ban Bí thư"@vi ;
+    rdfs:comment "Chức vụ trong Đảng"@vi .
+
+dbr-vi:Thượng_tướng_lực_lượng_vũ_trang_nhân_dân a dbo:Organisation ;
+    rdfs:label "Thượng tướng lực lượng vũ trang nhân dân"@vi ;
+    rdfs:comment "Quân hàm lực lượng vũ trang nhân dân"@vi .
+
+dbr-vi:Thầy_Nghệ a dbo:Person ;
+    rdfs:label "Thầy Nghệ"@vi ;
+    rdfs:comment "biệt danh của Nguyễn Sinh Khiêm"@vi .
+
+dbr-vi:Thủ_trưởng_cơ_quan_ngang_bộ a dbo:Person ;
+    rdfs:label "Thủ trưởng cơ quan ngang bộ"@vi ;
+    rdfs:comment "Chức vụ"@vi .
+
+dbr-vi:Thứ_trưởng a dbo:Person ;
+    rdfs:label "Thứ trưởng"@vi ;
+    dbo:country dbr-vi:Việt_Nam_Dân_chủ_Cộng_hòa ;
+    rdfs:comment "Chức vụ"@vi .
+
+dbr-vi:Thực_dân_Pháp a dbo:Organisation ;
+    rdfs:label "Thực dân Pháp"@vi ;
+    dbo:XÂM_LƯỢC dbr-vi:Việt_Nam ;
+    rdfs:comment "Thực dân"@vi .
+
+dbr-vi:Triều_đình_Huế a dbo:Organisation ;
+    rdfs:label "Triều đình Huế"@vi ;
+    rdfs:comment "Chính quyền"@vi .
+
+dbr-vi:Trung_Bắc_Tân_Văn a dbo:Work ;
+    rdfs:label "Trung Bắc Tân Văn"@vi ;
+    rdfs:comment "Tờ báo nơi Trường Chinh viết bài"@vi .
+
+dbr-vi:Trung_Hoa_Dân_Quốc a dbo:Place ;
+    rdfs:label "Trung Hoa Dân Quốc"@vi ;
+    dbo:GIẢI_GIÁP_TẠI dbr-vi:Bắc_Việt_Nam ;
+    rdfs:comment "Quốc gia"@vi .
+
+dbr-vi:Trung_Kỳ a dbo:Place ;
+    rdfs:label "Trung Kỳ"@vi ;
+    rdfs:comment "Khu vực"@vi .
+
+dbr-vi:Trung_tướng_lực_lượng_vũ_trang_nhân_dân a dbo:Organisation ;
+    rdfs:label "Trung tướng lực lượng vũ trang nhân dân"@vi ;
+    rdfs:comment "Quân hàm lực lượng vũ trang nhân dân"@vi .
+
+dbr-vi:Trường_Quốc_Học a dbo:Organisation ;
+    rdfs:label "Trường Quốc Học"@vi ;
+    rdfs:comment "Trường học"@vi .
+
+dbr-vi:Trường_Sơn a dbo:Place ;
+    rdfs:label "Trường Sơn"@vi ;
+    rdfs:comment "Dãy núi"@vi .
+
+dbr-vi:Trường_THPT_Chuyên_Lê_Hồng_Phong a dbo:Organisation ;
+    rdfs:label "Trường THPT Chuyên Lê Hồng Phong"@vi ;
+    rdfs:comment "Trường học"@vi .
+
+dbr-vi:Trường_Thành_Chung a dbo:Organisation ;
+    rdfs:label "Trường Thành Chung"@vi ;
+    dbo:isPartOf dbr-vi:Nam_Định ;
+    rdfs:comment "Trường học"@vi .
+
+dbr-vi:Trường_Võ_bị_Trần_Quốc_Tuấn a dbo:Organisation ;
+    rdfs:label "Trường Võ bị Trần Quốc Tuấn"@vi ;
+    rdfs:comment "Trường võ bị"@vi .
+
+<http://vi.dbpedia.org/resource/Trường_tiểu_học_Pháp_–_Việt_Đông_Ba> a dbo:Organisation ;
+    rdfs:label "Trường tiểu học Pháp – Việt Đông Ba"@vi ;
+    rdfs:comment "Trường học"@vi .
+
+dbr-vi:Trưởng_ban_của_Đảng_ở_trung_ương a dbo:Organisation ;
+    rdfs:label "Trưởng ban của Đảng ở trung ương"@vi ;
+    rdfs:comment "Chức vụ trong Đảng"@vi .
+
+dbr-vi:Trần_Quốc_Hoàn a dbo:Person ;
+    rdfs:label "Trần Quốc Hoàn"@vi ;
+    rdfs:comment "Thành viên Ban phụ trách quy hoạch A"@vi .
+
+dbr-vi:Tuyên_ngôn_độc_lập a dbo:Work ;
+    rdfs:label "Tuyên ngôn độc lập"@vi ;
+    rdfs:comment "Tác phẩm"@vi .
+
+dbr-vi:Tân_Sơn_Nhất a dbo:Place ;
+    rdfs:label "Tân Sơn Nhất"@vi ;
+    rdfs:comment "Sân bay quốc tế"@vi .
+
+dbr-vi:Tây_Cống a dbo:Place ;
+    rdfs:label "Tây Cống"@vi ;
+    rdfs:comment "Tên gọi khác của Sài Gòn"@vi .
+
+dbr-vi:Tây_Ninh a dbo:Place ;
+    rdfs:label "Tây Ninh"@vi ;
+    rdfs:comment "Tỉnh thuộc phủ Gia Định"@vi .
+
+dbr-vi:Tôn_Tử a dbo:Person ;
+    rdfs:label "Tôn Tử"@vi ;
+    rdfs:comment "Nhà lãnh đạo lịch sử"@vi .
+
+dbr-vi:Tư_tưởng_Hồ_Chí_Minh a dbo:Work ;
+    rdfs:label "Tư tưởng Hồ Chí Minh"@vi ;
+    dbo:VẬN_DỤNG dbr-vi:Chủ_nghĩa_Mác-Lênin ;
+    dbo:author dbr-vi:Hồ_Chí_Minh ;
+    dbo:country dbr-vi:Việt_Nam ;
+    dbo:ĐƯA_VÀO_CƯƠNG_LĨNH_CỦA dbr-vi:Đảng_Cộng_sản_Việt_Nam ;
+    dbo:ĐƯỢC_CHÍNH_THỨC_ĐƯA_RA_TẠI dbr-vi:Đại_hội_VII_của_Đảng ;
+    dbo:ĐƯỢC_TỔNG_KẾT_BỞI dbr-vi:Đảng_Cộng_sản_Việt_Nam ;
+    rdfs:comment "Hệ thống quan điểm và tư tưởng"@vi ;
+    owl:sameAs dbr-en:Ho_Chi_Minh_Thought .
+
+dbr-vi:Tất_Đạt a dbo:Person ;
+    rdfs:label "Tất Đạt"@vi ;
+    rdfs:comment "tên tự của Nguyễn Sinh Khiêm"@vi .
+
+dbr-vi:Tổng_Bí_thư_Nguyễn_Phú_Trọng a dbo:Person ;
+    rdfs:label "Tổng Bí thư Nguyễn Phú Trọng"@vi ;
+    rdfs:comment "Tổng Bí thư"@vi .
+
+dbr-vi:Tổng_Lâm_Thịnh a dbo:Place ;
+    rdfs:label "Tổng Lâm Thịnh"@vi ;
+    dbo:isPartOf dbr-vi:Huyện_Nam_Đàn ;
+    rdfs:comment "Tổng chứa xã Chung Cự"@vi .
+
+dbr-vi:Tổng_cục a dbo:Organisation ;
+    rdfs:label "Tổng cục"@vi ;
+    dbo:member <http://vi.dbpedia.org/resource/Bộ,_ban,_ngành>,
+        dbr-vi:Bộ_Quốc_phòng ;
+    rdfs:comment "Cơ quan tương đương thuộc Bộ Quốc phòng hoặc Bộ, ban, ngành"@vi .
+
+dbr-vi:Từ_Sơn a dbo:Place ;
+    rdfs:label "Từ Sơn"@vi ;
+    dbo:isPartOf dbr-vi:Bắc_Ninh ;
+    rdfs:comment "Thị xã"@vi .
+
+dbr-vi:Vinh a dbo:Place ;
+    rdfs:label "Vinh"@vi ;
+    rdfs:comment "Thành phố"@vi .
+
+dbr-vi:Viện_Dân_biểu_Trung_Kỳ a dbo:Organisation ;
+    rdfs:label "Viện Dân biểu Trung Kỳ"@vi ;
+    rdfs:comment "Cơ quan lập pháp"@vi .
+
+dbr-vi:Viện_Lăng_Lenin a dbo:Organisation ;
+    rdfs:label "Viện Lăng Lenin"@vi ;
+    rdfs:comment "Viện nghiên cứu và bảo quản thi hài"@vi .
+
+dbr-vi:Viện_Quân_y_108 a dbo:Organisation ;
+    rdfs:label "Viện Quân y 108"@vi ;
+    dbo:isPartOf dbr-vi:Hà_Nội ;
+    rdfs:comment "Viện y tế quân đội tại Hà Nội"@vi .
+
+dbr-vi:Viện_trưởng_Viện_kiểm_sát_nhân_dân_tối_cao a dbo:Organisation ;
+    rdfs:label "Viện trưởng Viện kiểm sát nhân dân tối cao"@vi ;
+    rdfs:comment "Chức vụ trong hệ thống tư pháp"@vi .
+
+dbr-vi:Việt_Nam_Thanh_niên_Cách_mạng_Đồng_chí_Hội a dbo:Organisation ;
+    rdfs:label "Việt Nam Thanh niên Cách mạng Đồng chí Hội"@vi ;
+    rdfs:comment "Tổ chức cách mạng"@vi .
+
+dbr-vi:Vladimir_Lenin a dbo:Person ;
+    rdfs:label "Vladimir Lenin"@vi ;
+    rdfs:comment "Nhà lãnh đạo lịch sử"@vi .
+
+dbr-vi:Võ_Giáp a dbo:Person ;
+    rdfs:label "Võ Giáp"@vi ;
+    rdfs:comment "Tên khai sinh của Võ Nguyên Giáp"@vi .
+
+dbr-vi:Võ_Quang_Nghiêm a dbo:Person ;
+    rdfs:label "Võ Quang Nghiêm"@vi ;
+    dbo:AN_TÁNG_TẠI dbr-vi:Nghĩa_trang_liệt_sĩ_huyện_Lệ_Thủy ;
+    dbo:LIÊN_QUAN_ĐẾN dbr-vi:Chiến_tranh_Đông_Dương ;
+    dbo:deathPlace dbr-vi:Huế ;
+    rdfs:comment "Cha của Võ Nguyên Giáp"@vi .
+
+dbr-vi:Võ_Thuần_Nho a dbo:Person ;
+    rdfs:label "Võ Thuần Nho"@vi ;
+    dbo:member dbr-vi:Bộ_Giáo_dục ;
+    rdfs:comment "Em trai của Võ Nguyên Giáp"@vi .
+
+dbr-vi:Võ_Thị_Lài a dbo:Person ;
+    rdfs:label "Võ Thị Lài"@vi ;
+    rdfs:comment "Em gái của Võ Nguyên Giáp"@vi .
+
+dbr-vi:Võ_Thị_Quế a dbo:Person ;
+    rdfs:label "Võ Thị Quế"@vi ;
+    dbo:birthPlace dbr-vi:ấp_Bình_Phụng ;
+    rdfs:comment "Mẹ của Võ Văn Kiệt"@vi .
+
+dbr-vi:Võ_Thị_Sáu a dbo:Place ;
+    rdfs:label "Võ Thị Sáu"@vi ;
+    dbo:isPartOf dbr-vi:Thành_phố_Hồ_Chí_Minh ;
+    rdfs:comment "Tên đường"@vi .
+
+dbr-vi:Văn_Tiến_Dũng a dbo:Person ;
+    rdfs:label "Văn Tiến Dũng"@vi ;
+    dbo:commander dbr-vi:Chiến_dịch_Hồ_Chí_Minh ;
+    dbo:ĐỐI_ĐẦU_VỚI dbr-vi:Quân_lực_Việt_Nam_Cộng_hòa ;
+    rdfs:comment "Tướng"@vi .
+
+dbr-vi:Văn_thân a dbo:Person ;
+    rdfs:label "Văn thân"@vi ;
+    rdfs:comment "Lãnh đạo phong trào Cần vương"@vi .
+
+dbr-vi:Vĩ_tuyến_17 a dbo:Place ;
+    rdfs:label "Vĩ tuyến 17"@vi ;
+    dbo:country dbr-vi:Quốc_gia_Việt_Nam,
+        dbr-vi:Việt_Nam_Dân_chủ_Cộng_hòa ;
+    rdfs:comment "Ranh giới quân sự tạm thời"@vi .
+
+dbr-vi:Vương_quốc_Campuchia a dbo:Place ;
+    rdfs:label "Vương quốc Campuchia"@vi ;
+    rdfs:comment "Quốc gia"@vi .
+
+dbr-vi:Vệ_quốc_quân a dbo:Organisation ;
+    rdfs:label "Vệ quốc quân"@vi ;
+    dbo:birthPlace dbr-vi:Hà_Nội ;
+    rdfs:comment "tên gọi trước của Quân đội nhân dân Việt Nam"@vi .
+
+dbr-vi:Vệ_quốc_đoàn a dbo:Organisation ;
+    rdfs:label "Vệ quốc đoàn"@vi ;
+    dbo:CHIẾN_ĐẤU_VỚI dbr-vi:quân_đội_Thực_dân_Pháp ;
+    dbo:birthPlace dbr-vi:Hà_Nội ;
+    dbo:country dbr-vi:Việt_Nam_Dân_chủ_Cộng_hòa ;
+    dbo:ĐỔI_TÊN_THÀNH dbr-vi:Việt_Nam_Giải_phóng_quân ;
+    rdfs:comment "lực lượng quân sự"@vi .
+
+dbr-vi:Xuân_Hồng a dbo:Place ;
+    rdfs:label "Xuân Hồng"@vi ;
+    dbo:isPartOf dbr-vi:Ninh_Bình,
+        dbr-vi:Xuân_Trường ;
+    rdfs:comment "Xã nơi sinh của Trường Chinh"@vi .
+
+dbr-vi:Xuân_Mai a dbo:Place ;
+    rdfs:label "Xuân Mai"@vi ;
+    rdfs:comment "Thị trấn"@vi .
+
+dbr-vi:Xuân_Trường a dbo:Place ;
+    rdfs:label "Xuân Trường"@vi ;
+    dbo:isPartOf dbr-vi:Nam_Định ;
+    rdfs:comment "Huyện nơi sinh của Trường Chinh"@vi .
+
+dbr-vi:Xô a dbo:Person ;
+    rdfs:label "Xô"@vi ;
+    rdfs:comment "Đứng đầu mật thám Trung Kì"@vi .
+
+dbr-vi:Xứ_ủy_viên a dbo:Organisation ;
+    rdfs:label "Xứ ủy viên"@vi ;
+    rdfs:comment "Chức vụ trong Đảng"@vi .
+
+dbr-vi:anh_Văn a dbo:Person ;
+    rdfs:label "anh Văn"@vi ;
+    rdfs:comment "Biệt danh của Võ Nguyên Giáp"@vi .
+
+dbr-vi:anh_trai a dbo:Person ;
+    rdfs:label "anh trai"@vi ;
+    rdfs:comment "Anh trai của Nguyễn Sinh Cung"@vi .
+
+dbr-vi:bà_ngoại a dbo:Person ;
+    rdfs:label "bà ngoại"@vi ;
+    rdfs:comment "Bà ngoại của Nguyễn Sinh Cung"@vi .
+
+dbr-vi:bài_vè_Thất_thủ_kinh_đô a dbo:Work ;
+    rdfs:label "bài vè Thất thủ kinh đô"@vi ;
+    dbo:NÓI_VỀ dbr-vi:phong_trào_đánh_Pháp ;
+    rdfs:comment "Bài vè"@vi .
+
+dbr-vi:cha_của_Võ_Nguyên_Giáp a dbo:Person ;
+    rdfs:label "cha của Võ Nguyên Giáp"@vi ;
+    dbo:GIỮ_GÌN dbr-vi:đạo_Khổng ;
+    dbo:author dbr-vi:bài_vè_Thất_thủ_kinh_đô ;
+    rdfs:comment "Cha của Võ Nguyên Giáp"@vi .
+
+dbr-vi:cha_mẹ a dbo:Person ;
+    rdfs:label "cha mẹ"@vi ;
+    rdfs:comment "Cha mẹ của Nguyễn Sinh Cung"@vi .
+
+dbr-vi:châu_Âu a dbo:Place ;
+    rdfs:label "châu Âu"@vi ;
+    rdfs:comment "Lục địa"@vi .
+
+dbr-vi:cột_mốc_số_0 a dbo:Place ;
+    rdfs:label "cột mốc số 0"@vi ;
+    rdfs:comment "điểm đánh dấu km 0"@vi .
+
+dbr-vi:di_tích_lịch_sử_quốc_gia a dbo:Place ;
+    rdfs:label "di tích lịch sử quốc gia"@vi ;
+    rdfs:comment "loại di tích"@vi .
+
+dbr-vi:dân_tộc a dbo:Organisation ;
+    rdfs:label "dân tộc"@vi ;
+    rdfs:comment "Tổ chức đại diện dân tộc"@vi .
+
+dbr-vi:huyện_Nam_Đàn a dbo:Place ;
+    rdfs:label "huyện Nam Đàn"@vi ;
+    dbo:isPartOf dbr-vi:tỉnh_Nghệ_An ;
+    rdfs:comment "Huyện nơi xã Kim Liên nằm"@vi .
+
+dbr-vi:huyện_Tân_Kỳ a dbo:Place ;
+    rdfs:label "huyện Tân Kỳ"@vi ;
+    dbo:isPartOf dbr-vi:tỉnh_Nghệ_An ;
+    rdfs:comment "huyện"@vi .
+
+dbr-vi:khối_Xã_hội_chủ_nghĩa a dbo:Organisation ;
+    rdfs:label "khối Xã hội chủ nghĩa"@vi ;
+    dbo:BAO_GỒM dbr-vi:Liên_Xô,
+        dbr-vi:Trung_Quốc,
+        dbr-vi:Đông_Âu ;
+    rdfs:comment "liên minh chính trị"@vi .
+
+dbr-vi:làng_Hòa_An a dbo:Place ;
+    rdfs:label "làng Hòa An"@vi ;
+    dbo:isPartOf dbr-vi:Cao_Lãnh ;
+    rdfs:comment "Làng nơi Nguyễn Sinh Sắc sinh sống cuối đời"@vi .
+
+dbr-vi:làng_Kim_Liên a dbo:Place ;
+    rdfs:label "làng Kim Liên"@vi ;
+    rdfs:comment "Làng khác gọi là làng Sen"@vi .
+
+dbr-vi:làng_Sen a dbo:Place ;
+    rdfs:label "làng Sen"@vi ;
+    dbo:alias dbr-vi:làng_Kim_Liên ;
+    dbo:isPartOf dbr-vi:xã_Kim_Liên ;
+    rdfs:comment "Làng nơi Hồ Chí Minh sinh ra"@vi .
+
+dbr-vi:làng_Tuy_Lộc a dbo:Place ;
+    rdfs:label "làng Tuy Lộc"@vi ;
+    rdfs:comment "Làng kề bên"@vi .
+
+dbr-vi:miền_Bắc_Việt_Nam a dbo:Place ;
+    rdfs:label "miền Bắc Việt Nam"@vi ;
+    rdfs:comment "Khu vực"@vi .
+
+dbr-vi:miền_Nam a dbo:Place ;
+    rdfs:label "miền Nam"@vi ;
+    rdfs:comment "vùng miền Nam Việt Nam"@vi .
+
+dbr-vi:mẹ a dbo:Person ;
+    rdfs:label "mẹ"@vi ;
+    rdfs:comment "Mẹ của Nguyễn Sinh Cung"@vi .
+
+dbr-vi:mẹ_của_Võ_Nguyên_Giáp a dbo:Person ;
+    rdfs:label "mẹ của Võ Nguyên Giáp"@vi ;
+    dbo:KỂ_VỀ dbr-vi:tướng_quân_Tôn_Thất_Thuyết ;
+    rdfs:comment "Mẹ của Võ Nguyên Giáp"@vi .
+
+dbr-vi:nhà_Khóa_Uy a dbo:Person ;
+    rdfs:label "nhà Khóa Uy"@vi ;
+    dbo:isPartOf dbr-vi:làng_Tuy_Lộc ;
+    rdfs:comment "Hoa kiều giàu có"@vi .
+
+dbr-vi:phong_trào_đánh_Pháp a dbo:Event ;
+    rdfs:label "phong trào đánh Pháp"@vi ;
+    rdfs:comment "Phong trào chống Pháp"@vi .
+
+dbr-vi:quân_đội_Thực_dân_Pháp a dbo:Organisation ;
+    rdfs:label "quân đội Thực dân Pháp"@vi ;
+    rdfs:comment "lực lượng quân sự"@vi .
+
+dbr-vi:quận_Dương_Kinh a dbo:Place ;
+    rdfs:label "quận Dương Kinh"@vi ;
+    dbo:country dbr-vi:thành_phố_Hải_Phòng ;
+    rdfs:comment "Quận"@vi .
+
+dbr-vi:quận_Lê_Chân a dbo:Place ;
+    rdfs:label "quận Lê Chân"@vi ;
+    dbo:country dbr-vi:thành_phố_Hải_Phòng ;
+    rdfs:comment "Quận"@vi .
+
+dbr-vi:quốc_lộ_3 a dbo:Place ;
+    rdfs:label "quốc lộ 3"@vi ;
+    rdfs:comment "Quốc lộ"@vi .
+
+dbr-vi:sông_Lạch_Tray a dbo:Place ;
+    rdfs:label "sông Lạch Tray"@vi ;
+    rdfs:comment "Sông"@vi .
+
+dbr-vi:thị_trấn_Lạt a dbo:Place ;
+    rdfs:label "thị trấn Lạt"@vi ;
+    dbo:alias dbr-vi:thị_trấn_Tân_Kỳ ;
+    dbo:isPartOf dbr-vi:huyện_Tân_Kỳ ;
+    rdfs:comment "điểm xuất phát km 0"@vi .
+
+dbr-vi:thị_trấn_Tân_Kỳ a dbo:Place ;
+    rdfs:label "thị trấn Tân Kỳ"@vi ;
+    rdfs:comment "tên khác của thị trấn Lạt"@vi .
+
+dbr-vi:trung_tâm_hành_chinh_mới_Đông_Anh a dbo:Place ;
+    rdfs:label "trung tâm hành chinh mới Đông Anh"@vi ;
+    dbo:isPartOf dbr-vi:Đông_Anh ;
+    rdfs:comment "Trung tâm hành chính mới"@vi .
+
+dbr-vi:trận_Điện_Biên_Phủ a dbo:Event ;
+    rdfs:label "trận Điện Biên Phủ"@vi ;
+    rdfs:comment "Trận đánh"@vi .
+
+dbr-vi:tướng_Giáp a dbo:Person ;
+    rdfs:label "tướng Giáp"@vi ;
+    rdfs:comment "Biệt danh của Võ Nguyên Giáp"@vi .
+
+dbr-vi:tướng_quân_Tôn_Thất_Thuyết a dbo:Person ;
+    rdfs:label "tướng quân Tôn Thất Thuyết"@vi ;
+    dbo:PHÒ_VUA dbr-vi:vua_Hàm_Nghi ;
+    rdfs:comment "Tướng quân"@vi .
+
+dbr-vi:tỉnh_Bình_Định a dbo:Place ;
+    rdfs:label "tỉnh Bình Định"@vi ;
+    rdfs:comment "Tỉnh nơi Bình Khê nằm"@vi .
+
+dbr-vi:tỉnh_Sa_Đéc a dbo:Place ;
+    rdfs:label "tỉnh Sa Đéc"@vi ;
+    dbo:alias dbr-vi:tỉnh_Đồng_Tháp ;
+    rdfs:comment "Tỉnh cũ nơi Cao Lãnh nằm"@vi .
+
+dbr-vi:tỉnh_Đồng_Tháp a dbo:Place ;
+    rdfs:label "tỉnh Đồng Tháp"@vi ;
+    rdfs:comment "Tỉnh hiện nay nơi Cao Lãnh nằm"@vi .
+
+dbr-vi:vua_Hàm_Nghi a dbo:Person ;
+    rdfs:label "vua Hàm Nghi"@vi ;
+    rdfs:comment "Vua"@vi .
+
+dbr-vi:vùng_núi_phía_Tây a dbo:Place ;
+    rdfs:label "vùng núi phía Tây"@vi ;
+    rdfs:comment "vùng núi"@vi .
+
+dbr-vi:xã_Kim_Liên a dbo:Place ;
+    rdfs:label "xã Kim Liên"@vi ;
+    dbo:isPartOf dbr-vi:huyện_Nam_Đàn ;
+    rdfs:comment "Xã nơi làng Sen nằm"@vi .
+
+dbr-vi:xã_Trung_Hiệp a dbo:Place ;
+    rdfs:label "xã Trung Hiệp"@vi ;
+    dbo:isPartOf dbr-vi:tỉnh_Vĩnh_Long ;
+    rdfs:comment "Xã thuộc tỉnh Vĩnh Long"@vi .
+
+dbr-vi:xã_Trung_Lương a dbo:Place ;
+    rdfs:label "xã Trung Lương"@vi ;
+    dbo:isPartOf dbr-vi:huyện_Vũng_Liêm ;
+    rdfs:comment "Xã thuộc huyện Vũng Liêm"@vi .
+
+dbr-vi:Điều_89_Hiến_pháp_nước_Cộng_hòa_xã_hội_chủ_nghĩa_Việt_Nam_2013 a dbo:Work ;
+    rdfs:label "Điều 89 Hiến pháp nước Cộng hòa xã hội chủ nghĩa Việt Nam 2013"@vi ;
+    rdfs:comment "Điều luật quy định thành lập Hội đồng Quốc phòng và An ninh Việt Nam"@vi .
+
+dbr-vi:Đài_Phát_thanh_Giải_phóng a dbo:Organisation ;
+    rdfs:label "Đài Phát thanh Giải phóng"@vi ;
+    dbo:country dbr-vi:Mặt_trận_Dân_tộc_Giải_phóng_miền_Nam_Việt_Nam ;
+    dbo:ĐẶT_TẠI dbr-vi:Okinawa ;
+    rdfs:comment "Đài phát thanh"@vi .
+
+dbr-vi:Đài_Truyền_hình_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Đài Truyền hình Việt Nam"@vi ;
+    rdfs:comment "Đài truyền hình"@vi .
+
+dbr-vi:Đông_Dương_Cộng_sản_Đảng a dbo:Organisation ;
+    rdfs:label "Đông Dương Cộng sản Đảng"@vi ;
+    rdfs:comment "Đảng chính trị"@vi .
+
+dbr-vi:Đông_Nam_Bộ a dbo:Place ;
+    rdfs:label "Đông Nam Bộ"@vi ;
+    rdfs:comment "Vùng chuyển tiếp"@vi .
+
+dbr-vi:Đông_Âu a dbo:Place ;
+    rdfs:label "Đông Âu"@vi ;
+    rdfs:comment "khu vực"@vi .
+
+dbr-vi:Đường_xuyên_Á_AH14 a dbo:Place ;
+    rdfs:label "Đường xuyên Á AH14"@vi ;
+    rdfs:comment "Tuyến đường xuyên Á"@vi .
+
+dbr-vi:Đại_Phong_Lộc a dbo:Place ;
+    rdfs:label "Đại Phong Lộc"@vi ;
+    dbo:isPartOf dbr-vi:Lệ_Thủy ;
+    rdfs:comment "Tổng"@vi .
+
+dbr-vi:Đại_Việt a dbo:Place ;
+    rdfs:label "Đại Việt"@vi ;
+    rdfs:comment "Quốc gia"@vi .
+
+dbr-vi:Đại_học_Quốc_gia_Hà_Nội a dbo:Organisation ;
+    rdfs:label "Đại học Quốc gia Hà Nội"@vi ;
+    rdfs:comment "Tên hiện nay của Đại học Đông Dương"@vi .
+
+dbr-vi:Đại_học_Đông_Dương a dbo:Organisation ;
+    rdfs:label "Đại học Đông Dương"@vi ;
+    dbo:alias dbr-vi:Đại_học_Quốc_gia_Hà_Nội ;
+    rdfs:comment "Đại học sở hữu Trường Cao đẳng Thương mại"@vi .
+
+dbr-vi:Đại_hội_VII_của_Đảng a dbo:Event ;
+    rdfs:label "Đại hội VII của Đảng"@vi ;
+    rdfs:comment "Sự kiện chính trị"@vi .
+
+dbr-vi:Đại_hội_Đảng_bộ_Thành_phố_Hồ_Chí_Minh a dbo:Event ;
+    rdfs:label "Đại hội Đảng bộ Thành phố Hồ Chí Minh"@vi ;
+    dbo:TỔ_CHỨC_TẠI dbr-vi:Hội_trường_Thành_phố ;
+    dbo:commander dbr-vi:Đảng_bộ_Thành_phố_Hồ_Chí_Minh ;
+    rdfs:comment "Cơ quan lãnh đạo cao nhất của Đảng bộ Thành phố Hồ Chí Minh"@vi .
+
+dbr-vi:Đại_tướng_Võ_Nguyên_Giáp a dbo:Person ;
+    rdfs:label "Đại tướng Võ Nguyên Giáp"@vi ;
+    dbo:birthPlace dbr-vi:30_Hoàng_Diệu ;
+    dbo:commander dbr-vi:Chiến_dịch_Hồ_Chí_Minh ;
+    dbo:member dbr-vi:Quân_ủy_Trung_ương ;
+    dbo:ĐƯỢC_TẶNG dbr-vi:Huân_chương_Hồ_Chí_Minh ;
+    rdfs:comment "Đại tướng"@vi .
+
+dbr-vi:Đại_tướng_lực_lượng_vũ_trang_nhân_dân a dbo:Organisation ;
+    rdfs:label "Đại tướng lực lượng vũ trang nhân dân"@vi ;
+    rdfs:comment "Quân hàm lực lượng vũ trang nhân dân"@vi .
+
+dbr-vi:Đảng_Cộng_sản a dbo:Organisation ;
+    rdfs:label "Đảng Cộng sản"@vi ;
+    rdfs:comment "Tổ chức chính trị"@vi .
+
+dbr-vi:Đảng_Cộng_sản_Liên_Xô a dbo:Organisation ;
+    rdfs:label "Đảng Cộng sản Liên Xô"@vi ;
+    dbo:country dbr-vi:Liên_Xô ;
+    rdfs:comment "Đảng chính trị"@vi .
+
+dbr-vi:Đảng_bộ_tỉnh_Bà_Rịa_-_Vũng_Tàu a dbo:Organisation ;
+    rdfs:label "Đảng bộ tỉnh Bà Rịa - Vũng Tàu"@vi ;
+    rdfs:comment "Đảng bộ của tỉnh Bà Rịa - Vũng Tàu"@vi .
+
+dbr-vi:Đảng_bộ_tỉnh_Bình_Dương a dbo:Organisation ;
+    rdfs:label "Đảng bộ tỉnh Bình Dương"@vi ;
+    rdfs:comment "Đảng bộ của tỉnh Bình Dương"@vi .
+
+dbr-vi:Đặng_Châu_Tệ a dbo:Person ;
+    rdfs:label "Đặng Châu Tệ"@vi ;
+    rdfs:comment "Nhà hoạt động phong trào sinh viên"@vi .
+
+dbr-vi:Đặng_Xuân_Khu a dbo:Person ;
+    rdfs:label "Đặng Xuân Khu"@vi ;
+    dbo:BỊ_BẮT_BỞI dbr-vi:Pháp ;
+    dbo:BỊ_ĐÀY_ĐI dbr-vi:Sơn_La ;
+    dbo:CỘNG_SỰ_CÙNG dbr-vi:Hoàng_Quốc_Việt,
+        dbr-vi:Hoàng_Văn_Thụ ;
+    dbo:PHỤ_TRÁCH dbr-vi:Báo_Tin_tức,
+        dbr-vi:En_Avant,
+        dbr-vi:Le_Travail,
+        dbr-vi:Rassemblement ;
+    dbo:TRUY_ĐIỆU dbr-vi:Phan_Chu_Trinh ;
+    dbo:commander dbr-vi:Báo_Cờ_giải_phóng ;
+    dbo:member dbr-vi:Hội_nghị_Trung_ương_7,
+        dbr-vi:Việt_Nam_Thanh_niên_Cách_mạng_Đồng_chí_Hội,
+        dbr-vi:Đông_Dương_Cộng_sản_Đảng,
+        dbr-vi:Đảng_Cộng_sản_Đông_Dương ;
+    dbo:ĐÃ_HỌC_TẠI dbr-vi:Trường_Cao_đẳng_Thương_mại,
+        dbr-vi:Trường_THPT_Chuyên_Lê_Hồng_Phong ;
+    dbo:ĐÃ_SỐNG_TẠI dbr-vi:Hà_Nội ;
+    dbo:ĐẠI_DIỆN_CỦA dbr-vi:Ủy_ban_Mặt_trận_Dân_chủ_Bắc_Kỳ ;
+    dbo:ỦNG_HỘ dbr-vi:Phan_Bội_Châu ;
+    rdfs:comment "Ủy viên Ban Chấp hành Trung ương"@vi .
+
+dbr-vi:Đế_quốc_Pháp a dbo:Organisation ;
+    rdfs:label "Đế quốc Pháp"@vi ;
+    rdfs:comment "Đế quốc"@vi .
+
+dbr-vi:Đế_quốc_Việt_Nam a dbo:Place ;
+    rdfs:label "Đế quốc Việt Nam"@vi ;
+    rdfs:comment "Quốc hiệu"@vi .
+
+dbr-vi:Đồng_Minh a dbo:Organisation ;
+    rdfs:label "Đồng Minh"@vi ;
+    rdfs:comment "Liên minh quân sự"@vi .
+
+dbr-vi:Đồng_Nai a dbo:Place ;
+    rdfs:label "Đồng Nai"@vi ;
+    dbo:country dbr-vi:Việt_Nam ;
+    rdfs:comment "Tỉnh"@vi .
+
+dbr-vi:Đồng_Tháp a dbo:Place ;
+    rdfs:label "Đồng Tháp"@vi ;
+    rdfs:comment "Tỉnh"@vi .
+
+dbr-vi:đường_Võ_Văn_Kiệt a dbo:Place ;
+    rdfs:label "đường Võ Văn Kiệt"@vi ;
+    rdfs:comment "Tuyến đường"@vi .
+
+dbr-vi:đường_mòn_Hồ_Chí_Minh a dbo:Work ;
+    rdfs:label "đường mòn Hồ Chí Minh"@vi ;
+    dbo:isPartOf dbr-vi:Campuchia,
+        dbr-vi:Lào,
+        dbr-vi:Nam_Việt_Nam,
+        dbr-vi:miền_Bắc_Việt_Nam ;
+    rdfs:comment "Kiến trúc quân sự"@vi .
+
+dbr-vi:đại_đoàn_quân_chủ_lực_30 a dbo:Organisation ;
+    rdfs:label "đại đoàn quân chủ lực 30"@vi ;
+    rdfs:comment "đơn vị quân sự"@vi .
+
+dbr-vi:đại_đoàn_quân_chủ_lực_308 a dbo:Organisation ;
+    rdfs:label "đại đoàn quân chủ lực 308"@vi ;
+    rdfs:comment "đơn vị quân sự"@vi .
+
+dbr-vi:đạo_Khổng a dbo:Organisation ;
+    rdfs:label "đạo Khổng"@vi ;
+    rdfs:comment "Tôn giáo"@vi .
+
+dbr-vi:đồng_bằng_sông_Cửu_Long a dbo:Place ;
+    rdfs:label "đồng bằng sông Cửu Long"@vi ;
+    rdfs:comment "Khu vực địa lý"@vi .
+
+dbr-vi:Ấu_học_tân_thư a dbo:Work ;
+    rdfs:label "Ấu học tân thư"@vi ;
+    rdfs:comment "Sách giáo dục Nho học"@vi .
+
+dbr-vi:Ủy_ban_Mặt_trận_Dân_chủ_Bắc_Kỳ a dbo:Organisation ;
+    rdfs:label "Ủy ban Mặt trận Dân chủ Bắc Kỳ"@vi ;
+    rdfs:comment "Tổ chức chính trị"@vi .
+
+dbr-vi:Ủy_viên_Ban_Bí_thư a dbo:Organisation ;
+    rdfs:label "Ủy viên Ban Bí thư"@vi ;
+    rdfs:comment "Chức vụ trong Đảng"@vi .
+
+dbr-vi:Ủy_viên_Xứ_ủy_Nam_Bộ a dbo:Organisation ;
+    rdfs:label "Ủy viên Xứ ủy Nam Bộ"@vi ;
+    rdfs:comment "Chức vụ"@vi .
+
+dbr-vi:Ban_Chấp_hành_Trung_ương_Đảng a dbo:Organisation ;
+    rdfs:label "Ban Chấp hành Trung ương Đảng"@vi ;
+    rdfs:comment "Ban Chấp hành Trung ương của Đảng Cộng sản Việt Nam"@vi .
+
+dbr-vi:Bảo_Đại a dbo:Person ;
+    rdfs:label "Bảo Đại"@vi ;
+    dbo:CHUẨN_Y dbr-vi:Trần_Trọng_Kim ;
+    dbo:GIẢI_THỂ dbr-vi:Viện_Dân_biểu_Trung_Kỳ ;
+    dbo:HỦY_BỎ dbr-vi:Hòa_ước_Giáp_Thân ;
+    dbo:MỜI_THAM_GIA_CHÍNH_PHỦ dbr-vi:Ngô_Đình_Diệm ;
+    dbo:commander dbr-vi:Trần_Trọng_Kim,
+        dbr-vi:Việt_Nam ;
+    dbo:country dbr-vi:Nhật_Bản ;
+    rdfs:comment "Hoàng đế"@vi .
+
+dbr-vi:Bắc_Việt_Nam a dbo:Place ;
+    rdfs:label "Bắc Việt Nam"@vi ;
+    rdfs:comment "Khu vực"@vi .
+
+dbr-vi:Chủ_nghĩa_Mác-Lênin a dbo:Work ;
+    rdfs:label "Chủ nghĩa Mác-Lênin"@vi ;
+    rdfs:comment "Hệ tư tưởng"@vi .
+
+dbr-vi:Chủ_tịch_Hội_đồng_Bộ_trưởng a dbo:Person ;
+    rdfs:label "Chủ tịch Hội đồng Bộ trưởng"@vi ;
+    dbo:commander dbr-vi:Hội_đồng_bộ_trưởng ;
+    rdfs:comment "Chức vụ"@vi .
+
+dbr-vi:Chủ_tịch_Quốc_hội a dbo:Person ;
+    rdfs:label "Chủ tịch Quốc hội"@vi ;
+    dbo:member dbr-vi:Hội_đồng_Quốc_phòng_và_An_ninh_Việt_Nam ;
+    rdfs:comment "Ủy viên của Hội đồng Quốc phòng và An ninh Việt Nam"@vi .
+
+dbr-vi:Cách_mạng_Tháng_Tám_năm_1945 a dbo:Event ;
+    rdfs:label "Cách mạng Tháng Tám năm 1945"@vi ;
+    rdfs:comment "cuộc cách mạng"@vi .
+
+dbr-vi:Cầu_Võ_Nguyên_Giáp a dbo:Work ;
+    rdfs:label "Cầu Võ Nguyên Giáp"@vi ;
+    dbo:isPartOf dbr-vi:quận_Dương_Kinh,
+        dbr-vi:quận_Lê_Chân,
+        dbr-vi:sông_Lạch_Tray ;
+    dbo:member dbr-vi:châu_Âu ;
+    rdfs:comment "Cây cầu"@vi .
+
+dbr-vi:Cộng_hòa_Xã_hội_chủ_nghĩa_Việt_Nam a dbo:Place ;
+    rdfs:label "Cộng hòa Xã hội chủ nghĩa Việt Nam"@vi ;
+    rdfs:comment "Quốc gia"@vi .
+
+dbr-vi:Cộng_hòa_miền_Nam_Việt_Nam a dbo:Place ;
+    rdfs:label "Cộng hòa miền Nam Việt Nam"@vi ;
+    dbo:THỐNG_NHẤT_THÀNH dbr-vi:Cộng_hòa_xã_hội_chủ_nghĩa_Việt_Nam ;
+    rdfs:comment "Nhà nước"@vi .
+
+dbr-vi:Cứu_quốc_quân a dbo:Organisation ;
+    rdfs:label "Cứu quốc quân"@vi ;
+    dbo:THAM_GIA dbr-vi:Khởi_nghĩa_Bắc_Sơn ;
+    dbo:birthPlace dbr-vi:Lạng_Sơn ;
+    dbo:commander dbr-vi:Chu_Văn_Tấn ;
+    dbo:member dbr-vi:Xứ_ủy_Bắc_Kỳ ;
+    rdfs:comment "lực lượng quân sự"@vi .
+
+dbr-vi:Di_chúc_của_Chủ_tịch_Hồ_Chí_Minh a dbo:Work ;
+    rdfs:label "Di chúc của Chủ tịch Hồ Chí Minh"@vi ;
+    dbo:LƯU_GIỮ_TẠI dbr-vi:Cục_lưu_trữ_Văn_phòng_Trung_ương_Đảng ;
+    dbo:author dbr-vi:Chủ_tịch_Hồ_Chí_Minh ;
+    rdfs:comment "Bản di chúc"@vi .
+
+dbr-vi:Hiệp_định_Paris a dbo:Event ;
+    rdfs:label "Hiệp định Paris"@vi ;
+    rdfs:comment "Hiệp định hòa bình"@vi .
+
+dbr-vi:Huyện_Tân_Bình a dbo:Place ;
+    rdfs:label "Huyện Tân Bình"@vi ;
+    dbo:isPartOf dbr-vi:Phủ_Gia_Định ;
+    rdfs:comment "Huyện thuộc phủ Gia Định"@vi .
+
+dbr-vi:Hòa_Lạc a dbo:Place ;
+    rdfs:label "Hòa Lạc"@vi ;
+    dbo:isPartOf dbr-vi:Hà_Nội ;
+    rdfs:comment "Thị trấn"@vi .
+
+dbr-vi:Hệ_thống_đường_Hồ_Chí_Minh a dbo:Place ;
+    rdfs:label "Hệ thống đường Hồ Chí Minh"@vi ;
+    dbo:country dbr-vi:Việt_Nam ;
+    rdfs:comment "Hệ thống đường"@vi .
+
+dbr-vi:Khối_Thịnh_vượng_chung_Đại_Đông_Á a dbo:Organisation ;
+    rdfs:label "Khối Thịnh vượng chung Đại Đông Á"@vi ;
+    rdfs:comment "Khối liên minh"@vi .
+
+dbr-vi:Làng_Hoàng_Trù a dbo:Place ;
+    rdfs:label "Làng Hoàng Trù"@vi ;
+    dbo:isPartOf dbr-vi:Xã_Chung_Cự ;
+    rdfs:comment "Quê ngoại của Hồ Chí Minh"@vi .
+
+dbr-vi:Làng_Kim_Liên a dbo:Place ;
+    rdfs:label "Làng Kim Liên"@vi ;
+    dbo:isPartOf dbr-vi:Xã_Chung_Cự ;
+    rdfs:comment "Quê nội của Hồ Chí Minh"@vi .
+
+dbr-vi:Lào a dbo:Place ;
+    rdfs:label "Lào"@vi ;
+    rdfs:comment "Quốc gia"@vi .
+
+dbr-vi:Lê_Thánh_Đức a dbo:Person ;
+    rdfs:label "Lê Thánh Đức"@vi ;
+    rdfs:comment "Vua nhà Lê"@vi .
+
+dbr-vi:Lăng_Chủ_tịch_Hồ_Chí_Minh a dbo:Place ;
+    rdfs:label "Lăng Chủ tịch Hồ Chí Minh"@vi ;
+    dbo:GÌN_GIỮ_THI_HÀI_CỦA dbr-vi:Chủ_tịch_Hồ_Chí_Minh ;
+    dbo:isPartOf dbr-vi:Quảng_trường_Ba_Đình ;
+    rdfs:comment "Lăng mộ"@vi ;
+    owl:sameAs dbr-en:Ho_Chi_Minh_Mausoleum .
+
+dbr-vi:Lăng_Hồ_Chủ_tịch a dbo:Place ;
+    rdfs:label "Lăng Hồ Chủ tịch"@vi ;
+    dbo:alias dbr-vi:Hồ_Chí_Minh,
+        dbr-vi:Lăng_Chủ_tịch_Hồ_Chí_Minh ;
+    rdfs:comment "Lăng mộ"@vi .
+
+dbr-vi:Lệ_Thủy a dbo:Place ;
+    rdfs:label "Lệ Thủy"@vi ;
+    dbo:isPartOf dbr-vi:Quảng_Ninh,
+        dbr-vi:Quảng_Trị ;
+    rdfs:comment "Xã hiện nay"@vi .
+
+dbr-vi:Lực_lượng_vũ_trang_nhân_dân_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Lực lượng vũ trang nhân dân Việt Nam"@vi ;
+    rdfs:comment "tổ chức quân sự"@vi .
+
+dbr-vi:Miền_Bắc_Việt_Nam a dbo:Place ;
+    rdfs:label "Miền Bắc Việt Nam"@vi ;
+    rdfs:comment "Khu vực"@vi .
+
+dbr-vi:Nam_Kỳ a dbo:Place ;
+    rdfs:label "Nam Kỳ"@vi ;
+    rdfs:comment "Khu vực"@vi .
+
+<http://vi.dbpedia.org/resource/Nghị_quyết_số_38/2004/QH11> a dbo:Work ;
+    rdfs:label "Nghị quyết số 38/2004/QH11"@vi ;
+    dbo:VỀ_CHỦ_TRƯƠNG_ĐẦU_TƯ_XÂY_DỰNG dbr-vi:Đường_Hồ_Chí_Minh ;
+    rdfs:comment "nghị quyết về chủ trương đầu tư xây dựng đường Hồ Chí Minh"@vi .
+
+dbr-vi:Nguyễn_Tất_Thành a dbo:Person ;
+    rdfs:label "Nguyễn Tất Thành"@vi ;
+    dbo:alias dbr-vi:Hồ_Chí_Minh ;
+    dbo:member dbr-vi:Hoàng_Phạm_Quỳnh,
+        dbr-vi:Trường_Quốc_Học,
+        <http://vi.dbpedia.org/resource/Trường_tiểu_học_Pháp_–_Việt_Đông_Ba> ;
+    rdfs:comment "Tên khác của Hồ Chí Minh"@vi .
+
+dbr-vi:Ngày_2_tháng_9_năm_1945 a dbo:Event ;
+    rdfs:label "Ngày 2 tháng 9 năm 1945"@vi ;
+    rdfs:comment "Ngày thành lập Việt Nam Dân chủ Cộng hòa"@vi .
+
+dbr-vi:Nhà_lao_Quảng_Ngãi a dbo:Place ;
+    rdfs:label "Nhà lao Quảng Ngãi"@vi ;
+    rdfs:comment "Nơi giam giữ Nguyễn Thị Thanh"@vi .
+
+dbr-vi:Nhật_Bản a dbo:Place ;
+    rdfs:label "Nhật Bản"@vi ;
+    rdfs:comment "Quốc gia"@vi .
+
+dbr-vi:Phan_Bội_Châu a dbo:Person ;
+    rdfs:label "Phan Bội Châu"@vi ;
+    rdfs:comment "Lãnh đạo phong trào"@vi .
+
+dbr-vi:Phong_trào_Cần_Vương a dbo:Event ;
+    rdfs:label "Phong trào Cần Vương"@vi ;
+    rdfs:comment "Phong trào"@vi .
+
+dbr-vi:Phó_Chủ_tịch_Hội_đồng_Bộ_trưởng a dbo:Person ;
+    rdfs:label "Phó Chủ tịch Hội đồng Bộ trưởng"@vi ;
+    dbo:GIÚP dbr-vi:Chủ_tịch_Hội_đồng_Bộ_trưởng ;
+    dbo:ỦY_NHIỆM_THAY dbr-vi:Chủ_tịch_Hội_đồng_Bộ_trưởng ;
+    rdfs:comment "Chức vụ"@vi .
+
+dbr-vi:Phó_Thủ_tướng_Chính_phủ a dbo:Person ;
+    rdfs:label "Phó Thủ tướng Chính phủ"@vi ;
+    dbo:alias dbr-vi:Phó_Chủ_tịch_Hội_đồng_Bộ_trưởng ;
+    dbo:member dbr-vi:Chính_phủ_Việt_Nam ;
+    dbo:ĐƯỢC_QUY_ĐỊNH_TRONG dbr-vi:Hiến_pháp_1946,
+        dbr-vi:Hiến_pháp_1980,
+        dbr-vi:Hiến_pháp_1992 ;
+    rdfs:comment "Chức vụ"@vi .
+
+dbr-vi:Quân_lực_Việt_Nam_Cộng_hòa a dbo:Organisation ;
+    rdfs:label "Quân lực Việt Nam Cộng hòa"@vi ;
+    dbo:PHÒNG_THỦ_TẠI dbr-vi:Sài_Gòn ;
+    dbo:member dbr-vi:Việt_Nam_Cộng_hòa ;
+    rdfs:comment "Lực lượng vũ trang"@vi .
+
+dbr-vi:Quân_đội_Quốc_gia_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Quân đội Quốc gia Việt Nam"@vi ;
+    dbo:GIÀNH_CHIẾN_THẮNG_TRONG dbr-vi:Chiến_dịch_Biên_giới ;
+    dbo:NHẬN_VIỆN_TRỢ_TỪ dbr-vi:khối_Xã_hội_chủ_nghĩa ;
+    dbo:PHÁT_TRIỂN_TỪ dbr-vi:Đội_Việt_Nam_Tuyên_truyền_Giải_phóng_quân ;
+    rdfs:comment "lực lượng quân sự"@vi .
+
+dbr-vi:Quảng_Trị a dbo:Place ;
+    rdfs:label "Quảng Trị"@vi ;
+    rdfs:comment "Tỉnh hiện nay"@vi .
+
+dbr-vi:Quốc_hội a dbo:Organisation ;
+    rdfs:label "Quốc hội"@vi ;
+    dbo:QUYẾT_ĐỊNH_CƠ_CẤU_SỐ_LƯỢNG_THÀNH_VIÊN_CỦA dbr-vi:Chính_phủ ;
+    rdfs:comment "Cơ quan lập pháp"@vi .
+
+dbr-vi:Thanh_Hóa a dbo:Place ;
+    rdfs:label "Thanh Hóa"@vi ;
+    rdfs:comment "Tỉnh"@vi .
+
+dbr-vi:Thành_ủy_Thành_phố_Hồ_Chí_Minh a dbo:Organisation ;
+    rdfs:label "Thành ủy Thành phố Hồ Chí Minh"@vi ;
+    dbo:CHỊU_TRÁCH_NHIỆM_TRƯỚC dbr-vi:Ban_Bí_thư_Trung_ương_Đảng,
+        dbr-vi:Bộ_Chính_trị,
+        dbr-vi:Đảng_bộ_Thành_phố_Hồ_Chí_Minh ;
+    dbo:alias dbr-vi:Ban_Chấp_hành_Đảng_bộ_Đảng_Cộng_sản_Việt_Nam_Thành_phố_Hồ_Chí_Minh ;
+    dbo:commander dbr-vi:Đảng_bộ_Thành_phố_Hồ_Chí_Minh ;
+    dbo:ĐƯỢC_THÀNH_LẬP_BỞI <http://vi.dbpedia.org/resource/Quyết_định_số_321-QĐ/TW> ;
+    rdfs:comment "Cơ quan lãnh đạo cao nhất của Đảng bộ Thành phố Hồ Chí Minh"@vi .
+
+dbr-vi:Trường_Cao_đẳng_Thương_mại a dbo:Organisation ;
+    rdfs:label "Trường Cao đẳng Thương mại"@vi ;
+    dbo:member dbr-vi:Đại_học_Đông_Dương ;
+    rdfs:comment "Trường học"@vi .
+
+dbr-vi:Tây_Nam_Bộ a dbo:Place ;
+    rdfs:label "Tây Nam Bộ"@vi ;
+    rdfs:comment "Khu vực Tây Nam Bộ"@vi .
+
+dbr-vi:Việt_Minh a dbo:Organisation ;
+    rdfs:label "Việt Minh"@vi ;
+    dbo:author dbr-vi:Ngày_2_tháng_9_năm_1945 ;
+    dbo:member dbr-vi:Việt_Nam_Dân_chủ_Cộng_hòa ;
+    rdfs:comment "Phong trào cách mạng"@vi .
+
+dbr-vi:Việt_Nam_dân_chủ_cộng_hòa a dbo:Place ;
+    rdfs:label "Việt Nam dân chủ cộng hòa"@vi ;
+    rdfs:comment "Quốc gia"@vi .
+
+dbr-vi:Võ_Nguyên_Giáp a dbo:Person ;
+    rdfs:label "Võ Nguyên Giáp"@vi ;
+    dbo:CHỈ_HUY_TRƯỞNG_CỦA dbr-vi:Chiến_tranh_Việt_Nam,
+        <http://vi.dbpedia.org/resource/Chiến_tranh_biên_giới_Việt_–_Trung>,
+        dbr-vi:Chiến_tranh_Đông_Dương,
+        dbr-vi:trận_Điện_Biên_Phủ ;
+    dbo:CHỊU_ẢNH_HƯỞNG_CỦA dbr-vi:Carl_von_Clausewitz,
+        dbr-vi:George_Washington,
+        dbr-vi:Napoléon,
+        dbr-vi:T._E._Lawrence,
+        dbr-vi:Tôn_Tử,
+        dbr-vi:Vladimir_Lenin ;
+    dbo:HỌC_TRÒ_CỦA dbr-vi:Chủ_tịch_Hồ_Chí_Minh ;
+    dbo:HỌC_TỪ dbr-vi:Ấu_học_tân_thư ;
+    dbo:KIẾN_TRÚC_SƯ_CỦA dbr-vi:đường_mòn_Hồ_Chí_Minh ;
+    dbo:alias dbr-vi:Võ_Giáp,
+        dbr-vi:anh_Văn,
+        dbr-vi:tướng_Giáp ;
+    dbo:birthPlace dbr-vi:An_Xá,
+        dbr-vi:Mỹ_Đức ;
+    dbo:child dbr-vi:Nguyễn_Thị_Kiên,
+        dbr-vi:Võ_Quang_Nghiêm,
+        dbr-vi:Võ_Thuần_Nho,
+        dbr-vi:Võ_Thị_Lài,
+        dbr-vi:cha_của_Võ_Nguyên_Giáp,
+        dbr-vi:mẹ_của_Võ_Nguyên_Giáp ;
+    dbo:commander dbr-vi:Hoàng_Văn_Thái,
+        dbr-vi:Hàm_Nghi,
+        dbr-vi:Quân_đội_Nhân_dân_Việt_Nam,
+        dbr-vi:Văn_Tiến_Dũng ;
+    dbo:deathPlace dbr-vi:Bệnh_viện_Trung_ương_Quân_đội_108,
+        dbr-vi:Quảng_Trạch ;
+    dbo:member dbr-vi:Hội_đồng_Quốc_phòng,
+        dbr-vi:Phong_trào_Cần_Vương,
+        dbr-vi:Việt_Nam_Dân_chủ_Cộng_hòa ;
+    dbo:ĐÁNH_BẠI_TRONG dbr-vi:Hoa_Kỳ,
+        dbr-vi:Pháp,
+        dbr-vi:Việt_Nam_Cộng_hòa ;
+    rdfs:comment "Anh hùng"@vi .
+
+dbr-vi:Xã_Chung_Cự a dbo:Place ;
+    rdfs:label "Xã Chung Cự"@vi ;
+    dbo:isPartOf dbr-vi:Tổng_Lâm_Thịnh ;
+    rdfs:comment "Xã chứa làng Kim Liên và làng Hoàng Trù"@vi .
+
+dbr-vi:Xứ_ủy_Bắc_Kỳ a dbo:Organisation ;
+    rdfs:label "Xứ ủy Bắc Kỳ"@vi ;
+    rdfs:comment "Tổ chức Đảng"@vi .
+
+dbr-vi:cha_ông a dbo:Person ;
+    rdfs:label "cha ông"@vi ;
+    rdfs:comment "Cha của Nguyễn Sinh Cung"@vi .
+
+dbr-vi:huyện_Vũng_Liêm a dbo:Place ;
+    rdfs:label "huyện Vũng Liêm"@vi ;
+    dbo:isPartOf dbr-vi:tỉnh_Vĩnh_Long ;
+    rdfs:comment "Huyện"@vi .
+
+dbr-vi:thành_phố_Hải_Phòng a dbo:Place ;
+    rdfs:label "thành phố Hải Phòng"@vi ;
+    dbo:country dbr-vi:Việt_Nam ;
+    rdfs:comment "Thành phố"@vi .
+
+dbr-vi:tỉnh_Nghệ_An a dbo:Place ;
+    rdfs:label "tỉnh Nghệ An"@vi ;
+    rdfs:comment "tỉnh"@vi .
+
+dbr-vi:tỉnh_Vĩnh_Long a dbo:Place ;
+    rdfs:label "tỉnh Vĩnh Long"@vi ;
+    rdfs:comment "Tỉnh"@vi .
+
+dbr-vi:Đông_Anh a dbo:Place ;
+    rdfs:label "Đông Anh"@vi ;
+    rdfs:comment "Huyện"@vi .
+
+dbr-vi:Đường_Hồ_Chí_Minh a dbo:Place ;
+    rdfs:label "Đường Hồ Chí Minh"@vi ;
+    dbo:BẮT_ĐẦU_TẠI dbr-vi:Hòa_Lạc ;
+    dbo:KẾT_THÚC_TẠI dbr-vi:Đồng_Nai ;
+    dbo:isPartOf dbr-vi:Việt_Nam,
+        dbr-vi:vùng_núi_phía_Tây ;
+    rdfs:comment "Hệ thống đường"@vi ;
+    owl:sameAs dbr-en:Ho_Chi_Minh_Highway .
+
+dbr-vi:Đế_chế_Khmer a dbo:Organisation ;
+    rdfs:label "Đế chế Khmer"@vi ;
+    rdfs:comment "Đế chế"@vi .
+
+dbr-vi:Đồng_bằng_sông_Cửu_Long a dbo:Place ;
+    rdfs:label "Đồng bằng sông Cửu Long"@vi ;
+    dbo:isPartOf dbr-vi:Việt_Nam ;
+    rdfs:comment "Khu vực tiếp quản"@vi .
+
+dbr-vi:Đội_Việt_Nam_Tuyên_truyền_Giải_phóng_quân a dbo:Organisation ;
+    rdfs:label "Đội Việt Nam Tuyên truyền Giải phóng quân"@vi ;
+    dbo:SÁP_NHẬP_VỚI dbr-vi:Cứu_quốc_quân ;
+    dbo:birthPlace dbr-vi:Cao_Bằng ;
+    dbo:member dbr-vi:Chủ_tịch_Hồ_Chí_Minh ;
+    dbo:ĐỔI_TÊN_THÀNH dbr-vi:Việt_Nam_Giải_phóng_quân ;
+    rdfs:comment "lực lượng quân sự"@vi .
+
+dbr-vi:đồng_bằng_ven_biển_phía_Đông a dbo:Place ;
+    rdfs:label "đồng bằng ven biển phía Đông"@vi ;
+    rdfs:comment "vùng đồng bằng ven biển"@vi .
+
+dbr-vi:Ủy_viên_Bộ_Chính_trị a dbo:Organisation ;
+    rdfs:label "Ủy viên Bộ Chính trị"@vi ;
+    rdfs:comment "Chức vụ trong Đảng"@vi .
+
+<http://vi.dbpedia.org/resource/Bộ,_ban,_ngành> a dbo:Organisation ;
+    rdfs:label "Bộ, ban, ngành"@vi ;
+    rdfs:comment "Các cơ quan nhà nước"@vi .
+
+dbr-vi:Bộ_trưởng a dbo:Person ;
+    rdfs:label "Bộ trưởng"@vi ;
+    dbo:country dbr-vi:Việt_Nam_Dân_chủ_Cộng_hòa ;
+    dbo:member dbr-vi:Hội_đồng_Chính_phủ ;
+    rdfs:comment "Chức vụ"@vi .
+
+dbr-vi:Chiến_tranh_Việt_Nam a dbo:Event ;
+    rdfs:label "Chiến tranh Việt Nam"@vi ;
+    dbo:KẾT_THÚC dbr-vi:Việt_Nam_Cộng_hòa ;
+    dbo:XẢY_RA_TẠI dbr-vi:Việt_Nam_dân_chủ_cộng_hòa ;
+    dbo:ĐỐI_THỦ_CỦA dbr-vi:Việt_Nam_Cộng_hòa,
+        dbr-vi:Việt_Nam_Dân_chủ_Cộng_hòa ;
+    rdfs:comment "Cuộc chiến tranh"@vi .
+
+dbr-vi:Hoa_Kỳ a dbo:Place ;
+    rdfs:label "Hoa Kỳ"@vi ;
+    dbo:KÝ dbr-vi:Hiệp_định_Paris ;
+    dbo:member dbr-vi:Việt_Nam_Cộng_hòa ;
+    dbo:ĐỀ_XUẤT_QUẢN_LÝ dbr-vi:Đông_Dương ;
+    dbo:ĐỒNG_Ý_GIẢI_GIÁP dbr-vi:Trung_Hoa_Dân_Quốc ;
+    dbo:ỦNG_HỘ dbr-vi:Pháp,
+        dbr-vi:Quốc_gia_Việt_Nam ;
+    rdfs:comment "Quốc gia"@vi .
+
+dbr-vi:Huế a dbo:Place ;
+    rdfs:label "Huế"@vi ;
+    rdfs:comment "Thành phố"@vi .
+
+dbr-vi:Miền_Nam_Việt_Nam a dbo:Place ;
+    rdfs:label "Miền Nam Việt Nam"@vi ;
+    rdfs:comment "Khu vực chiến tranh"@vi .
+
+dbr-vi:Nam_Định a dbo:Place ;
+    rdfs:label "Nam Định"@vi ;
+    rdfs:comment "Tỉnh"@vi .
+
+dbr-vi:Ngô_Đình_Diệm a dbo:Person ;
+    rdfs:label "Ngô Đình Diệm"@vi ;
+    dbo:PHẾ_TRUẤT dbr-vi:Bảo_Đại ;
+    dbo:isPartOf dbr-vi:Sài_Gòn ;
+    rdfs:comment "Chính trị gia"@vi .
+
+dbr-vi:Quảng_Bình a dbo:Place ;
+    rdfs:label "Quảng Bình"@vi ;
+    dbo:country dbr-vi:Việt_Nam ;
+    rdfs:comment "Tỉnh"@vi .
+
+dbr-vi:Quốc_gia_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Quốc gia Việt Nam"@vi ;
+    rdfs:comment "Nhà nước miền Nam Việt Nam"@vi .
+
+dbr-vi:Thủ_tướng a dbo:Person ;
+    rdfs:label "Thủ tướng"@vi ;
+    dbo:country dbr-vi:Việt_Nam_Dân_chủ_Cộng_hòa ;
+    dbo:member dbr-vi:Hội_đồng_Chính_phủ ;
+    rdfs:comment "Chức vụ"@vi .
+
+dbr-vi:Trung_Quốc a dbo:Place ;
+    rdfs:label "Trung Quốc"@vi ;
+    dbo:member dbr-vi:Mặt_trận_Dân_tộc_Giải_phóng_miền_Nam_Việt_Nam,
+        dbr-vi:Quân_đội_nhân_dân_Việt_Nam ;
+    rdfs:comment "Quốc gia"@vi .
+
+dbr-vi:Trường_Chinh a dbo:Person ;
+    rdfs:label "Trường Chinh"@vi ;
+    dbo:CHỊU_ẢNH_HƯỞNG_TỪ dbr-vi:Chủ_nghĩa_Lenin,
+        dbr-vi:Chủ_nghĩa_Marx,
+        dbr-vi:Hồ_Chí_Minh,
+        dbr-vi:Khối_Xô_Viết,
+        dbr-vi:Mao_Trạch_Đông ;
+    dbo:THEO_HỌC_TẠI dbr-vi:Trường_Cao_đẳng_Thương_mại ;
+    dbo:alias dbr-vi:Sóng_Hồng,
+        dbr-vi:Đặng_Xuân_Khu ;
+    dbo:author dbr-vi:Nam_Phong,
+        dbr-vi:Ngọ_Báo,
+        dbr-vi:Trung_Bắc_Tân_Văn ;
+    dbo:birthPlace dbr-vi:Hành_Thiện,
+        dbr-vi:Nam_Định ;
+    dbo:country dbr-vi:Trung_Quốc,
+        dbr-vi:Việt_Nam ;
+    dbo:member dbr-vi:Nguyễn_Khắc_Lương,
+        dbr-vi:Nguyễn_Văn_Hoan,
+        dbr-vi:Nguyễn_Đức_Cảnh,
+        dbr-vi:Phạm_Năng_Độ,
+        dbr-vi:Đảng_Cộng_sản,
+        dbr-vi:Đặng_Châu_Tệ ;
+    dbo:ĐÃ_HỌC_TẠI dbr-vi:Trường_Thành_Chung ;
+    dbo:ĐƯỢC_TRUYỀN_CẢM_HỨNG_TỪ dbr-vi:Cách_mạng_Pháp_năm_1789,
+        dbr-vi:Cách_mạng_Trung_Quốc_năm_1911,
+        dbr-vi:Jean-Jacque_Rousseau,
+        dbr-vi:Montesquieu ;
+    rdfs:comment "Nhà lãnh đạo chủ chốt"@vi ;
+    owl:sameAs dbr-en:Trường_Chinh .
+
+dbr-vi:Trần_Trọng_Kim a dbo:Person ;
+    rdfs:label "Trần Trọng Kim"@vi ;
+    dbo:commander dbr-vi:Bảo_Đại,
+        dbr-vi:Khối_Thịnh_vượng_chung_Đại_Đông_Á,
+        dbr-vi:Việt_Nam,
+        dbr-vi:Đế_quốc_Việt_Nam ;
+    dbo:ĐANG_Ở dbr-vi:Singapore ;
+    rdfs:comment "Thủ tướng"@vi .
+
+dbr-vi:Việt_Nam_Giải_phóng_quân a dbo:Organisation ;
+    rdfs:label "Việt Nam Giải phóng quân"@vi ;
+    dbo:THỰC_HIỆN dbr-vi:Cách_mạng_Tháng_Tám_năm_1945 ;
+    dbo:birthPlace dbr-vi:Thái_Nguyên ;
+    dbo:member dbr-vi:Mặt_trận_Việt_Minh ;
+    rdfs:comment "lực lượng quân sự"@vi .
+
+dbr-vi:Đông_Dương a dbo:Place ;
+    rdfs:label "Đông Dương"@vi ;
+    dbo:THÀNH_LẬP dbr-vi:Hội_đồng_Liên_bang ;
+    rdfs:comment "Khu vực"@vi .
+
+dbr-vi:Đảng_Cộng_sản_Đông_Dương a dbo:Organisation ;
+    rdfs:label "Đảng Cộng sản Đông Dương"@vi ;
+    rdfs:comment "Đảng chính trị"@vi .
+
+dbr-vi:ấp_Bình_Phụng a dbo:Place ;
+    rdfs:label "ấp Bình Phụng"@vi ;
+    dbo:alias dbr-vi:xã_Trung_Hiệp ;
+    dbo:isPartOf dbr-vi:xã_Trung_Lương ;
+    rdfs:comment "Ấp nghèo"@vi .
+
+dbr-vi:Chủ_tịch_nước a dbo:Organisation ;
+    rdfs:label "Chủ tịch nước"@vi ;
+    rdfs:comment "Chức vụ cao nhất trong nhà nước"@vi .
+
+dbr-vi:Cộng_hòa_xã_hội_chủ_nghĩa_Việt_Nam a dbo:Place ;
+    rdfs:label "Cộng hòa xã hội chủ nghĩa Việt Nam"@vi ;
+    rdfs:comment "Nhà nước"@vi .
+
+dbr-vi:Hoàng_Thị_Loan a dbo:Person ;
+    rdfs:label "Hoàng Thị Loan"@vi ;
+    dbo:child dbr-vi:Hoàng_Xuân_Đường,
+        dbr-vi:Hồ_Chí_Minh ;
+    dbo:deathPlace dbr-vi:Nghệ_An ;
+    dbo:parent dbr-vi:Nguyễn_Sinh_Cung ;
+    dbo:spouse dbr-vi:Nguyễn_Sinh_Sắc ;
+    rdfs:comment "Thân mẫu của Hồ Chí Minh"@vi .
+
+dbr-vi:Nghệ_An a dbo:Place ;
+    rdfs:label "Nghệ An"@vi ;
+    rdfs:comment "Tỉnh"@vi .
+
+dbr-vi:Nguyễn_Văn_Thiệu a dbo:Person ;
+    rdfs:label "Nguyễn Văn Thiệu"@vi ;
+    dbo:commander dbr-vi:Chính_phủ_Mỹ ;
+    rdfs:comment "Tổng thống Sài Gòn"@vi .
+
+dbr-vi:Quân_đội_nhân_dân_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Quân đội nhân dân Việt Nam"@vi ;
+    dbo:CÓ_NGÀY_TRUYỀN_THỐNG dbr-vi:Ngày_22_tháng_12 ;
+    dbo:SỬ_DỤNG_QUÂN_KỲ dbr-vi:Quốc_kỳ_Việt_Nam ;
+    dbo:alias dbr-vi:Cứu_quốc_quân,
+        dbr-vi:Quân_đội_Quốc_gia_Việt_Nam,
+        dbr-vi:Việt_Nam_Giải_phóng_quân,
+        dbr-vi:Vệ_quốc_quân,
+        dbr-vi:Vệ_quốc_đoàn,
+        dbr-vi:Đội_Việt_Nam_Tuyên_truyền_Giải_phóng_quân ;
+    dbo:country dbr-vi:Việt_Nam ;
+    dbo:isPartOf dbr-vi:Nhà_khách_Bộ_Quốc_phòng ;
+    dbo:member dbr-vi:Bộ_Quốc_phòng_Việt_Nam,
+        dbr-vi:Chính_phủ,
+        dbr-vi:Lực_lượng_vũ_trang_nhân_dân_Việt_Nam,
+        dbr-vi:Mặt_trận_Dân_tộc_Giải_phóng_miền_Nam_Việt_Nam,
+        dbr-vi:Nhân_dân,
+        dbr-vi:Đảng,
+        dbr-vi:Đảng_Cộng_sản_Việt_Nam ;
+    dbo:ĐƯỢC_ĐẶT_TÊN_BỞI dbr-vi:Chủ_tịch_Hồ_Chí_Minh ;
+    rdfs:comment "Quân đội"@vi ;
+    owl:sameAs <http://dbpedia.org/resource/People's_Army_of_Vietnam> .
+
+<http://vi.dbpedia.org/resource/Thành_phố_Sài_Gòn_–_Gia_Định> a dbo:Place ;
+    rdfs:label "Thành phố Sài Gòn – Gia Định"@vi ;
+    dbo:alias dbr-vi:Sài_Gòn ;
+    dbo:country dbr-vi:Việt_Nam ;
+    rdfs:comment "Thành phố hợp nhất"@vi .
+
+dbr-vi:Tổng_Bí_thư a dbo:Person ;
+    rdfs:label "Tổng Bí thư"@vi ;
+    dbo:commander dbr-vi:Đại_hội_Đảng_bộ_Thành_phố_Hồ_Chí_Minh ;
+    rdfs:comment "Lãnh đạo chỉ đạo Đại hội Đảng bộ Thành phố Hồ Chí Minh"@vi .
+
+dbr-vi:Chiến_tranh_Đông_Dương a dbo:Event ;
+    rdfs:label "Chiến tranh Đông Dương"@vi ;
+    dbo:member dbr-vi:Pháp,
+        dbr-vi:Việt_Nam_Dân_chủ_Cộng_hòa ;
+    rdfs:comment "Cuộc chiến tranh"@vi .
+
+dbr-vi:Liên_Xô a dbo:Place ;
+    rdfs:label "Liên Xô"@vi ;
+    dbo:HỖ_TRỢ_BẢO_QUẢN_THI_HÀI_CỦA dbr-vi:Việt_Nam ;
+    dbo:member dbr-vi:Mặt_trận_Dân_tộc_Giải_phóng_miền_Nam_Việt_Nam,
+        dbr-vi:Quân_đội_nhân_dân_Việt_Nam ;
+    dbo:ĐỒNG_Ý_QUẢN_LÝ dbr-vi:Đông_Dương ;
+    rdfs:comment "quốc gia"@vi .
+
+dbr-vi:Mặt_trận_Dân_tộc_Giải_phóng_miền_Nam_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Mặt trận Dân tộc Giải phóng miền Nam Việt Nam"@vi ;
+    dbo:TIẾP_QUAN_TẠI dbr-vi:Đồng_bằng_sông_Cửu_Long ;
+    dbo:commander dbr-vi:Cộng_hòa_miền_Nam_Việt_Nam ;
+    rdfs:comment "Tổ chức chính trị - quân sự"@vi .
+
+dbr-vi:Thủ_tướng_Chính_phủ a dbo:Person ;
+    rdfs:label "Thủ tướng Chính phủ"@vi ;
+    dbo:commander dbr-vi:Hội_đồng_Chính_phủ ;
+    rdfs:comment "Chức vụ"@vi .
+
+dbr-vi:Đảng a dbo:Organisation ;
+    rdfs:label "Đảng"@vi ;
+    rdfs:comment "Đảng chính trị"@vi .
+
+dbr-vi:Chiến_dịch_Hồ_Chí_Minh a dbo:Event ;
+    rdfs:label "Chiến dịch Hồ Chí Minh"@vi ;
+    dbo:DIỄN_RA_TẠI dbr-vi:Sài_Gòn ;
+    dbo:LÀ_CHIẾN_DỊCH_CỦA dbr-vi:Quân_Giải_phóng_miền_Nam_Việt_Nam ;
+    dbo:alias dbr-vi:Chiến_dịch_Giải_phóng_Sài_Gòn_-_Gia_Định,
+        <http://vi.dbpedia.org/resource/Chiến_dịch_Giải_phóng_Sài_Gòn_–_Gia_Định> ;
+    dbo:country dbr-vi:Chiến_tranh_Việt_Nam,
+        dbr-vi:Cuộc_Tổng_tấn_công_và_nổi_dậy_mùa_Xuân_năm_1975 ;
+    dbo:ĐƯỢC_QUYẾT_ĐỊNH_BỞI dbr-vi:Bộ_Chính_trị ;
+    rdfs:comment "Tên chiến dịch"@vi .
+
+dbr-vi:Chính_phủ a dbo:Organisation ;
+    rdfs:label "Chính phủ"@vi ;
+    dbo:BAO_GỒM dbr-vi:Bộ_trưởng,
+        dbr-vi:Phó_Thủ_tướng_Chính_phủ,
+        dbr-vi:Thủ_trưởng_cơ_quan_ngang_bộ,
+        dbr-vi:Thủ_tướng_Chính_phủ ;
+    dbo:member dbr-vi:Bộ_trưởng,
+        dbr-vi:Phó_Thủ_tướng,
+        dbr-vi:Thành_viên_khác_của_Chính_phủ,
+        dbr-vi:Thủ_tướng ;
+    rdfs:comment "Chính phủ"@vi .
+
+dbr-vi:Hội_đồng_Chính_phủ a dbo:Organisation ;
+    rdfs:label "Hội đồng Chính phủ"@vi ;
+    rdfs:comment "Cơ quan quyền lực Nhà nước"@vi .
+
+dbr-vi:Hội_đồng_Quốc_phòng_và_An_ninh a dbo:Organisation ;
+    rdfs:label "Hội đồng Quốc phòng và An ninh"@vi ;
+    dbo:country dbr-vi:Đảng_Cộng_sản_Việt_Nam ;
+    rdfs:comment "Cơ quan quốc phòng và an ninh"@vi .
+
+dbr-vi:Nguyễn_Sinh_Sắc a dbo:Person ;
+    rdfs:label "Nguyễn Sinh Sắc"@vi ;
+    dbo:birthPlace dbr-vi:làng_Hòa_An ;
+    dbo:commander dbr-vi:Bình_Khê ;
+    dbo:deathPlace dbr-vi:Huế,
+        dbr-vi:Đồng_Tháp ;
+    dbo:parent dbr-vi:Hồ_Chí_Minh,
+        dbr-vi:Nguyễn_Sinh_Cung ;
+    rdfs:comment "Chồng của Hoàng Thị Loan"@vi .
+
+dbr-vi:Pháp a dbo:Place ;
+    rdfs:label "Pháp"@vi ;
+    dbo:KHẲNG_ĐỊNH_CHỦ_QUYỀN dbr-vi:Đông_Dương ;
+    rdfs:comment "Quốc gia thực dân"@vi .
+
+dbr-vi:Võ_Văn_Kiệt a dbo:Person ;
+    rdfs:label "Võ Văn Kiệt"@vi ;
+    dbo:CHIẾN_ĐẤU_CHỐNG_LẠI dbr-vi:Thực_dân_Pháp ;
+    dbo:DI_CHUYỂN_ĐẾN dbr-vi:Miền_Đông_Nam_Bộ ;
+    dbo:HOẠT_ĐỘNG_TẠI dbr-vi:Miền_Nam_Việt_Nam ;
+    dbo:KHÔNG_DI_CƯ_ĐẾN dbr-vi:Miền_Bắc_Việt_Nam ;
+    dbo:PHỤ_TRÁCH_CÔNG_TÁC_TIẾP_QUAN_CƠ_SỞ_KINH_TẾ_KỸ_THUẬT dbr-vi:Bộ_Chỉ_huy_Chiến_dịch_Giải_phóng_Sài_Gòn_-_Gia_Định ;
+    dbo:alias dbr-vi:Chín_Hòa,
+        dbr-vi:Phan_Văn_Hòa ;
+    dbo:birthPlace dbr-vi:ấp_Bình_Phụng ;
+    dbo:child dbr-vi:Phan_Văn_Dựa,
+        dbr-vi:Võ_Thị_Quế ;
+    dbo:commander dbr-vi:Bộ_Chỉ_huy_Chiến_dịch_Giải_phóng_Sài_Gòn_-_Gia_Định,
+        dbr-vi:Cộng_hòa_xã_hội_chủ_nghĩa_Việt_Nam ;
+    dbo:member dbr-vi:Bạc_Liêu,
+        dbr-vi:Nam_Kỳ,
+        dbr-vi:Phan_Văn_Chi,
+        dbr-vi:Rạch_Giá,
+        dbr-vi:Tây_Nam_Bộ,
+        dbr-vi:Việt_Minh,
+        dbr-vi:huyện_Vũng_Liêm,
+        dbr-vi:Đảng_Cộng_sản_Đông_Dương ;
+    dbo:ĐƯỢC_BẦU_LÀM dbr-vi:Phó_Bí_thư_liên_Tỉnh_ủy_Hậu_Giang,
+        dbr-vi:Ủy_viên_Xứ_ủy_Nam_Bộ ;
+    rdfs:comment "Thành viên phong trào độc lập Việt Minh"@vi ;
+    owl:sameAs dbr-en:Võ_Văn_Kiệt .
+
+dbr-vi:Đảng_bộ_Thành_phố_Hồ_Chí_Minh a dbo:Organisation ;
+    rdfs:label "Đảng bộ Thành phố Hồ Chí Minh"@vi ;
+    dbo:HỢP_NHẤT_VỚI dbr-vi:Đảng_bộ_tỉnh_Bà_Rịa_-_Vũng_Tàu,
+        dbr-vi:Đảng_bộ_tỉnh_Bình_Dương ;
+    dbo:country dbr-vi:Thành_phố_Hồ_Chí_Minh ;
+    dbo:member dbr-vi:Ban_Chấp_hành_Trung_ương_Đảng ;
+    rdfs:comment "Đảng bộ của Thành phố Hồ Chí Minh"@vi .
+
+dbr-vi:Bộ_Chính_trị a dbo:Organisation ;
+    rdfs:label "Bộ Chính trị"@vi ;
+    dbo:CÔNG_BỐ dbr-vi:Di_chúc_của_Chủ_tịch_Hồ_Chí_Minh ;
+    dbo:QUYẾT_ĐỊNH_VỀ dbr-vi:Lăng_Hồ_Chủ_tịch ;
+    rdfs:comment "Cơ quan chỉ định thành viên Ban Thường vụ Thành ủy"@vi .
+
+dbr-vi:Bộ_Quốc_phòng a dbo:Organisation ;
+    rdfs:label "Bộ Quốc phòng"@vi ;
+    dbo:member dbr-vi:Hội_đồng_Quốc_phòng_và_An_ninh ;
+    rdfs:comment "Cơ quan nhà nước"@vi .
+
+dbr-vi:Hội_đồng_Quốc_phòng a dbo:Organisation ;
+    rdfs:label "Hội đồng Quốc phòng"@vi ;
+    dbo:alias dbr-vi:Hội_đồng_Quốc_phòng_và_An_ninh ;
+    rdfs:comment "Tên gọi trước đây của Hội đồng Quốc phòng và An ninh"@vi .
+
+dbr-vi:Hội_đồng_Quốc_phòng_và_An_ninh_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Hội đồng Quốc phòng và An ninh Việt Nam"@vi ;
+    dbo:alias dbr-vi:Điều_89_Hiến_pháp_nước_Cộng_hòa_xã_hội_chủ_nghĩa_Việt_Nam_2013 ;
+    dbo:commander dbr-vi:Lực_lượng_vũ_trang_nhân_dân_Việt_Nam ;
+    dbo:isPartOf dbr-vi:Phủ_Chủ_tịch ;
+    rdfs:comment "Cơ quan tham mưu cho Chủ tịch nước về an ninh và quốc phòng"@vi ;
+    owl:sameAs dbr-en:National_Defense_and_Security_Council_\(Vietnam\) .
+
+dbr-vi:Đảng_Cộng_sản_Việt_Nam a dbo:Organisation ;
+    rdfs:label "Đảng Cộng sản Việt Nam"@vi ;
+    dbo:alias dbr-vi:Chủ_nghĩa_Mác-Lênin ;
+    dbo:commander dbr-vi:Tư_tưởng_Hồ_Chí_Minh ;
+    dbo:country dbr-vi:Việt_Nam ;
+    rdfs:comment "đảng chính trị"@vi .
+
+dbr-vi:Nguyễn_Sinh_Cung a dbo:Person ;
+    rdfs:label "Nguyễn Sinh Cung"@vi ;
+    dbo:QUÊ_NỘI dbr-vi:Làng_Kim_Liên ;
+    dbo:alias dbr-vi:Hồ_Chí_Minh,
+        dbr-vi:Nguyễn_Tất_Thành ;
+    dbo:birthPlace dbr-vi:Huế,
+        dbr-vi:Làng_Hoàng_Trù,
+        dbr-vi:Nghệ_An ;
+    dbo:child dbr-vi:Hoàng_Thị_Loan,
+        dbr-vi:anh_trai,
+        dbr-vi:bà_ngoại,
+        dbr-vi:cha_mẹ,
+        dbr-vi:cha_ông,
+        dbr-vi:mẹ ;
+    dbo:deathPlace dbr-vi:miền_Nam ;
+    rdfs:comment "em trai của Nguyễn Sinh Khiêm"@vi .
+
+dbr-vi:Thành_phố_Hồ_Chí_Minh a dbo:Place ;
+    rdfs:label "Thành phố Hồ Chí Minh"@vi ;
+    dbo:alias <http://vi.dbpedia.org/resource/Thành_phố_Sài_Gòn_–_Gia_Định> ;
+    dbo:country dbr-vi:Hồ_Chí_Minh,
+        dbr-vi:Việt_Nam ;
+    dbo:isPartOf dbr-vi:Tây_Nam_Bộ,
+        dbr-vi:Đông_Nam_Bộ ;
+    rdfs:comment "Thành phố"@vi .
+
+dbr-vi:Việt_Nam_Cộng_hòa a dbo:Place ;
+    rdfs:label "Việt Nam Cộng hòa"@vi ;
+    dbo:alias dbr-vi:Quốc_gia_Việt_Nam ;
+    dbo:commander dbr-vi:Ngô_Đình_Diệm,
+        <http://vi.dbpedia.org/resource/Thành_phố_Sài_Gòn_–_Gia_Định> ;
+    rdfs:comment "Nhà nước"@vi .
+
+dbr-vi:Chủ_tịch_Hồ_Chí_Minh a dbo:Person ;
+    rdfs:label "Chủ tịch Hồ Chí Minh"@vi ;
+    dbo:country dbr-vi:Việt_Nam ;
+    rdfs:comment "Chủ tịch"@vi .
+
+dbr-vi:Hồ_Chí_Minh a dbo:Person ;
+    rdfs:label "Hồ Chí Minh"@vi ;
+    dbo:LIÊN_QUAN dbr-vi:Liên_Xô ;
+    dbo:alias dbr-vi:Bác_Hồ,
+        dbr-vi:Nguyễn_Sinh_Cung,
+        dbr-vi:Nguyễn_Tất_Thành,
+        dbr-vi:Nguyễn_Ái_Quốc ;
+    dbo:author dbr-vi:Trường_Võ_bị_Trần_Quốc_Tuấn,
+        dbr-vi:Tuyên_ngôn_độc_lập ;
+    dbo:birthPlace dbr-vi:làng_Sen ;
+    dbo:commander dbr-vi:Ban_Chấp_hành_Trung_ương_Đảng_Lao_động_Việt_Nam,
+        dbr-vi:Chiến_tranh_Việt_Nam,
+        dbr-vi:Chiến_tranh_Đông_Dương,
+        dbr-vi:Cách_mạng_Tháng_Tám_năm_1945,
+        dbr-vi:Hội_đồng_Quốc_phòng,
+        dbr-vi:Mặt_trận_Dân_tộc_Giải_phóng_miền_Nam_Việt_Nam,
+        dbr-vi:Quân_đội_nhân_dân_Việt_Nam,
+        dbr-vi:Việt_Minh,
+        dbr-vi:Việt_Nam_Dân_chủ_Cộng_hòa,
+        dbr-vi:Đảng_Cộng_sản_Việt_Nam,
+        dbr-vi:Đảng_Cộng_sản_Đông_Dương ;
+    dbo:country dbr-vi:Việt_Nam,
+        dbr-vi:Việt_Nam_dân_chủ_cộng_hòa ;
+    dbo:deathPlace dbr-vi:Viện_Quân_y_108 ;
+    dbo:member dbr-vi:Đảng ;
+    dbo:ĐƯỢC_ĐỒNG_BÀO_MIỀN_NAM_KÍNH_TRỌNG dbr-vi:Miền_Nam ;
+    dbo:ỦNG_HỘ_BỞI dbr-vi:Đồng_Minh ;
+    rdfs:comment "Nhà cách mạng"@vi .
+
+dbr-vi:Sài_Gòn a dbo:Place ;
+    rdfs:label "Sài Gòn"@vi ;
+    dbo:alias dbr-vi:Thành_phố_Hồ_Chí_Minh,
+        dbr-vi:Tây_Cống ;
+    dbo:isPartOf dbr-vi:Huyện_Tân_Bình,
+        dbr-vi:Tân_Sơn_Nhất ;
+    rdfs:comment "Thành phố"@vi .
+
+dbr-vi:Hà_Nội a dbo:Place ;
+    rdfs:label "Hà Nội"@vi ;
+    dbo:country dbr-vi:Việt_Nam ;
+    rdfs:comment "Thủ đô"@vi .
+
+dbr-vi:Bộ_Chỉ_huy_Chiến_dịch_Giải_phóng_Sài_Gòn_-_Gia_Định a dbo:Organisation ;
+    rdfs:label "Bộ Chỉ huy Chiến dịch Giải phóng Sài Gòn - Gia Định"@vi ;
+    dbo:birthPlace dbr-vi:Lộc_Ninh ;
+    rdfs:comment "Bộ chỉ huy chiến dịch"@vi .
+
+dbr-vi:Việt_Nam_Dân_chủ_Cộng_hòa a dbo:Place ;
+    rdfs:label "Việt Nam Dân chủ Cộng hòa"@vi ;
+    dbo:CÔNG_NHẬN dbr-vi:Cộng_hòa_miền_Nam_Việt_Nam ;
+    dbo:KÝ dbr-vi:Hiệp_định_Paris ;
+    dbo:THỐNG_NHẤT_THÀNH dbr-vi:Cộng_hòa_xã_hội_chủ_nghĩa_Việt_Nam ;
+    dbo:alias dbr-vi:Cộng_hòa_xã_hội_chủ_nghĩa_Việt_Nam ;
+    dbo:birthPlace dbr-vi:Ngày_2_tháng_9_năm_1945 ;
+    dbo:commander dbr-vi:Chủ_tịch_Hồ_Chí_Minh ;
+    dbo:country dbr-vi:Việt_Nam ;
+    dbo:isPartOf dbr-vi:Cộng_hòa_Xã_hội_chủ_nghĩa_Việt_Nam ;
+    rdfs:comment "quốc gia"@vi .
+
+dbr-vi:Việt_Nam a dbo:Place ;
+    rdfs:label "Việt Nam"@vi ;
+    dbo:country dbr-vi:Khối_Thịnh_vượng_chung_Đại_Đông_Á ;
+    dbo:isPartOf dbr-vi:Bắc_Kỳ,
+        dbr-vi:Nam_Kỳ,
+        dbr-vi:Trung_Kỳ ;
+    rdfs:comment "Quốc gia"@vi .
+
